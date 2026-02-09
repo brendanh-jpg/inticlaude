@@ -1,19 +1,18 @@
 import type { Page } from "playwright-core";
-import { getEnv } from "@/sync/config/env";
+import type { OwlCredentials } from "@/sync/types/api";
 import { safeGoto, fillField, clickButton } from "@/sync/browser/helpers";
 import { createChildLogger } from "@/sync/logger";
 
 const log = createChildLogger("owl-auth");
 
-export async function loginToOwl(page: Page): Promise<void> {
-  const env = getEnv();
-  log.info("Logging into Owl Practice", { url: env.OWL_PRACTICE_URL });
+export async function loginToOwl(page: Page, credentials: OwlCredentials): Promise<void> {
+  log.info("Logging into Owl Practice", { url: credentials.url });
 
-  await safeGoto(page, env.OWL_PRACTICE_URL);
+  await safeGoto(page, credentials.url);
 
   // TODO: Update selectors once Owl Practice login page is inspected
-  await fillField(page, 'input[type="email"]', env.OWL_PRACTICE_EMAIL);
-  await fillField(page, 'input[type="password"]', env.OWL_PRACTICE_PASSWORD);
+  await fillField(page, 'input[type="email"]', credentials.email);
+  await fillField(page, 'input[type="password"]', credentials.password);
   await clickButton(page, 'button[type="submit"]');
 
   // TODO: Wait for dashboard element to confirm login success
@@ -32,9 +31,9 @@ export async function isLoggedIn(page: Page): Promise<boolean> {
   }
 }
 
-export async function ensureLoggedIn(page: Page): Promise<void> {
+export async function ensureLoggedIn(page: Page, credentials: OwlCredentials): Promise<void> {
   if (!(await isLoggedIn(page))) {
     log.info("Session expired, re-authenticating...");
-    await loginToOwl(page);
+    await loginToOwl(page, credentials);
   }
 }

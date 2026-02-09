@@ -1,4 +1,5 @@
 import type { Client, Appointment, SessionNote, MeetingLink, SyncResult } from "@/sync/types";
+import type { OwlCredentials } from "@/sync/types/api";
 import { createBrowserSession, closeBrowserSession, type BrowserSession } from "@/sync/browser/session";
 import { ensureLoggedIn } from "./auth";
 import { createClient, updateClient, findExistingClient, searchClientByName } from "./pages/clients";
@@ -11,11 +12,16 @@ const log = createChildLogger("owl-client");
 
 export class OwlPracticeClient {
   private session: BrowserSession | null = null;
+  private credentials: OwlCredentials;
+
+  constructor(credentials: OwlCredentials) {
+    this.credentials = credentials;
+  }
 
   async connect(): Promise<void> {
     log.info("Connecting to Owl Practice...");
     this.session = await createBrowserSession();
-    await ensureLoggedIn(this.session.page);
+    await ensureLoggedIn(this.session.page, this.credentials);
     log.info("Connected to Owl Practice");
   }
 
@@ -36,7 +42,7 @@ export class OwlPracticeClient {
 
   async createOrUpdateClient(client: Client): Promise<SyncResult> {
     const page = this.getPage();
-    await ensureLoggedIn(page);
+    await ensureLoggedIn(page, this.credentials);
 
     try {
       const existingId = await searchClientByName(page, client.firstName, client.lastName);
@@ -55,7 +61,7 @@ export class OwlPracticeClient {
 
   async createOrUpdateAppointment(appointment: Appointment): Promise<SyncResult> {
     const page = this.getPage();
-    await ensureLoggedIn(page);
+    await ensureLoggedIn(page, this.credentials);
 
     try {
       const existingId = await findExistingAppointment(page, appointment.sourceId);
@@ -74,7 +80,7 @@ export class OwlPracticeClient {
 
   async pushSessionNote(note: SessionNote): Promise<SyncResult> {
     const page = this.getPage();
-    await ensureLoggedIn(page);
+    await ensureLoggedIn(page, this.credentials);
 
     try {
       const exists = await findExistingNote(page, note.sourceId);
@@ -92,7 +98,7 @@ export class OwlPracticeClient {
 
   async pushMeetingLink(link: MeetingLink): Promise<SyncResult> {
     const page = this.getPage();
-    await ensureLoggedIn(page);
+    await ensureLoggedIn(page, this.credentials);
 
     try {
       await setMeetingLink(page, link);

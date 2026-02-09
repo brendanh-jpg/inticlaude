@@ -1,32 +1,92 @@
 import type { Client, Appointment, SessionNote, MeetingLink } from "@/sync/types";
-import { getEnv } from "@/sync/config/env";
+import type { PlaySpaceCredentials } from "@/sync/types/api";
+import type {
+  PlaySpaceListResponse,
+  PlaySpaceClientResponse,
+  PlaySpaceAppointmentResponse,
+  PlaySpaceNoteResponse,
+  PlaySpacePractitionerResponse,
+} from "./types";
+import { mapClient, mapAppointment, mapNote, mapMeetingLink } from "./mappers";
 import { createChildLogger } from "@/sync/logger";
 
 const log = createChildLogger("playspace-client");
 
+const DEFAULT_BASE_URL = "https://agentic-ps.playspace.health";
+const PAGE_LIMIT = 100;
+
 export class PlaySpaceClient {
   private baseUrl: string;
-  private apiKey: string;
+  private credentials: PlaySpaceCredentials;
+  private accessToken: string | null = null;
 
-  constructor() {
-    const env = getEnv();
-    this.baseUrl = env.PLAYSPACE_API_BASE_URL;
-    this.apiKey = env.PLAYSPACE_API_KEY;
+  constructor(credentials: PlaySpaceCredentials) {
+    this.credentials = credentials;
+    this.baseUrl = credentials.baseUrl ?? DEFAULT_BASE_URL;
   }
 
+  /** Exchange client credentials for an Auth0 access token. */
+  private async authenticate(): Promise<void> {
+    if (this.accessToken) return;
+
+    log.info("Authenticating with PlaySpace (Auth0 M2M)...");
+    const tokenUrl = `https://${this.credentials.auth0Domain}/oauth/token`;
+
+    const response = await fetch(tokenUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        grant_type: "client_credentials",
+        client_id: this.credentials.clientId,
+        client_secret: this.credentials.clientSecret,
+        audience: this.credentials.audience,
+      }),
+    });
+
+    if (!response.ok) {
+      const body = await response.text();
+      throw new Error(`PlaySpace auth failed: ${response.status} ${body}`);
+    }
+
+    const data = await response.json() as { access_token: string };
+    this.accessToken = data.access_token;
+    log.info("PlaySpace authentication successful");
+  }
+
+  /** Make an authenticated GET request to the PlaySpace Partner API. */
   private async request<T>(path: string, params?: Record<string, string>): Promise<T> {
-    const url = new URL(path, this.baseUrl);
+    await this.authenticate();
+
+    const url = new URL(`/api/v1/partner${path}`, this.baseUrl);
     if (params) {
-      Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
+      Object.entries(params).forEach(([k, v]) => {
+        if (v !== undefined && v !== "") url.searchParams.set(k, v);
+      });
     }
 
     log.debug("PlaySpace API request", { path, params });
     const response = await fetch(url.toString(), {
       headers: {
-        Authorization: `Bearer ${this.apiKey}`,
+        Authorization: `Bearer ${this.accessToken}`,
         Accept: "application/json",
       },
     });
+
+    if (response.status === 401) {
+      // Token expired — re-authenticate and retry once
+      this.accessToken = null;
+      await this.authenticate();
+      const retryResponse = await fetch(url.toString(), {
+        headers: {
+          Authorization: `Bearer ${this.accessToken}`,
+          Accept: "application/json",
+        },
+      });
+      if (!retryResponse.ok) {
+        throw new Error(`PlaySpace API error: ${retryResponse.status} ${retryResponse.statusText}`);
+      }
+      return retryResponse.json() as Promise<T>;
+    }
 
     if (!response.ok) {
       throw new Error(`PlaySpace API error: ${response.status} ${response.statusText}`);
@@ -35,33 +95,101 @@ export class PlaySpaceClient {
     return response.json() as Promise<T>;
   }
 
-  // TODO: Implement once PlaySpace API endpoints and response shapes are known
+  /** Fetch all pages of a paginated endpoint. */
+  private async fetchAllPages<T>(
+    path: string,
+    params?: Record<string, string>,
+  ): Promise<T[]> {
+    const all: T[] = [];
+    let offset = 0;
+    let hasMore = true;
 
-  async getClients(_options?: { since?: Date; limit?: number }): Promise<Client[]> {
-    throw new Error("Not implemented — awaiting PlaySpace API documentation");
+    while (hasMore) {
+      const response = await this.request<PlaySpaceListResponse<T>>(path, {
+        ...params,
+        limit: String(PAGE_LIMIT),
+        offset: String(offset),
+      });
+
+      all.push(...response.data);
+      hasMore = response.pagination.hasMore;
+      offset += PAGE_LIMIT;
+    }
+
+    return all;
   }
 
-  async getClient(_id: string): Promise<Client> {
-    throw new Error("Not implemented — awaiting PlaySpace API documentation");
+  // --- Practitioners ---
+
+  async getPractitioners(): Promise<PlaySpacePractitionerResponse[]> {
+    return this.fetchAllPages<PlaySpacePractitionerResponse>("/practitioners");
   }
 
-  async getAppointments(_options?: { since?: Date; clientId?: string }): Promise<Appointment[]> {
-    throw new Error("Not implemented — awaiting PlaySpace API documentation");
+  // --- Clients ---
+
+  async getClients(options?: { practitionerId?: string }): Promise<Client[]> {
+    const practitionerId = options?.practitionerId;
+    if (!practitionerId) {
+      // Fetch practitioners first, then get clients for each
+      const practitioners = await this.getPractitioners();
+      const allClients: Client[] = [];
+      const seen = new Set<string>();
+
+      for (const p of practitioners) {
+        const raw = await this.fetchAllPages<PlaySpaceClientResponse>("/clients", {
+          practitionerId: p.id,
+        });
+        for (const c of raw) {
+          if (!seen.has(c.id)) {
+            seen.add(c.id);
+            allClients.push(mapClient(c));
+          }
+        }
+      }
+      return allClients;
+    }
+
+    const raw = await this.fetchAllPages<PlaySpaceClientResponse>("/clients", {
+      practitionerId,
+    });
+    return raw.map(mapClient);
   }
 
-  async getAppointment(_id: string): Promise<Appointment> {
-    throw new Error("Not implemented — awaiting PlaySpace API documentation");
+  // --- Appointments ---
+
+  async getAppointments(options?: {
+    practitionerId?: string;
+    clientId?: string;
+    dateFrom?: string;
+    dateTo?: string;
+  }): Promise<Appointment[]> {
+    const params: Record<string, string> = {};
+    if (options?.practitionerId) params.practitionerId = options.practitionerId;
+    if (options?.clientId) params.clientId = options.clientId;
+    if (options?.dateFrom) params.dateFrom = options.dateFrom;
+    if (options?.dateTo) params.dateTo = options.dateTo;
+    params.include = "clients";
+
+    const raw = await this.fetchAllPages<PlaySpaceAppointmentResponse>("/appointments", params);
+    return raw.map(mapAppointment);
   }
 
-  async getSessionNotes(_options?: { since?: Date; clientId?: string }): Promise<SessionNote[]> {
-    throw new Error("Not implemented — awaiting PlaySpace API documentation");
+  // --- Session Notes ---
+
+  async getSessionNotes(options: { clientId: string }): Promise<SessionNote[]> {
+    const raw = await this.fetchAllPages<PlaySpaceNoteResponse>("/notes", {
+      clientId: options.clientId,
+    });
+    return raw.map((n) => mapNote(n, options.clientId));
   }
 
-  async getSessionNote(_id: string): Promise<SessionNote> {
-    throw new Error("Not implemented — awaiting PlaySpace API documentation");
-  }
+  // --- Meeting Links (derived from appointments with videoMeetingUrl) ---
 
-  async getMeetingLinks(_options?: { appointmentId?: string }): Promise<MeetingLink[]> {
-    throw new Error("Not implemented — awaiting PlaySpace API documentation");
+  async getMeetingLinks(options?: { practitionerId?: string }): Promise<MeetingLink[]> {
+    const params: Record<string, string> = {};
+    if (options?.practitionerId) params.practitionerId = options.practitionerId;
+
+    const raw = await this.fetchAllPages<PlaySpaceAppointmentResponse>("/appointments", params);
+    return raw.map(mapMeetingLink).filter((ml): ml is MeetingLink => ml !== null);
   }
 }

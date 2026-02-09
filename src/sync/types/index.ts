@@ -2,9 +2,13 @@ export interface Client {
   id: string;
   firstName: string;
   lastName: string;
+  preferredName?: string;
   email?: string;
   phone?: string;
   dateOfBirth?: string;
+  city?: string;
+  stateProvince?: string;
+  country?: string;
   notes?: string;
   source: "playspace";
   sourceId: string;
@@ -12,27 +16,28 @@ export interface Client {
 
 export interface Appointment {
   id: string;
-  clientId: string;
-  therapistId?: string;
+  clientId?: string;
+  practitionerId?: string;
+  name?: string;
+  description?: string;
   startTime: string;
   endTime: string;
-  type: "in-person" | "video" | "phone";
+  duration?: number;
+  type: "in-person" | "telehealth";
   status: "scheduled" | "completed" | "cancelled" | "no-show";
   meetingLink?: string;
-  location?: string;
   source: "playspace";
   sourceId: string;
 }
 
 export interface SessionNote {
   id: string;
-  clientId: string;
+  clientId?: string;
   appointmentId?: string;
+  name?: string;
   date: string;
   content: string;
-  type?: string;
-  goals?: string[];
-  interventions?: string[];
+  locked?: boolean;
   source: "playspace";
   sourceId: string;
 }
@@ -47,10 +52,13 @@ export interface MeetingLink {
   sourceId: string;
 }
 
+export type EntityType = "client" | "appointment" | "sessionNote" | "meetingLink";
+
 export interface SyncResult {
-  entity: "client" | "appointment" | "sessionNote" | "meetingLink";
+  entity: EntityType;
   sourceId: string;
   action: "created" | "updated" | "skipped" | "failed";
+  owlReference?: string;
   error?: string;
   timestamp: string;
 }
