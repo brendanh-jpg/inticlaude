@@ -6,7 +6,7 @@ export async function safeGoto(
   options?: { timeout?: number }
 ): Promise<void> {
   const timeout = options?.timeout ?? 30_000;
-  await page.goto(url, { waitUntil: "networkidle", timeout });
+  await page.goto(url, { waitUntil: "domcontentloaded", timeout });
 }
 
 export async function waitForSelector(

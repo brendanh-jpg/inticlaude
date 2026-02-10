@@ -45,10 +45,15 @@ export class OwlPracticeClient {
     await ensureLoggedIn(page, this.credentials);
 
     try {
+      // Check if client already exists by name
       const existingId = await searchClientByName(page, client.firstName, client.lastName);
       if (existingId) {
-        await updateClient(page, client);
-        return { entity: "client", sourceId: client.sourceId, action: "updated", timestamp: new Date().toISOString() };
+        // MVP: skip existing clients (update not yet implemented)
+        log.info("Client already exists in Owl — skipping", {
+          name: `${client.firstName} ${client.lastName}`,
+          owlId: existingId,
+        });
+        return { entity: "client", sourceId: client.sourceId, action: "skipped", owlReference: existingId, timestamp: new Date().toISOString() };
       }
       await createClient(page, client);
       return { entity: "client", sourceId: client.sourceId, action: "created", timestamp: new Date().toISOString() };
