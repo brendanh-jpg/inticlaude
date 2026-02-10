@@ -29,14 +29,6 @@ const log = createChildLogger("owl-appointments");
 const MODAL_TIMEOUT = 8000;
 const NAV_TIMEOUT = 5000;
 
-/** Map PlaySpace status → Owl Attendance dropdown label */
-const STATUS_TO_ATTENDANCE: Record<string, string> = {
-  scheduled: "Attended",
-  completed: "Attended",
-  cancelled: "Cancelled",
-  "no-show": "No Show",
-};
-
 /** Pick the best-matching Owl Service based on appointment name/duration. */
 function pickServiceLabel(appointment: Appointment): string {
   const name = (appointment.name || "").toLowerCase();
@@ -432,9 +424,9 @@ async function searchAndSelectClient(page: Page, firstName: string, lastName: st
  * 1. Open "Create Session" modal via FAB "+" on calendar
  * 2. Search and select client (auto-fills Therapist, enables Service dropdown)
  * 3. Set Date and Time via react-select dropdowns
- * 4. Select Service based on appointment name/duration (must be BEFORE Attendance)
- * 5. Set Attendance (setting Attendance can disable Service, so do it last)
- * 6. Set Duration
+ * 4. Select Service based on appointment name/duration
+ * 5. Set Duration
+ * 6. Add session comments
  * 7. Click "Create Session" to submit
  */
 export async function createAppointment(page: Page, appointment: Appointment): Promise<void> {
@@ -595,20 +587,8 @@ export async function createAppointment(page: Page, appointment: Appointment): P
     }
   }
 
-  // Set Attendance — done AFTER Service because setting Attendance can disable the Service dropdown
-  // Attendance is typically index 2 (after Event Type at 0, Therapist at 1)
-  const attendanceIdx = dateStartIdx - 1; // Attendance is right before the date fields
-  const attendance = STATUS_TO_ATTENDANCE[appointment.status] || "Attended";
-  try {
-    await selectReactSelect(page, attendanceIdx, attendance);
-    log.info("Attendance set", { attendance, index: attendanceIdx });
-  } catch (error) {
-    log.warn("Could not set attendance — trying index 2 as fallback", { error: error instanceof Error ? error.message : String(error) });
-    try {
-      await selectReactSelect(page, 2, attendance);
-      log.info("Attendance set via fallback index 2", { attendance });
-    } catch { /* proceed without attendance */ }
-  }
+  // Attendance is intentionally NOT set during sync — it's optional and only
+  // relevant after a session has occurred, not when creating upcoming sessions.
 
   // Set Duration
   if (appointment.duration) {
