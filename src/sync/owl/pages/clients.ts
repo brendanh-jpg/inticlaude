@@ -43,8 +43,34 @@ const NAV_TIMEOUT = 5000;
 export async function navigateToClients(page: Page): Promise<void> {
   log.info("Navigating to Clients list...");
 
-  // Click "Clients" in the left sidebar nav
-  await page.click('a:has-text("Clients")', { timeout: NAV_TIMEOUT });
+  // Dismiss ALL overlay backdrops that might intercept pointer events
+  await page.evaluate(() => {
+    document.querySelectorAll('.bp3-overlay-backdrop').forEach(el => {
+      (el as HTMLElement).style.pointerEvents = 'none';
+    });
+    // Also close any open overlays/dialogs
+    document.querySelectorAll('.bp3-overlay-content').forEach(el => {
+      (el as HTMLElement).style.display = 'none';
+    });
+  });
+  await page.waitForTimeout(300);
+
+  // Try Escape to close any lingering modals
+  for (let i = 0; i < 3; i++) {
+    try {
+      const overlay = await page.$('.bp3-overlay-backdrop');
+      if (overlay && await overlay.isVisible()) {
+        await page.keyboard.press("Escape");
+        await page.waitForTimeout(500);
+      } else {
+        break;
+      }
+    } catch { break; }
+  }
+
+  // Use direct URL navigation for reliability — avoids sidebar click issues
+  const baseUrl = page.url().split("/").slice(0, 3).join("/");
+  await page.goto(`${baseUrl}/clients/all-clients`, { waitUntil: "domcontentloaded", timeout: 15000 });
   await page.waitForTimeout(2000);
 
   // Verify we're on the clients page
@@ -150,17 +176,29 @@ export async function createClient(page: Page, client: Client): Promise<void> {
   // Wait for the form submission to be processed
   await page.waitForTimeout(3000);
 
-  // Close any remaining modals by pressing Escape
-  try {
-    const dialog = await page.$('.bp3-dialog');
-    if (dialog && await dialog.isVisible()) {
-      log.info("Dialog still visible after submit — closing it");
-      await page.keyboard.press("Escape");
-      await page.waitForTimeout(1000);
+  // Aggressively close any remaining modals/overlays to prevent blocking navigation
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const overlay = await page.$('.bp3-overlay-backdrop, .bp3-dialog');
+      if (overlay && await overlay.isVisible()) {
+        log.info("Overlay/dialog still visible — closing (attempt " + (attempt + 1) + ")");
+        await page.keyboard.press("Escape");
+        await page.waitForTimeout(800);
+      } else {
+        break; // No more overlays
+      }
+    } catch {
+      break; // No overlay found
     }
-  } catch {
-    // No dialog found — that's fine
   }
+  // Final check — click the backdrop directly if still present
+  try {
+    const backdrop = await page.$('.bp3-overlay-backdrop');
+    if (backdrop && await backdrop.isVisible()) {
+      await backdrop.click();
+      await page.waitForTimeout(500);
+    }
+  } catch { /* clean */ }
 
   log.info("Client created successfully", { name: `${client.firstName} ${client.lastName}` });
 }

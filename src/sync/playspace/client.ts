@@ -14,6 +14,7 @@ const log = createChildLogger("playspace-client");
 
 const DEFAULT_BASE_URL = "https://agentic-ps.playspace.health";
 const PAGE_LIMIT = 100;
+const DEFAULT_PRACTITIONER_ID = "c28e47bf-2767-479d-bdac-c86a89ab7302"; // brendanh@playspace.health
 
 export class PlaySpaceClient {
   private baseUrl: string;
@@ -128,26 +129,7 @@ export class PlaySpaceClient {
   // --- Clients ---
 
   async getClients(options?: { practitionerId?: string }): Promise<Client[]> {
-    const practitionerId = options?.practitionerId;
-    if (!practitionerId) {
-      // Fetch practitioners first, then get clients for each
-      const practitioners = await this.getPractitioners();
-      const allClients: Client[] = [];
-      const seen = new Set<string>();
-
-      for (const p of practitioners) {
-        const raw = await this.fetchAllPages<PlaySpaceClientResponse>("/clients", {
-          practitionerId: p.id,
-        });
-        for (const c of raw) {
-          if (!seen.has(c.id)) {
-            seen.add(c.id);
-            allClients.push(mapClient(c));
-          }
-        }
-      }
-      return allClients;
-    }
+    const practitionerId = options?.practitionerId ?? DEFAULT_PRACTITIONER_ID;
 
     const raw = await this.fetchAllPages<PlaySpaceClientResponse>("/clients", {
       practitionerId,
@@ -164,7 +146,7 @@ export class PlaySpaceClient {
     dateTo?: string;
   }): Promise<Appointment[]> {
     const params: Record<string, string> = {};
-    if (options?.practitionerId) params.practitionerId = options.practitionerId;
+    params.practitionerId = options?.practitionerId ?? DEFAULT_PRACTITIONER_ID;
     if (options?.clientId) params.clientId = options.clientId;
     if (options?.dateFrom) params.dateFrom = options.dateFrom;
     if (options?.dateTo) params.dateTo = options.dateTo;
@@ -187,7 +169,7 @@ export class PlaySpaceClient {
 
   async getMeetingLinks(options?: { practitionerId?: string }): Promise<MeetingLink[]> {
     const params: Record<string, string> = {};
-    if (options?.practitionerId) params.practitionerId = options.practitionerId;
+    params.practitionerId = options?.practitionerId ?? DEFAULT_PRACTITIONER_ID;
 
     const raw = await this.fetchAllPages<PlaySpaceAppointmentResponse>("/appointments", params);
     return raw.map(mapMeetingLink).filter((ml): ml is MeetingLink => ml !== null);

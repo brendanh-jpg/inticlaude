@@ -17,6 +17,8 @@ export interface Client {
 export interface Appointment {
   id: string;
   clientId?: string;
+  clientFirstName?: string;
+  clientLastName?: string;
   practitionerId?: string;
   name?: string;
   description?: string;

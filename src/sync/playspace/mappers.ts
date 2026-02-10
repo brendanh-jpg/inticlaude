@@ -34,6 +34,8 @@ export function mapAppointment(raw: PlaySpaceAppointmentResponse): Appointment {
     id: raw.id,
     practitionerId: raw.practitionerId || undefined,
     clientId: raw.clients?.[0]?.clientId || undefined,
+    clientFirstName: raw.clients?.[0]?.firstName || undefined,
+    clientLastName: raw.clients?.[0]?.lastName || undefined,
     name: raw.name || undefined,
     description: raw.description || undefined,
     startTime: raw.startTime,
