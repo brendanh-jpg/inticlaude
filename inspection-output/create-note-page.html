@@ -1,0 +1,882 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Client - 1 - Sessions</title><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" onload="this.onload=null;this.removeAttribute('media');"><meta name="robots" content="noindex, nofollow"><script>window.userpilotSettings = {token: 'NX-6a493d7a'};</script><script async="" src="https://js.userpilot.io/sdk/latest.js"></script><script async="" data-client-key="sdk-h5XaCIAThsGrQsQi" src="https://cdn.jsdelivr.net/npm/@growthbook/growthbook/dist/bundles/auto.min.js"></script><meta name="apple-mobile-web-app-title" content="Owl Practice"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="theme-color" content="#237396"><link rel="apple-touch-startup-image" href="/icon_180x180.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon_180x180.png"><link rel="apple-touch-icon" sizes="167x167" href="/icon_167x167.png"><link rel="apple-touch-icon" sizes="152x152" href="/icon_152x152.png"><link rel="apple-touch-icon" sizes="120x120" href="/icon_120x120.png"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><link href="/main.054b2f5eacdbf73260f2.css" rel="stylesheet"><link as="style" href="/0.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/15.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/17.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/9.054b2f5eacdbf73260f2.css" rel="preload"><script src="https://js.userpilot.io/sdk/version/1.771/app.js" async=""></script><style>
+iframe#userpilot-nps {
+  width: 900px;
+  right: 0px;
+  margin: 0px auto;
+  opacity: 1 !important;
+}
+
+/* NPS Mobile */
+@media (max-width: 900px) {
+  iframe#userpilot-nps {
+      width: 100%;
+  }
+}
+
+iframe#userpilot-resource-centre-frame {
+  width: 0px;
+  height: 0px;
+}
+
+div#userpilotContent[key="1213681490"]:not(.preview) {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  line-height: 18px;
+  -webkit-transition: none;
+  transition: none;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483638;
+  pointer-events: none;
+  outline: none !important;
+  background: none !important;
+  --sidebar-width: 0px;
+  direction: ltr;
+  display: block;
+}
+
+div#userpilotContent[key="1213681490"] * {
+  -webkit-transition: none;
+  transition: none;
+  direction: ltr;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont, #userpilotContent[key="1213681490"] .conv-backdrop-cont {
+  z-index: 999999999;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  transition: opacity 0.1s, z-index 0s, visibility 0s;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont, #userpilotContent[key="1213681490"] .conv-backdrop-cont {
+  z-index: 999999999;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  transition: opacity 0.1s, z-index 0s, visibility 0s;
+}
+
+#userpilotContent[key="1213681490"] .userpilot .conv-cont {
+  z-index: 2147483000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont {
+  background: none;
+}
+
+#userpilotContent[key="1213681490"] .canv {
+  position: absolute;
+  top: 0;
+  box-shadow: inset 0 0 0 0px #ffffff, inset 0 0 15px rgb(208, 208, 208);
+  background: none !important;
+  display: flex;
+  border: 10000px solid rgba(255, 255, 255, .56);
+  margin-left: -10000px;
+  margin-top: -10000px;
+  padding: 150px;
+  opacity: 0;
+  transition: opacity 0.2s, padding 0.2s;
+  border-radius: 10006px
+}
+
+#userpilotContent[key="1213681490"] .userpilot .canv {
+  position: fixed;
+  top: 0;
+  background: none;
+  display: flex;
+  border: 10000px solid rgba(255, 255, 255, .7);
+  margin-left: -10000px;
+  margin-top: -10000px;
+  padding: 150px;
+  opacity: 0;
+  border-radius: 10006px
+}
+
+#userpilotContent[key="1213681490"] .canv.userpilot-canv-hidden {
+  opacity: 0 !important
+}
+
+#userpilotContent[key="1213681490"] .userpilot-soft-focus .canv {
+  border: none
+}
+
+#userpilotContent[key="1213681490"] .conv-cont[userpilot-hidden] .up-userpilot-mmx-part{
+  pointer-events: none !important;
+}
+
+#userpilotContent[key="1213681490"] .up-userpilot-mmx-part {
+  position: absolute;
+  z-index: 1 !important;
+  background: none;
+}
+
+#userpilotContent[key="1213681490"] [up-backdrop="0"] {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont[backdrop-overlay="1"] .up-userpilot-mmx-part {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0px !important;
+  left: 0px !important;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont.allow-scroll .up-userpilot-mmx-part {
+  pointer-events: none;
+}
+
+div#userpilotContent[key="1213681490"]>*, div#userpilotContent[key="1213681490"]>*:not(.userpilot-hotspot-container)>*:not(.userpilot-backdrop) {
+  pointer-events: all;
+}
+
+#userpilotContent[key="1213681490"] .userpilot-mmx-cursor {
+  position: fixed;
+  width: 14px;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  pointer-events: none
+}
+#userpilotContent[key="1213681490"] .userpilot-mmx-cursor * {
+  pointer-events: none !important;
+}
+#userpilotContent[key="1213681490"] .up-t-pluse {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 100%;
+  color: gainsboro;
+  background: gainsboro
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse {
+  width: 10px;
+  height: 10px;
+  pointer-events: none !important;
+}
+#userpilotContent[key="1213681490"] .up-t-pluse:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -3px;
+  top: -3px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 7px solid;
+  border-color: inherit;
+  -webkit-animation: userpilotActive 2s infinite linear;
+  animation: userpilotActive 2s infinite linear
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse:before {
+  height: 18px;
+  width: 18px;
+  left: -4px;
+  top: -4px;
+  border: 0px;
+  background: inherit;
+  -webkit-animation: userpilot-tooltip-pulse 2s infinite linear;
+  animation: userpilot-tooltip-pulse 2s infinite linear
+}
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@-webkit-keyframes active {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+#userpilotContent[key="1213681490"] .userpilot-ripple {
+  position: absolute;
+  pointer-events: none;
+  width: 0px;
+  height: 30px;
+  border: none;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple {
+  height: 18px;
+  width: 18px;
+  background-color: transparent !important;
+}
+#userpilotContent[key="1213681490"] .userpilot-ripple:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 0px;
+  top: 0px;
+  background-color: transparent;
+  border-radius: 50%;
+  background: inherit;
+  -webkit-animation: userpilotActive 2s infinite linear;
+  animation: userpilotActive 2s infinite linear;
+  border: 10px solid;
+  border-color: inherit;
+  box-sizing: border-box;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple:before {
+  height: 18px;
+  width: 18px;
+  left: -1px;
+  top: -1px;
+  -webkit-animation: userpilot-tooltip-pulse 2s infinite linear;
+  animation: userpilot-tooltip-pulse 2s infinite linear;
+}
+@-webkit-keyframes userpilot-tooltip-pulse {
+  0%,
+  100% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+@keyframes userpilot-tooltip-pulse {
+  0%,
+  100% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+#userpilotContent[key="1213681490"] .userpilot-ripple:after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 10px;
+  top: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  background: inherit;
+  -webkit-animation: userpilot_active_after 2s infinite linear;
+  animation: userpilot_active_after 2s infinite linear;
+  box-sizing: border-box;
+  background: currentColor;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple:after {
+  height: 10px;
+  width: 10px;
+  left: 4px;
+  top: 4px;
+  animation: none;
+}
+@keyframes userpilot_active_after {
+  0% {
+    -webkit-transform: scale(.1);
+    opacity: 1
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: scale(1)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(5)
+  }
+}
+
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    opacity: 1;
+    border-color: inherit;
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: scale(1.5);
+    border-color: inherit;
+  }
+
+  30% {
+    background: none;
+    border: 0 solid;
+    border-color: inherit;
+    opacity: 0
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    border-color: inherit;
+  }
+}
+
+
+/* sonar animations */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"], 
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"] {
+  background: none !important;
+  animation: none;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"]::after, 
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"]::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  border-radius: 150px;
+  animation: pulse-dot infinite 1.5s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"]::before {
+  left: 0px;
+  top: 0px;
+  animation: pulse-ring infinite 1.5s;
+  border-style: solid;
+  border-width: 4px;
+  padding: 5px;
+  background: none !important;
+}
+
+/* morph animation */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"],
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"] {
+  background: none !important;
+  animation: none;
+  height: 18px;
+  width: 18px;
+  left: -4px;
+  top: -4px;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"]::before {
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  opacity: .6;
+  position: absolute;
+  border-radius: 50%;
+  animation: morph 1s linear infinite;
+  box-shadow: 0 0 5px 1px currentColor;
+  border: 9px solid;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"]::after {
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  content: "";
+  display: block;
+}
+
+/* target animation */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"],
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]{
+  height: 18px;
+  width: 18px;
+  box-shadow: 0 0 4px 2px currentColor;
+  opacity: 1;
+  animation: target 2s linear infinite;
+  background: currentColor !important;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: currentColor transparent transparent transparent;
+  opacity: .6;
+  background: none;
+  animation: none;
+  border-radius: 0;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent currentColor transparent;
+  opacity: .6;
+  top: initial;
+  left: initial;
+  border-radius: initial;
+  background: none;
+}
+
+ /* egg animations */
+ #userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"],
+ #userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 6px 4px currentColor;
+  animation: egg 600ms linear infinite;
+  animation-direction: alternate;
+  background: none !important;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  background: transparent;
+  border: 1px solid currentColor;
+  animation: none;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]::after {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  background: currentColor;
+  opacity: .6;
+}
+
+
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@-webkit-keyframes active {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1, 1) translate(-50%, -50%);
+  }
+
+  30% {
+    transform: scale(1.25, 1.25) translate(-40%, -40%);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(-50%, -50%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale(1.8, 1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes morph {
+  0% {
+    transform: rotateZ(0);
+    border-radius: 20%;
+  }
+
+  50% {
+    transform: rotateZ(45deg);
+    border-radius: 50%;
+  }
+
+  100% {
+    transform: rotateZ(90deg);
+    border-radius: 20%;
+  }
+}
+
+@keyframes target {
+  0% {
+    transform: rotateZ(0) scale(0.6);
+  }
+
+  50% {
+    transform: rotateZ(180deg) scale(1);
+  }
+
+  100% {
+    transform: rotateZ(360deg) scale(0.6);
+  }
+}
+
+@keyframes egg {
+  from {
+    box-shadow: inset 0 0 8px 3px currentColor;
+  }
+
+  to {
+    box-shadow: inset 0 0 4px 1px currentColor;
+  }
+}</style><style>
+iframe.userpilot-disabled-iframe {
+  pointer-events: none !important;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-nps,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-checklist,
+iframe#userpilotSurveys,
+iframe#userpilot-survey {
+  background: none;
+  max-height: none;
+  max-width: none;
+  min-height: 0px;
+  min-width: 0px;
+  filter: none;
+  pointer-events: initial;
+  outline: none;
+  visibility: visible;
+  transition: none;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-checklist,
+iframe#userpilotSurveys,
+iframe#userpilot-survey {
+  right: initial;
+  left: initial;
+  top: initial;
+  bottom: initial;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-survey,
+iframe#userpilotSurveys {
+    display: initial;
+}
+
+iframe#userpilotContentNativeIframe {
+  user-select: none;
+}
+
+.userpilot-mask-item {
+  position: absolute;
+  top: 0px;
+  z-index: 2147483647;
+  pointer-events: none;
+  box-shadow: rgb(239, 71, 132) 0px 0px 0px 1px inset !important;
+  background-color: rgba(239, 71, 132, 0.09) !important;
+  border: none;
+  pointer-events: none;
+  color-scheme: light;
+}
+
+#userpilot-banner_v2-container {
+  display: flex;
+}
+
+iframe#userpilotIframeContainer.userpilot-banner {
+  box-sizing: content-box;
+}
+</style><style>
+  /* Container styles */
+  .bb-custom-select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* Opener button styles */
+  .bb-custom-select-opener {
+    display: none;
+  }
+
+  /* Disabled state styles */
+  .bb-custom-select-container.bb-is-disabled .bb-custom-select-opener {
+    background-color: #e9ecef;
+    border-color: #505050;
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+
+  /* Add not-allowed cursor to the entire container when disabled */
+  .bb-custom-select-container.bb-is-disabled {
+    cursor: not-allowed;
+  }
+
+  /* Also ensure the select element shows not-allowed cursor when disabled */
+  .bb-custom-select-container.bb-is-disabled select {
+    cursor: not-allowed;
+  }
+
+  .bb-custom-select-container.bb-is-disabled .bb-custom-select-opener::after {
+    border-top-color: #6c757d;
+  }
+
+  /* Add dropdown arrow */
+  .bb-custom-select-opener::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666;
+  }
+
+  /* Rotate arrow when open */
+  .bb-custom-select-opener.bb-is-open::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  /* Keep native select visible */
+  .bb-customSelect select {
+    position: relative;
+    width: 100%;
+  }
+
+  /* Dropdown panel */
+  .bb-custom-select-panel {
+    display: none;  /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999999; /* Should always be on top of other elements */
+    margin-top: 4px;
+    width: max-content; /* Allow panel to grow based on content */
+    min-width: 100%;   /* But ensure it's at least as wide as the opener */
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  /* Show panel when container has bb-is-open class */
+  .bb-custom-select-container.bb-is-open .bb-custom-select-panel {
+    display: block;
+  }
+
+  /* Option styles */
+  .bb-custom-select-option {
+    padding: 6px 12px;
+    line-height: 1.5;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .bb-custom-select-option:hover,
+  .bb-custom-select-option.bb-has-focus {
+    background-color: #f0f9fa;
+  }
+
+  .bb-custom-select-option.bb-is-selected {
+    background-color: #e9ecef;
+  }
+</style><link rel="stylesheet" type="text/css" href="/0.054b2f5eacdbf73260f2.css"><script charset="utf-8" src="/0.be0181f7385702419586.chunk.js"></script><script charset="utf-8" src="/1.82bc9082982ecc8e31f9.chunk.js"></script><style data-styled-components=""></style><style data-styled-components=""></style><style data-emotion=""></style><style>.cke{visibility:hidden;}</style><script charset="utf-8" src="/16.1ee8548cc095f531623b.chunk.js"></script><script charset="utf-8" src="/4.dfe4fd97da37b6cc1809.chunk.js"></script><script charset="utf-8" src="/49.181b5a837fea3f6bfcc5.chunk.js"></script><script charset="utf-8" src="/72.5f6f5d10fd3faa705a4d.chunk.js"></script><script charset="utf-8" src="/69.19a1f0e1149244b966ef.chunk.js"></script><script charset="utf-8" src="/29.7ba425ec1807c242f4da.chunk.js"></script><script src="//js.userpilot.io/sdk/latest.js"></script><script charset="utf-8" src="/77.e0ba17c976463c41b448.chunk.js"></script><script type="text/javascript" src="https://brendanherjtherapy.owlpractice.ca/ckeditor/config.js?t=H5SC"></script><link rel="stylesheet" type="text/css" href="https://brendanherjtherapy.owlpractice.ca/ckeditor/skins/moono-lisa/editor.css?t=H5SC"><script type="text/javascript" src="https://brendanherjtherapy.owlpractice.ca/ckeditor/lang/en-ca.js?t=H5SC"></script><script type="text/javascript" src="https://brendanherjtherapy.owlpractice.ca/ckeditor/styles.js?t=H5SC"></script><script type="text/javascript" src="https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/wordcount/plugin.js?t=H5SC"></script><link rel="stylesheet" type="text/css" href="https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css"><link rel="stylesheet" type="text/css" href="https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/wordcount/css/wordcount.css"><script type="text/javascript" src="https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/wordcount/lang/en.js?t=H5SC"></script><link rel="stylesheet" type="text/css" href="https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/copyformatting/styles/copyformatting.css"></head><body><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/></noscript><noscript style="display: block; margin-left: auto; margin-right: auto; font-family: sans-serif; max-width: 380px; padding: 1em; text-align: center;">If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript><div id="app" style="height: 100%; width: 100%;" role="main"><div class="App__Container-sc-1urod3b-0 fZgMJP Provider__Base-sc-vpkrki-0 ikABkA"><style>
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Regular'), url(/49de8c8f70a36ad4618f9e4975f5364b.ttf) format('truetype');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Medium'), url(/a822d33614b51eb05478e0e29cf757f3.ttf) format('truetype');
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Bold'), url(/0043e1adfa9ab91f0df1a629e273302d.ttf) format('truetype');
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: 'HKGrotesk-Regular';
+        src: local('HKGrotesk-Regular'), url(/49de8c8f70a36ad4618f9e4975f5364b.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'ProximaNova-Regular';
+        src: local('ProximaNova-Regular'), url(/feface72008e6857da27f939e1eceffa.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'ProximaNova-Medium';
+        src: local('ProximaNova-Medium'), url(/251c35fe6eeec7ffa3d335357aabcbd0.ttf) format('truetype');
+        font-weight: 500;
+      }
+    </style><div class="styles__SideMenuWrapper-sc-xh2s93-4 dClqlN"><div class="styles__FirstNavItem-sc-xh2s93-5 fKdJXr styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 iCpAWl" data-testid="icon" viewBox="0 0 24 24" fill="#FFF" width="60" height="60"><path data-testid="icon-path" d="M8.5,10.7c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5S9,11.5,9,11.2C9,11,8.8,10.7,8.5,10.7z M18.4,10.7 c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5C18.9,11,18.7,10.7,18.4,10.7z M17.1,8.5 c-2,0-3.5,1.4-3.7,3.5c-0.2,2.1,1.6,4.1,3.7,4.1c2,0,3.7-1.7,3.7-3.9C20.7,10.1,19.1,8.5,17.1,8.5z M17.1,14.4 c-1.4,0-2.5-1.2-2.5-2.6c0-1.4,1.1-2.5,2.5-2.5c1.4,0,2.5,1.1,2.5,2.5C19.6,13.2,18.4,14.4,17.1,14.4z M7.2,8.5 c-2,0-3.5,1.4-3.7,3.5c-0.2,2.1,1.6,4.1,3.7,4.1c2,0,3.7-1.7,3.7-3.9C10.8,10.1,9.3,8.5,7.2,8.5z M7.3,14.4c-1.4,0-2.5-1.2-2.5-2.6 c0-1.4,1.1-2.5,2.5-2.5s2.5,1.1,2.5,2.5C9.7,13.2,8.6,14.4,7.3,14.4z M22.7,11.4c0-2.1-1.7-3.8-1.7-3.8L21.3,4 c-1,0.8-2.6,1.2-2.6,1.2l-2,0.6c-1.9,0.5-3,1.3-3,1.3C13,7.9,12,7.8,12,7.8c-1,0-1.6-0.6-1.6-0.6C9.4,6.2,6.8,5.6,6.8,5.6 C3.5,4.9,2.8,4,2.8,4l0.3,3.6c-2.3,2.2-1.8,5.2-1.8,5.2c0.4,2.7,1.8,4,3.5,5c1.7,1,6.3,0.3,6.3,0.3l1,2l1-2c2.7,0.4,4,0.1,4,0.1 c1.2,0,3.2-0.8,4.6-2.7C23,13.5,22.7,11.4,22.7,11.4z M7.1,16.8c-2.5,0-4.5-2.2-4.4-4.6c0.1-2.4,2-4.4,4.4-4.4c2.4,0,4.3,2,4.4,4.4 C11.6,14.7,9.6,16.8,7.1,16.8z M12.1,19.5l-1.7-3.2c0,0,1.6-1.2,1.7-3.6c0,0-0.1,2,1.7,3.6L12.1,19.5z M17.1,16.8 c-2.5,0-4.5-2.2-4.4-4.6c0.1-2.4,2-4.4,4.4-4.4c2.4,0,4.3,2,4.4,4.4C21.5,14.7,19.6,16.8,17.1,16.8z"></path></svg></div><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Calendar</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 RhHWP"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Clients</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Workflow</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Dashboard</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H11V3M13,3V11H21V5C21,3.89 20.11,3 19,3M13,13V21H19C20.11,21 21,20.11 21,19V13"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Manage</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Settings</div></div></a><span><div class="styles__NavItem-sc-xh2s93-3 fXBiLB" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"></path></svg>Help</div></span></div><div class="App__WorkspaceWrapper-sc-1urod3b-3 fSCIGM" aria-live="polite"><div class="App__TopMenuWrapper-sc-1urod3b-1 iEoicu"><div class="styles__TopMenuWrapper-sc-c8kk2l-0 fbmOKD"><div class="styles__MenuToggle-sc-c8kk2l-2 fRPbLX"><button class="undefined Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" type="button" aria-label="menu"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button></div><div class="styles__UserName-sc-c8kk2l-1 fAdXuF">BrendanHerj Private Practice - Brendan Herjavec<span class="styles__TrialUpgrade-sc-c8kk2l-15 cOntnM">|<svg class="Icon__IconContainer-sc-s95nwd-0 fMbfUs" data-testid="icon" viewBox="0 0 24 24" fill="white" width="18" height="18" style="margin: 0px 5px;"><path data-testid="icon-path" d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg>12 days left on trial</span></div><div class="styles__Actions-sc-c8kk2l-3 iVMDfz"><div class="styles__ActionDropdownWrapper-sc-c8kk2l-4 efTxZI"><div class="styles__SearchWrapper-sc-c8kk2l-6 hBUylg"><div><div class="InputGroup__Wrapper-sc-kcke9n-3 jCMBil" data-testid="components_input-group"><div class="InputGroup__InputRow-sc-kcke9n-1 taPJV" data-testid="components_input-group_input-row"><div class="inputGroup__input-symbol InputGroup__InputSymbol-sc-kcke9n-2 hxEXGB" data-testid="components_input-group_input-symbol"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></span></div><div class="InputGroup__Input-sc-kcke9n-0 cwgEqz" data-testid="components_input-group_input"><div><input class="common__Input-sc-1hb9rs-24 iJWrSo" placeholder="Search..." type="text" value="" style=""></div></div></div></div></div></div></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="privacy mode"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg></button></span></span></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="Recently Viewed"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg></button></span></span></span></span></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="add client"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg></button></span></span></div><button class="styles__UpgradeButton-sc-c8kk2l-16 hjGEhR Button__ButtonBase-sc-17zmp21-0 grrQNS" data-userpilot="upgrade-plan-topmenu" type="button" tabindex="0">Upgrade Plan</button><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" type="button" aria-label="more options"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></button></span></span></div></div></div></div><div class="App__Content-sc-1urod3b-2 uZzQq"><div class="common__RootWrapper-sc-1hb9rs-10 dLkTCo common__Wrapper-sc-1hb9rs-2 kLpUho"><div aria-live="polite" class="bp3-overlay bp3-overlay-open bp3-overlay-inline bp3-overlay-scroll-container"><div tabindex="0" class="bp3-overlay-start-focus-trap bp3-overlay-appear-done bp3-overlay-enter-done"></div><div class="bp3-overlay-backdrop bp3-overlay-appear-done bp3-overlay-enter-done"></div><div class="bp3-dialog-container bp3-overlay-content bp3-overlay-appear-done bp3-overlay-enter-done"><div class="bp3-dialog modals__NoteModal-sc-1qp27o5-15 gONOUr Modal__Wrapper-sc-m5rli6-0 iUPTRp" role="dialog" aria-labelledby="title-bp-dialog-19"><div class="bp3-dialog-header"><h4 id="title-bp-dialog-19" class="bp3-heading"><div class="styles__NoteModalTitle-sc-p5pee8-0 llvrwO">Session note  for&nbsp;<div class="ClientCodeBlock__Wrapper-sc-zzoprq-4 hAlNgD"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><div class="ClientCodeBlock__FlipAvatar-sc-zzoprq-5 huRPsx Avatar__Wrapper-sc-1pxdunm-0 jBZrXT" color="#FFF" size="30" style="font-size: 0.75em; margin-right: 0.25em; max-width: 30px; min-width: 30px;"><span class="Avatar__Content-sc-1pxdunm-1 bLmaLe">HHo</span></div></span></span><div class="ClientCodeBlock__GroupDetailsWrapper-sc-zzoprq-19 ekgXBd"><span class="ClientCodeBlock__ClientName-sc-zzoprq-2 eZlrM" title="Hillary Hootkins" size="16">Hillary Hootkins</span></div></div></div></h4><button type="button" aria-label="Close" class="bp3-button bp3-minimal bp3-dialog-close-button"><span icon="small-cross" aria-hidden="true" class="bp3-icon bp3-icon-small-cross"><svg data-icon="small-cross" width="20" height="20" viewBox="0 0 20 20"><path d="M11.41 10l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 0 0-1.71-.71L10 8.59l-3.29-3.3a1.003 1.003 0 0 0-1.42 1.42L8.59 10 5.3 13.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71l3.29-3.3 3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 0 0 .71-1.71L11.41 10z" fill-rule="evenodd"></path></svg></span></button></div><div class="Modal__Content-sc-m5rli6-1 eaGNJL" data-testid="components_modal_content"><div class="styles__NoteEditorWrapper-sc-p5pee8-4 gfHijF"><div class="styles__OptionsPanel-sc-p5pee8-5 iBGcYU"><ul class="bp3-menu bp3-large" style="background: transparent;"><li class="bp3-menu-header SessionSummary__MenuHeading-sc-1pk11t9-0 duWLVe"><h6 class="bp3-heading">Session Summary</h6></li><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="Icon__IconContainer-sc-s95nwd-0 eMfDfy" data-testid="icon" viewBox="0 0 24 24" fill="#85BD25"><path data-testid="icon-path" d="M16.53 11.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17l5.94-5.94zM19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"></path></svg></span></span><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 jomUpd">Current Session (#1)</span></span><br><small><span class="styles__Content-sc-1cvw4xw-1 jQTHka">Hoot Help Session (120 minutes)<br>Sun, Feb 8 2026 - 10:00AM</span></small></div></a></li></div><hr class="Divider-sc-1rwdet1-0 gtAJmU"><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 cCuIkb" data-testid="icon" viewBox="0 0 24 24" fill="#333"><path data-testid="icon-path" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 jomUpd">Client(s)</span></span><br><small><span class="styles__WrappedContent-sc-1cvw4xw-2 eGLeaC styles__Content-sc-1cvw4xw-1 jQTHka">Hillary Hootkins (selected)<br></span></small></div></a></li></div><hr class="Divider-sc-1rwdet1-0 gtAJmU"><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 cCuIkb" data-testid="icon" viewBox="0 0 24 24" fill="#333"><path data-testid="icon-path" d="M22,4H14V7H10V4H2A2,2 0 0,0 0,6V20A2,2 0 0,0 2,22H22A2,2 0 0,0 24,20V6A2,2 0 0,0 22,4M8,9A2,2 0 0,1 10,11A2,2 0 0,1 8,13A2,2 0 0,1 6,11A2,2 0 0,1 8,9M12,17H4V16C4,14.67 6.67,14 8,14C9.33,14 12,14.67 12,16V17M20,18H14V16H20V18M20,14H14V12H20V14M20,10H14V8H20V10M13,6H11V2H13V6Z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 jomUpd">Therapist(s)</span></span><br><small><span class="styles__Content-sc-1cvw4xw-1 jQTHka">Brendan Herjavec (therapist)<br></span></small></div></a></li></div><hr class="Divider-sc-1rwdet1-0 gtAJmU"><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 jomUpd">Next Session</span></span><br><small><span class="styles__Content-sc-1cvw4xw-1 jQTHka">No Session Booked</span></small></div></a></li></div><hr class="Divider-sc-1rwdet1-0 gtAJmU"><li class="bp3-menu-header NoteEditor__MenuHeading-sc-r8pji0-3 cxWdqV"><h6 class="bp3-heading">Actions</h6></li>0<span class="styles__SectionTitle-sc-1cvw4xw-3 hBhtQg">Choose a Template</span><div><div class="css-10nd86i styles__StyledDropdown-sc-57lqb0-1 eKctnM"><div class="css-hu7has react-select__control"><div class="css-1c8pw3s react-select__value-container"><div class="css-1641cza react-select__placeholder">Select...</div><div class="css-1skrffd"><div class="react-select__input" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: HKGrotesk-Regular, Helvetica, Arial, sans-serif; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class="css-1wy0on6 react-select__indicators"><span class="css-nmj1y2 react-select__indicator-separator"></span><div aria-hidden="true" class="css-1hh0tlj react-select__indicator react-select__dropdown-indicator"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-19bqh2r"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div></div><span class="styles__SectionTitle-sc-1cvw4xw-3 hBhtQg">Session Comments</span><div class="CommentsPanel__CommentsWrapper-sc-1ivbdv-0 cGGwbX"><div class="Textarea__Wrapper-sc-gnnj6f-1 cPITMB"><textarea class="CommentsPanel__StyledTextArea-sc-1ivbdv-1 hlIByG Textarea__Input-sc-gnnj6f-0 edxwes" spellcheck="false" style=""></textarea><div class="LengthCounter__Wrapper-sc-1d0tw4e-0 gzVRJI" data-testid="length-counter">4096 Characters remaining</div></div></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 cCuIkb" data-testid="icon" viewBox="0 0 24 24" fill="#333"><path data-testid="icon-path" d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 jomUpd">Print Note</span></span><br><small><span class="styles__Content-sc-1cvw4xw-1 jQTHka">Save and print</span></small></div></a></li></div><hr class="Divider-sc-1rwdet1-0 gtAJmU"><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 cCuIkb" data-testid="icon" viewBox="0 0 24 24" fill="#333"><path data-testid="icon-path" d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 jomUpd">PDF</span></span><br><small><span class="styles__Content-sc-1cvw4xw-1 jQTHka">Save and download</span></small></div></a></li></div><hr class="Divider-sc-1rwdet1-0 gtAJmU"><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 fPtix" data-testid="icon" viewBox="0 0 24 24" fill="#6D7175"><path data-testid="icon-path" d="M0.650007 3.05001C1.12001 3.51001 1.86001 3.53001 2.36001 3.11001C2.73001 2.79001 3.05001 2.60001 3.23001 2.68001C3.73001 2.88001 3.23001 3.71001 2.93001 4.20001C2.68001 4.62001 0.0700073 8.09001 0.0700073 10.51C0.0700073 11.79 0.550007 12.85 1.41001 13.49C2.16001 14.05 3.15001 14.22 4.05001 13.95C5.12001 13.64 6.00001 12.55 7.11001 11.18C8.32001 9.69001 9.94001 7.74001 11.19 7.74001C12.82 7.74001 12.84 8.75001 12.95 9.53001C9.17001 10.17 7.57001 13.2 7.57001 14.9C7.57001 16.6 9.01001 17.99 10.78 17.99C12.41 17.99 15.07 16.66 15.47 11.89H16.68C17.37 11.89 17.93 11.33 17.93 10.64C17.93 9.95001 17.37 9.39001 16.68 9.39001H15.46C15.31 7.74001 14.37 5.19001 11.43 5.19001C9.18001 5.19001 7.25001 7.10001 6.49001 8.03001C5.91001 8.76001 4.43001 10.51 4.20001 10.75C3.95001 11.05 3.52001 11.59 3.09001 11.59C2.64001 11.59 2.37001 10.76 2.73001 9.67001C3.08001 8.58001 4.13001 6.81001 4.58001 6.15001C5.36001 5.01001 5.88001 4.23001 5.88001 2.87001C5.88001 0.70001 4.24001 0.0100098 3.37001 0.0100098C2.28001 0.0100098 1.33001 0.64001 0.670007 1.23001C0.140007 1.71001 0.140007 2.55001 0.650007 3.05001ZM10.81 15.56C10.5 15.56 10.07 15.3 10.07 14.84C10.07 14.24 10.8 12.64 12.94 12.08C12.64 14.77 11.51 15.56 10.81 15.56Z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 dFkThk">Add a Handwritten Note</span></span><br><small><span class="styles__WrappedContent-sc-1cvw4xw-2 ehwHVw styles__Content-sc-1cvw4xw-1 jQTHka">Save this note to access handwritten notes</span></small></div></a></li></div><hr class="Divider-sc-1rwdet1-0 gtAJmU"><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M9.17 0H2C0.9 0 0 0.9 0 2V18C0 19.1 0.9 20 2 20H14C15.1 20 16 19.1 16 18V6.83C16 6.3 15.79 5.79 15.41 5.42L10.58 0.59C10.21 0.21 9.7 0 9.17 0ZM12 13C12 15.34 9.99 17.21 7.61 16.98C5.53 16.78 4 14.92 4 12.83V7.64C4 6.33 4.94 5.14 6.24 5.01C7.74 4.86 9 6.03 9 7.5V12C9 12.55 8.55 13 8 13C7.45 13 7 12.55 7 12V7.5C7 7.22 6.78 7 6.5 7C6.22 7 6 7.22 6 7.5V12.89C6 13.89 6.68 14.81 7.66 14.97C8.92 15.18 10 14.21 10 13V10C10 9.45 10.45 9 11 9C11.55 9 12 9.45 12 10V13ZM10 5V2L14 6H11C10.45 6 10 5.55 10 5Z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span><span class="styles__Label-sc-1cvw4xw-0 jomUpd">Associate Documents</span></span><br><small><div class="DocumentPanel__DocumentActions-sc-1f99dnh-3 pryUM"><span class="UploadButton__Wrapper-sc-13uu1pf-0 dxLGdR" for="doc-upload">Upload<input id="doc-upload" type="file" multiple="" style="inset: 0px; cursor: pointer; opacity: 0; position: absolute; width: 100%; z-index: 1;"></span><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 KrmdJ" tabindex="0" type="button" aria-label="associate document">Associate</button></span></span></div></small></div></a></li></div></ul></div><div class="styles__ButtonColumn-sc-p5pee8-6 bUsjFW"><button class="styles__FullScreenButton-sc-p5pee8-15 lfsQnF Button__ButtonBase-sc-17zmp21-0 grrQNS" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 eGVAAu" data-testid="icon" viewBox="0 0 24 24" width="20" height="20"><path data-testid="icon-path" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></button></div><div class="styles__NoteWorkspace-sc-p5pee8-3 bGtzkD"><div class="styles__NoteControlBar-sc-p5pee8-10 btVfjf"><div class="styles__NoteControlBarLeft-sc-p5pee8-11 eGJHNW"></div><div class="styles__NoteControlBarRight-sc-p5pee8-12 duFIip"><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Start Over</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Clear Content</button></div></div><div class="SchemaRender__NodeRow-sc-g9ah84-0 eKYCBA"><div class="Editor__Wrapper-sc-q0dkzn-0 ilMJol"><div><div id="cke_editor1" class="cke_1 cke cke_reset cke_chrome cke_editor_editor1 cke_ltr cke_browser_webkit" dir="ltr" lang="en-ca" role="application" aria-labelledby="cke_editor1_arialbl"><span id="cke_editor1_arialbl" class="cke_voice_label">Rich Text Editor, editor1</span><div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_10" class="cke_voice_label">Editor toolbars</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_10" onmousedown="return false;"><span class="cke_toolbox_main"><span id="cke_15" class="cke_toolbar" aria-labelledby="cke_15_label" role="toolbar"><span id="cke_15_label" class="cke_voice_label">Clipboard/Undo</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_16" class="cke_button cke_button__cut cke_button_disabled " href="javascript:void('Cut')" title="Cut (Ctrl+X)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" aria-describedby="cke_16_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(2,event);" onfocus="return CKEDITOR.tools.callFunction(3,event);" onclick="CKEDITOR.tools.callFunction(4,this);return false;"><span class="cke_button_icon cke_button__cut_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -312px;background-size:auto;">&nbsp;</span><span id="cke_16_label" class="cke_button_label cke_button__cut_label" aria-hidden="false">Cut</span><span id="cke_16_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+X</span></a><a id="cke_17" class="cke_button cke_button__copy cke_button_disabled " href="javascript:void('Copy')" title="Copy (Ctrl+C)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_17_label" aria-describedby="cke_17_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(5,event);" onfocus="return CKEDITOR.tools.callFunction(6,event);" onclick="CKEDITOR.tools.callFunction(7,this);return false;"><span class="cke_button_icon cke_button__copy_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -264px;background-size:auto;">&nbsp;</span><span id="cke_17_label" class="cke_button_label cke_button__copy_label" aria-hidden="false">Copy</span><span id="cke_17_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+C</span></a><a id="cke_18" class="cke_button cke_button__paste cke_button_off" href="javascript:void('Paste')" title="Paste (Ctrl+V)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" aria-describedby="cke_18_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(8,event);" onfocus="return CKEDITOR.tools.callFunction(9,event);" onclick="CKEDITOR.tools.callFunction(10,this);return false;"><span class="cke_button_icon cke_button__paste_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -360px;background-size:auto;">&nbsp;</span><span id="cke_18_label" class="cke_button_label cke_button__paste_label" aria-hidden="false">Paste</span><span id="cke_18_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+V</span></a><a id="cke_19" class="cke_button cke_button__pastetext cke_button_off" href="javascript:void('Paste as plain text')" title="Paste as plain text (Ctrl+Shift+V)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_19_label" aria-describedby="cke_19_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(11,event);" onfocus="return CKEDITOR.tools.callFunction(12,event);" onclick="CKEDITOR.tools.callFunction(13,this);return false;"><span class="cke_button_icon cke_button__pastetext_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1560px;background-size:auto;">&nbsp;</span><span id="cke_19_label" class="cke_button_label cke_button__pastetext_label" aria-hidden="false">Paste as plain text</span><span id="cke_19_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+Shift+V</span></a><a id="cke_20" class="cke_button cke_button__pastefromword cke_button_off" href="javascript:void('Paste from Word')" title="Paste from Word" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_20_label" aria-describedby="cke_20_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(14,event);" onfocus="return CKEDITOR.tools.callFunction(15,event);" onclick="CKEDITOR.tools.callFunction(16,this);return false;"><span class="cke_button_icon cke_button__pastefromword_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1608px;background-size:auto;">&nbsp;</span><span id="cke_20_label" class="cke_button_label cke_button__pastefromword_label" aria-hidden="false">Paste from Word</span><span id="cke_20_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_21" class="cke_button cke_button__undo cke_button_disabled " href="javascript:void('Undo')" title="Undo (Ctrl+Z)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-describedby="cke_21_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(17,event);" onfocus="return CKEDITOR.tools.callFunction(18,event);" onclick="CKEDITOR.tools.callFunction(19,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -2016px;background-size:auto;">&nbsp;</span><span id="cke_21_label" class="cke_button_label cke_button__undo_label" aria-hidden="false">Undo</span><span id="cke_21_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+Z</span></a><a id="cke_22" class="cke_button cke_button__redo cke_button_disabled " href="javascript:void('Redo')" title="Redo (Ctrl+Y)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_22_label" aria-describedby="cke_22_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(20,event);" onfocus="return CKEDITOR.tools.callFunction(21,event);" onclick="CKEDITOR.tools.callFunction(22,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1968px;background-size:auto;">&nbsp;</span><span id="cke_22_label" class="cke_button_label cke_button__redo_label" aria-hidden="false">Redo</span><span id="cke_22_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+Y</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_23" class="cke_toolbar cke_toolbar_last" aria-labelledby="cke_23_label" role="toolbar"><span id="cke_23_label" class="cke_voice_label">Editing</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_24" class="cke_button cke_button__find cke_button_off" href="javascript:void('Find')" title="Find" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_24_label" aria-describedby="cke_24_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(23,event);" onfocus="return CKEDITOR.tools.callFunction(24,event);" onclick="CKEDITOR.tools.callFunction(25,this);return false;"><span class="cke_button_icon cke_button__find_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -552px;background-size:auto;">&nbsp;</span><span id="cke_24_label" class="cke_button_label cke_button__find_label" aria-hidden="false">Find</span><span id="cke_24_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_25" class="cke_button cke_button__replace cke_button_off" href="javascript:void('Replace')" title="Replace" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_25_label" aria-describedby="cke_25_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(26,event);" onfocus="return CKEDITOR.tools.callFunction(27,event);" onclick="CKEDITOR.tools.callFunction(28,this);return false;"><span class="cke_button_icon cke_button__replace_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -576px;background-size:auto;">&nbsp;</span><span id="cke_25_label" class="cke_button_label cke_button__replace_label" aria-hidden="false">Replace</span><span id="cke_25_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_26" class="cke_button cke_button__selectall cke_button_off" href="javascript:void('Select All')" title="Select All" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_26_label" aria-describedby="cke_26_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(29,event);" onfocus="return CKEDITOR.tools.callFunction(30,event);" onclick="CKEDITOR.tools.callFunction(31,this);return false;"><span class="cke_button_icon cke_button__selectall_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1752px;background-size:auto;">&nbsp;</span><span id="cke_26_label" class="cke_button_label cke_button__selectall_label" aria-hidden="false">Select All</span><span id="cke_26_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span class="cke_toolbar_break"></span><span id="cke_27" class="cke_toolbar" aria-labelledby="cke_27_label" role="toolbar"><span id="cke_27_label" class="cke_voice_label">Basic Styles</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_28" class="cke_button cke_button__bold cke_button_off" href="javascript:void('Bold')" title="Bold (Ctrl+B)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_28_label" aria-describedby="cke_28_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(32,event);" onfocus="return CKEDITOR.tools.callFunction(33,event);" onclick="CKEDITOR.tools.callFunction(34,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_28_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">Bold</span><span id="cke_28_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+B</span></a><a id="cke_29" class="cke_button cke_button__italic cke_button_off" href="javascript:void('Italic')" title="Italic (Ctrl+I)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_29_label" aria-describedby="cke_29_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(35,event);" onfocus="return CKEDITOR.tools.callFunction(36,event);" onclick="CKEDITOR.tools.callFunction(37,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_29_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">Italic</span><span id="cke_29_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+I</span></a><a id="cke_30" class="cke_button cke_button__underline cke_button_off" href="javascript:void('Underline')" title="Underline (Ctrl+U)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_30_label" aria-describedby="cke_30_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(38,event);" onfocus="return CKEDITOR.tools.callFunction(39,event);" onclick="CKEDITOR.tools.callFunction(40,this);return false;"><span class="cke_button_icon cke_button__underline_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -144px;background-size:auto;">&nbsp;</span><span id="cke_30_label" class="cke_button_label cke_button__underline_label" aria-hidden="false">Underline</span><span id="cke_30_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+U</span></a><a id="cke_31" class="cke_button cke_button__strike cke_button_off" href="javascript:void('Strike Through')" title="Strike Through" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_31_label" aria-describedby="cke_31_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(41,event);" onfocus="return CKEDITOR.tools.callFunction(42,event);" onclick="CKEDITOR.tools.callFunction(43,this);return false;"><span class="cke_button_icon cke_button__strike_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -72px;background-size:auto;">&nbsp;</span><span id="cke_31_label" class="cke_button_label cke_button__strike_label" aria-hidden="false">Strike Through</span><span id="cke_31_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_32" class="cke_button cke_button__subscript cke_button_off" href="javascript:void('Subscript')" title="Subscript" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_32_label" aria-describedby="cke_32_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(44,event);" onfocus="return CKEDITOR.tools.callFunction(45,event);" onclick="CKEDITOR.tools.callFunction(46,this);return false;"><span class="cke_button_icon cke_button__subscript_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -96px;background-size:auto;">&nbsp;</span><span id="cke_32_label" class="cke_button_label cke_button__subscript_label" aria-hidden="false">Subscript</span><span id="cke_32_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_33" class="cke_button cke_button__superscript cke_button_off" href="javascript:void('Superscript')" title="Superscript" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_33_label" aria-describedby="cke_33_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(47,event);" onfocus="return CKEDITOR.tools.callFunction(48,event);" onclick="CKEDITOR.tools.callFunction(49,this);return false;"><span class="cke_button_icon cke_button__superscript_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -120px;background-size:auto;">&nbsp;</span><span id="cke_33_label" class="cke_button_label cke_button__superscript_label" aria-hidden="false">Superscript</span><span id="cke_33_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_34" class="cke_button cke_button__copyformatting cke_button_off" href="javascript:void('Copy Formatting')" title="Copy Formatting (Ctrl+Shift+C)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_34_label" aria-describedby="cke_34_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(50,event);" onfocus="return CKEDITOR.tools.callFunction(51,event);" onclick="CKEDITOR.tools.callFunction(52,this);return false;"><span class="cke_button_icon cke_button__copyformatting_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -480px;background-size:auto;">&nbsp;</span><span id="cke_34_label" class="cke_button_label cke_button__copyformatting_label" aria-hidden="false">Copy Formatting</span><span id="cke_34_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+Shift+C</span></a><a id="cke_35" class="cke_button cke_button__removeformat cke_button_off" href="javascript:void('Remove Format')" title="Remove Format" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_35_label" aria-describedby="cke_35_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(53,event);" onfocus="return CKEDITOR.tools.callFunction(54,event);" onclick="CKEDITOR.tools.callFunction(55,this);return false;"><span class="cke_button_icon cke_button__removeformat_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1704px;background-size:auto;">&nbsp;</span><span id="cke_35_label" class="cke_button_label cke_button__removeformat_label" aria-hidden="false">Remove Format</span><span id="cke_35_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_36" class="cke_toolbar" aria-labelledby="cke_36_label" role="toolbar"><span id="cke_36_label" class="cke_voice_label">Paragraph</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_37" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('Insert/Remove Numbered List')" title="Insert/Remove Numbered List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_37_label" aria-describedby="cke_37_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(56,event);" onfocus="return CKEDITOR.tools.callFunction(57,event);" onclick="CKEDITOR.tools.callFunction(58,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1392px;background-size:auto;">&nbsp;</span><span id="cke_37_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">Insert/Remove Numbered List</span><span id="cke_37_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_38" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('Insert/Remove Bulleted List')" title="Insert/Remove Bulleted List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_38_label" aria-describedby="cke_38_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(59,event);" onfocus="return CKEDITOR.tools.callFunction(60,event);" onclick="CKEDITOR.tools.callFunction(61,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1344px;background-size:auto;">&nbsp;</span><span id="cke_38_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">Insert/Remove Bulleted List</span><span id="cke_38_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_39" class="cke_button cke_button__outdent cke_button_disabled " href="javascript:void('Decrease Indent')" title="Decrease Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_39_label" aria-describedby="cke_39_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(62,event);" onfocus="return CKEDITOR.tools.callFunction(63,event);" onclick="CKEDITOR.tools.callFunction(64,this);return false;"><span class="cke_button_icon cke_button__outdent_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1056px;background-size:auto;">&nbsp;</span><span id="cke_39_label" class="cke_button_label cke_button__outdent_label" aria-hidden="false">Decrease Indent</span><span id="cke_39_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_40" class="cke_button cke_button__indent cke_button_off" href="javascript:void('Increase Indent')" title="Increase Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_40_label" aria-describedby="cke_40_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(65,event);" onfocus="return CKEDITOR.tools.callFunction(66,event);" onclick="CKEDITOR.tools.callFunction(67,this);return false;"><span class="cke_button_icon cke_button__indent_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1008px;background-size:auto;">&nbsp;</span><span id="cke_40_label" class="cke_button_label cke_button__indent_label" aria-hidden="false">Increase Indent</span><span id="cke_40_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_41" class="cke_button cke_button__blockquote cke_button_off" href="javascript:void('Block Quote')" title="Block Quote" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_41_label" aria-describedby="cke_41_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(68,event);" onfocus="return CKEDITOR.tools.callFunction(69,event);" onclick="CKEDITOR.tools.callFunction(70,this);return false;"><span class="cke_button_icon cke_button__blockquote_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -216px;background-size:auto;">&nbsp;</span><span id="cke_41_label" class="cke_button_label cke_button__blockquote_label" aria-hidden="false">Block Quote</span><span id="cke_41_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_42" class="cke_button cke_button__justifyleft cke_button_off" href="javascript:void('Align Left')" title="Align Left" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_42_label" aria-describedby="cke_42_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(71,event);" onfocus="return CKEDITOR.tools.callFunction(72,event);" onclick="CKEDITOR.tools.callFunction(73,this);return false;"><span class="cke_button_icon cke_button__justifyleft_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1152px;background-size:auto;">&nbsp;</span><span id="cke_42_label" class="cke_button_label cke_button__justifyleft_label" aria-hidden="false">Align Left</span><span id="cke_42_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_43" class="cke_button cke_button__justifycenter cke_button_off" href="javascript:void('Centre')" title="Centre" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_43_label" aria-describedby="cke_43_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(74,event);" onfocus="return CKEDITOR.tools.callFunction(75,event);" onclick="CKEDITOR.tools.callFunction(76,this);return false;"><span class="cke_button_icon cke_button__justifycenter_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1128px;background-size:auto;">&nbsp;</span><span id="cke_43_label" class="cke_button_label cke_button__justifycenter_label" aria-hidden="false">Centre</span><span id="cke_43_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_44" class="cke_button cke_button__justifyright cke_button_off" href="javascript:void('Align Right')" title="Align Right" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_44_label" aria-describedby="cke_44_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(77,event);" onfocus="return CKEDITOR.tools.callFunction(78,event);" onclick="CKEDITOR.tools.callFunction(79,this);return false;"><span class="cke_button_icon cke_button__justifyright_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1176px;background-size:auto;">&nbsp;</span><span id="cke_44_label" class="cke_button_label cke_button__justifyright_label" aria-hidden="false">Align Right</span><span id="cke_44_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_45" class="cke_button cke_button__justifyblock cke_button_off" href="javascript:void('Justify')" title="Justify" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_45_label" aria-describedby="cke_45_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(80,event);" onfocus="return CKEDITOR.tools.callFunction(81,event);" onclick="CKEDITOR.tools.callFunction(82,this);return false;"><span class="cke_button_icon cke_button__justifyblock_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1104px;background-size:auto;">&nbsp;</span><span id="cke_45_label" class="cke_button_label cke_button__justifyblock_label" aria-hidden="false">Justify</span><span id="cke_45_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_46" class="cke_button cke_button__bidiltr cke_button_off" href="javascript:void('Text direction from left to right')" title="Text direction from left to right" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_46_label" aria-describedby="cke_46_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(83,event);" onfocus="return CKEDITOR.tools.callFunction(84,event);" onclick="CKEDITOR.tools.callFunction(85,this);return false;"><span class="cke_button_icon cke_button__bidiltr_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -168px;background-size:auto;">&nbsp;</span><span id="cke_46_label" class="cke_button_label cke_button__bidiltr_label" aria-hidden="false">Text direction from left to right</span><span id="cke_46_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_47" class="cke_button cke_button__bidirtl cke_button_off" href="javascript:void('Text direction from right to left')" title="Text direction from right to left" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_47_label" aria-describedby="cke_47_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(86,event);" onfocus="return CKEDITOR.tools.callFunction(87,event);" onclick="CKEDITOR.tools.callFunction(88,this);return false;"><span class="cke_button_icon cke_button__bidirtl_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -192px;background-size:auto;">&nbsp;</span><span id="cke_47_label" class="cke_button_label cke_button__bidirtl_label" aria-hidden="false">Text direction from right to left</span><span id="cke_47_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_48" class="cke_button cke_button__language cke_button_off" href="javascript:void('Set language')" title="Set language" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_48_label" aria-describedby="cke_48_description" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(89,event);" onfocus="return CKEDITOR.tools.callFunction(90,event);" onclick="CKEDITOR.tools.callFunction(91,this);return false;"><span class="cke_button_icon cke_button__language_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1200px;background-size:auto;">&nbsp;</span><span id="cke_48_label" class="cke_button_label cke_button__language_label" aria-hidden="false">Set language</span><span id="cke_48_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_49" class="cke_toolbar cke_toolbar_last" aria-labelledby="cke_49_label" role="toolbar"><span id="cke_49_label" class="cke_voice_label">Insert</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_50" class="cke_button cke_button__table cke_button_off" href="javascript:void('Table')" title="Table" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_50_label" aria-describedby="cke_50_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(92,event);" onfocus="return CKEDITOR.tools.callFunction(93,event);" onclick="CKEDITOR.tools.callFunction(94,this);return false;"><span class="cke_button_icon cke_button__table_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1920px;background-size:auto;">&nbsp;</span><span id="cke_50_label" class="cke_button_label cke_button__table_label" aria-hidden="false">Table</span><span id="cke_50_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_51" class="cke_button cke_button__horizontalrule cke_button_off" href="javascript:void('Insert Horizontal Line')" title="Insert Horizontal Line" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_51_label" aria-describedby="cke_51_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(95,event);" onfocus="return CKEDITOR.tools.callFunction(96,event);" onclick="CKEDITOR.tools.callFunction(97,this);return false;"><span class="cke_button_icon cke_button__horizontalrule_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -912px;background-size:auto;">&nbsp;</span><span id="cke_51_label" class="cke_button_label cke_button__horizontalrule_label" aria-hidden="false">Insert Horizontal Line</span><span id="cke_51_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_52" class="cke_button cke_button__smiley cke_button_off" href="javascript:void('Smiley')" title="Smiley" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_52_label" aria-describedby="cke_52_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(98,event);" onfocus="return CKEDITOR.tools.callFunction(99,event);" onclick="CKEDITOR.tools.callFunction(100,this);return false;"><span class="cke_button_icon cke_button__smiley_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1080px;background-size:auto;">&nbsp;</span><span id="cke_52_label" class="cke_button_label cke_button__smiley_label" aria-hidden="false">Smiley</span><span id="cke_52_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_53" class="cke_button cke_button__specialchar cke_button_off" href="javascript:void('Insert Special Character')" title="Insert Special Character" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_53_label" aria-describedby="cke_53_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(101,event);" onfocus="return CKEDITOR.tools.callFunction(102,event);" onclick="CKEDITOR.tools.callFunction(103,this);return false;"><span class="cke_button_icon cke_button__specialchar_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1872px;background-size:auto;">&nbsp;</span><span id="cke_53_label" class="cke_button_label cke_button__specialchar_label" aria-hidden="false">Insert Special Character</span><span id="cke_53_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_54" class="cke_button cke_button__pagebreak cke_button_off" href="javascript:void('Insert Page Break for Printing')" title="Insert Page Break for Printing" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_54_label" aria-describedby="cke_54_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(104,event);" onfocus="return CKEDITOR.tools.callFunction(105,event);" onclick="CKEDITOR.tools.callFunction(106,this);return false;"><span class="cke_button_icon cke_button__pagebreak_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -1512px;background-size:auto;">&nbsp;</span><span id="cke_54_label" class="cke_button_label cke_button__pagebreak_label" aria-hidden="false">Insert Page Break for Printing</span><span id="cke_54_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span class="cke_toolbar_break"></span><span id="cke_55" class="cke_toolbar" aria-labelledby="cke_55_label" role="toolbar"><span id="cke_55_label" class="cke_voice_label">Styles</span><span class="cke_toolbar_start"></span><span id="cke_11" class="cke_combo cke_combo__styles cke_combo_off" role="presentation"><span id="cke_11_label" class="cke_combo_label">Styles</span><a class="cke_combo_button" title="Formatting Styles" tabindex="-1" href="javascript:void('Formatting Styles')" hidefocus="true" role="button" aria-labelledby="cke_11_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(108,event,this);" onfocus="return CKEDITOR.tools.callFunction(109,event);" onclick="CKEDITOR.tools.callFunction(107,this);return false;"><span id="cke_11_text" class="cke_combo_text cke_combo_inlinelabel">Styles</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_12" class="cke_combo cke_combo__format cke_combo_off" role="presentation"><span id="cke_12_label" class="cke_combo_label">Format</span><a class="cke_combo_button" title="Paragraph Format" tabindex="-1" href="javascript:void('Paragraph Format')" hidefocus="true" role="button" aria-labelledby="cke_12_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(111,event,this);" onfocus="return CKEDITOR.tools.callFunction(112,event);" onclick="CKEDITOR.tools.callFunction(110,this);return false;"><span id="cke_12_text" class="cke_combo_text cke_combo_inlinelabel">Format</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_13" class="cke_combo cke_combo__font cke_combo_off" role="presentation"><span id="cke_13_label" class="cke_combo_label">Font</span><a class="cke_combo_button" title="Font Name" tabindex="-1" href="javascript:void('Font Name')" hidefocus="true" role="button" aria-labelledby="cke_13_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(114,event,this);" onfocus="return CKEDITOR.tools.callFunction(115,event);" onclick="CKEDITOR.tools.callFunction(113,this);return false;"><span id="cke_13_text" class="cke_combo_text cke_combo_inlinelabel">Font</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_14" class="cke_combo cke_combo__fontsize cke_combo_off" role="presentation"><span id="cke_14_label" class="cke_combo_label">Size</span><a class="cke_combo_button" title="Font Size" tabindex="-1" href="javascript:void('Font Size')" hidefocus="true" role="button" aria-labelledby="cke_14_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(117,event,this);" onfocus="return CKEDITOR.tools.callFunction(118,event);" onclick="CKEDITOR.tools.callFunction(116,this);return false;"><span id="cke_14_text" class="cke_combo_text cke_combo_inlinelabel">Size</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_56" class="cke_toolbar cke_toolbar_last" aria-labelledby="cke_56_label" role="toolbar"><span id="cke_56_label" class="cke_voice_label">Colors</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_57" class="cke_button cke_button__textcolor cke_button_off" href="javascript:void('Text Colour')" title="Text Colour" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_57_label" aria-describedby="cke_57_description" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(119,event);" onfocus="return CKEDITOR.tools.callFunction(120,event);" onclick="CKEDITOR.tools.callFunction(121,this);return false;"><span class="cke_button_icon cke_button__textcolor_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -408px;background-size:auto;">&nbsp;</span><span id="cke_57_label" class="cke_button_label cke_button__textcolor_label" aria-hidden="false">Text Colour</span><span id="cke_57_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a><a id="cke_58" class="cke_button cke_button__bgcolor cke_button_off" href="javascript:void('Background Colour')" title="Background Colour" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_58_label" aria-describedby="cke_58_description" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(122,event);" onfocus="return CKEDITOR.tools.callFunction(123,event);" onclick="CKEDITOR.tools.callFunction(124,this);return false;"><span class="cke_button_icon cke_button__bgcolor_icon" style="background-image:url('https://brendanherjtherapy.owlpractice.ca/ckeditor/plugins/icons.png?t=H5SC');background-position:0 -384px;background-size:auto;">&nbsp;</span><span id="cke_58_label" class="cke_button_label cke_button__bgcolor_label" aria-hidden="false">Background Colour</span><span id="cke_58_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a></span><span class="cke_toolbar_end"></span></span></span><a title="Collapse Toolbar" id="cke_1_toolbar_collapser" tabindex="-1" class="cke_toolbox_collapser" onclick="CKEDITOR.tools.callFunction(125)"><span class="cke_arrow">▲</span></a></span></span><div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 994px;"><span id="cke_61" class="cke_voice_label">Press ALT 0 for help</span><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" title="Rich Text Editor, editor1" aria-describedby="cke_61" tabindex="0" allowtransparency="true" style="width: 100%; height: 100%;"></iframe></div><span id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;"><span id="cke_1_resizer" class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="Resize" onmousedown="CKEDITOR.tools.callFunction(0, event)">◢</span><div class="cke_wordcount" style="" title="Statistics"><span id="cke_wordcount_editor1" class="cke_path_item"></span></div></span></div></div></div></div></div></div></div></div><div class="Modal__Actions-sc-m5rli6-2 kqmGrI" data-testid="components_modal_actions"><div class="styles__AutoSaveContent-sc-p5pee8-1 jpCZCm"></div><button class="undefined Button__ButtonBase-sc-17zmp21-0 grrQNS" type="button" tabindex="0">Close </button><button class="undefined Button__ButtonBase-sc-17zmp21-0 cRnxcU" type="button" tabindex="0">Save </button><button class="undefined Button__ButtonBase-sc-17zmp21-0 cRnxcU" type="button" tabindex="0">Save and Close </button></div></div></div></div><div></div><div class="common__RootWorkspace-sc-1hb9rs-7 dgKGPI common__Wrapper-sc-1hb9rs-2 kLpUho"><div class="PowerBar__PowerbarWrapper-sc-10s9il7-0 gjaXiV"><div class="PowerBar__PowerBarContent-sc-10s9il7-1 fqcEZz"><ul class="bp3-menu bp3-large" style="background: transparent;"><div class="common__Subheader-sc-1hb9rs-25 fucXBY">Navigate</div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bTcYMU"><div class="ListItem__ActiveIndicator-sc-rurafb-0 cePqAr"></div><li class=""><a tabindex="0" data-testid="containers_client_navigation_sessions-notes" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Sessions &amp; Notes</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" data-testid="containers_client_navigation_contact-clinical" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Contact &amp; Clinical</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" data-testid="containers_client_navigation_documents" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Documents</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" data-testid="containers_client_navigation_finances" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Finances</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" data-testid="containers_client_navigation_eclaims" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>eClaims</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" data-testid="containers_client_navigation_logs" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Logs</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Measures</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Forms</span></div></a></li></div></ul><hr class="Divider-sc-1rwdet1-0 gtAJmU"><ul class="bp3-menu bp3-large" style="background: transparent;"><div class="common__Subheader-sc-1hb9rs-25 fucXBY">Actions</div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" id="containers_client_navigation_create-invoice" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24" fill="rgb(49, 49, 49)"><path data-testid="icon-path" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Create Invoice</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" id="containers_client_navigation_record-payment" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24" fill="rgb(49, 49, 49)"><path data-testid="icon-path" d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Record Transaction</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" id="containers_client_navigation_account-summary" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24" fill="rgb(49, 49, 49)"><path data-testid="icon-path" d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Client Summary</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" id="containers_client_navigation_client-export" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24" fill="rgb(49, 49, 49)"><path data-testid="icon-path" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Client Export</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" id="containers_client_navigation_client-export" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24" fill="rgb(49, 49, 49)"><path data-testid="icon-path" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Messages Export</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" id="containers_client_navigation_form-export" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24" fill="rgb(49, 49, 49)"><path data-testid="icon-path" d="M18 17H6v-2h12v2zm0-4H6v-2h12v2zm0-4H6V7h12v2zM3 22l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.5-1.5L15 22l1.5-1.5L18 22l1.5-1.5L21 22V2l-1.5 1.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2 4.5 3.5 3 2v20z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Send Forms</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" id="containers_client_navigation_measure-export" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24" fill="rgb(49, 49, 49)"><path data-testid="icon-path" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Send Measures</span></div></a></li></div></ul></div></div><div class="Client__ClientWorkspace-sc-ezcod2-0 cFsvrE common__StandardWorkspace-sc-1hb9rs-6 dtArXg common__Wrapper-sc-1hb9rs-2 kLpUho"><div class="styles__Wrapper-sc-1fo8d91-0 fAvzgg"><div class="styles__TopRow-sc-1fo8d91-1 jLDTUa Card-sc-1ac7maq-0 hsCPbp"><div class="styles__TopRowSection-sc-1fo8d91-2 hbTREr"><div class="ClientCodeBlock__Wrapper-sc-zzoprq-4 hAlNgD"><div class="Avatar__Wrapper-sc-1pxdunm-0 jBZrXT" color="#FFF" size="30" style="font-size: 0.75em; margin-right: 0.25em; max-width: 30px; min-width: 30px;"><span class="Avatar__Content-sc-1pxdunm-1 bLmaLe">HHo</span></div><div class="ClientCodeBlock__GroupDetailsWrapper-sc-zzoprq-19 ekgXBd"><span class="ClientCodeBlock__ClientName-sc-zzoprq-2 exFbzq" title="Hillary Hootkins" size="16">Hillary Hootkins (#1)</span></div></div><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="ClientTopPanel__PriorityCommentIcon-sc-3usdg6-0 gbKpwR Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF" tabindex="0"><path data-testid="icon-path" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10M16,14H8V13C8,11.67 10.67,11 12,11C13.33,11 16,11.67 16,13V14M12,6A2,2 0 0,1 14,8A2,2 0 0,1 12,10A2,2 0 0,1 10,8A2,2 0 0,1 12,6Z"></path></svg></span></span></div><div class="styles__TopRowSection-sc-1fo8d91-2 hbTREr"><div class="ClientTopPanel__TopRowTags-sc-3usdg6-3 epTXWl"></div><div class="ClientTopPanel__TopRowHover-sc-3usdg6-5 lpfJUx ClientTopPanel__TopRowButton-sc-3usdg6-4 YJops"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" type="button" aria-label="Add Tags"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M6.5 10C7.3 10 8 9.3 8 8.5S7.3 7 6.5 7 5 7.7 5 8.5 5.7 10 6.5 10M9 6L16 13L11 18L4 11V6H9M9 4H4C2.9 4 2 4.9 2 6V11C2 11.6 2.2 12.1 2.6 12.4L9.6 19.4C9.9 19.8 10.4 20 11 20S12.1 19.8 12.4 19.4L17.4 14.4C17.8 14 18 13.5 18 13C18 12.4 17.8 11.9 17.4 11.6L10.4 4.6C10.1 4.2 9.6 4 9 4M13.5 5.7L14.5 4.7L21.4 11.6C21.8 12 22 12.5 22 13S21.8 14.1 21.4 14.4L16 19.8L15 18.8L20.7 13L13.5 5.7Z"></path></svg></button></span></span></span></span></div><div class="ClientTopPanel__TopRowButton-sc-3usdg6-4 YJops"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="book session"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19 19V8H5V19H19M16 1H18V3H19C20.11 3 21 3.9 21 5V19C21 20.11 20.11 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.89 3.89 3 5 3H6V1H8V3H16V1M11 9.5H13V12.5H16V14.5H13V17.5H11V14.5H8V12.5H11V9.5Z"></path></svg></button></span></span></div><div class="ClientTopPanel__TopRowHover-sc-3usdg6-5 lpfJUx ClientTopPanel__TopRowButton-sc-3usdg6-4 YJops"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="Invite Client to Portal"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M3.67124 20.4L21.1212 12.92C21.9312 12.57 21.9312 11.43 21.1212 11.08L3.67124 3.60002C3.01124 3.31002 2.28124 3.80002 2.28124 4.51002L2.27124 9.12002C2.27124 9.62002 2.64124 10.05 3.14124 10.11L17.2712 12L3.14124 13.88C2.64124 13.95 2.27124 14.38 2.27124 14.88L2.28124 19.49C2.28124 20.2 3.01124 20.69 3.67124 20.4Z"></path></svg></button></span></span></div><div class="ClientTopPanel__TopRowHover-sc-3usdg6-5 lpfJUx ClientTopPanel__TopRowButton-sc-3usdg6-4 YJops"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><div class="styles__TodoWrapper-sc-1fo8d91-4 hAhIAi"><div class="IconCounter__Wrapper-sc-12bxetf-0 hqvLcG" data-testid="components_icon-counter"><button class="undefined Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" data-testid="components_icon-counter_button" type="button" aria-label="select counter"><svg class="Icon__IconContainer-sc-s95nwd-0 kLiBYf" data-testid="icon" viewBox="0 0 24 24" fill="#EAEAEA"><path data-testid="icon-path" d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path></svg></button><div class="IconCounter__Counter-sc-12bxetf-2 fdDFpY Avatar__Wrapper-sc-1pxdunm-0 bFaMOi" data-testid="components_icon-counter_counter" size="17"><span class="Avatar__Content-sc-1pxdunm-1 bLmaLe">0</span></div></div></div></span></span></span></span></div></div></div><div class="styles__Body-sc-1fo8d91-3 cNQCNv"><div class="styles__PanelSection-sc-1fo8d91-5 ealmUU Card-sc-1ac7maq-0 hsCPbp"><button class="styles__ButtonWrapper-sc-1fo8d91-9 cuQGCs Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" aria-label="view session"><div class="styles__CenterValue-sc-1fo8d91-7 dfULsm CardTitle__Wrapper-sc-1boazl2-0 leSmZR"><div class="CardTitle__Title-sc-1boazl2-1 kzlmzv">No Session Booked</div><div class="CardTitle__Subtitle-sc-1boazl2-2 eFQtaE"><div class="ClientTopPanel__SubtitleWrapper-sc-3usdg6-2 kncarV"><span>Add New Session</span> </div></div></div></button></div><div class="styles__PanelSection-sc-1fo8d91-5 ealmUU Card-sc-1ac7maq-0 hsCPbp"><button class="styles__ButtonWrapper-sc-1fo8d91-9 cuQGCs Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" aria-label="add phone number"><div class="styles__CenterValue-sc-1fo8d91-7 dfULsm CardTitle__Wrapper-sc-1boazl2-0 leSmZR"><div class="CardTitle__Title-sc-1boazl2-1 kzlmzv">No Phone Number</div><div class="CardTitle__Subtitle-sc-1boazl2-2 eFQtaE">Add a number</div></div></button></div><div class="styles__PanelSection-sc-1fo8d91-5 ealmUU Card-sc-1ac7maq-0 hsCPbp"><button class="styles__BalancePanel-sc-1fo8d91-10 jmUbQi styles__ButtonWrapper-sc-1fo8d91-9 cuQGCs Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" aria-label="view billing"><div class="CardTitle__Wrapper-sc-1boazl2-0 leSmZR"><div class="CardTitle__Title-sc-1boazl2-1 kzlmzv"><span class="BalanceIndicator__EvenBalanceWrapper-sc-xe8hno-1 detuyv"><span data-testid="currency-string">$0.00</span></span></div><div class="CardTitle__Subtitle-sc-1boazl2-2 eFQtaE">Balance</div></div></button></div><div class="styles__PanelSection-sc-1fo8d91-5 ixZwTk Card-sc-1ac7maq-0 hsCPbp"><div class="styles__CenterValue-sc-1fo8d91-7 dfULsm CardTitle__Wrapper-sc-1boazl2-0 leSmZR"><div class="CardTitle__Title-sc-1boazl2-1 kzlmzv">100%</div><div class="CardTitle__Subtitle-sc-1boazl2-2 eFQtaE">Attendance rating</div></div></div></div></div><div class="Client__Section-sc-ezcod2-1 gqLAKg"><div class="common__Wrapper-sc-1hb9rs-2 kLpUho"><div class="SessionAndNotesTabs__SessionsTabBar-sc-1atv6fu-0 cTjArc TabView__Wrapper-sc-1doprxs-0 fhpqzQ"><div class="TabView__TabBar-sc-1doprxs-1 hugMcT"><div><button class="tab-button underline-hover is-selected Touchable-sc-d2zavk-0 dGKylw">Sessions &amp; Notes</button></div><div><button class="tab-button underline-hover  Touchable-sc-d2zavk-0 dGKylw">Non-Session Notes</button></div><div><button class="tab-button underline-hover  Touchable-sc-d2zavk-0 dGKylw">Deleted Notes</button></div></div><div class="TabView__TabWorkspace-sc-1doprxs-3 kbUmZc"><div class="Header__HeaderWrapper-sc-xfcimv-0 hbxRHf"><div class="Header__TableTitle-sc-xfcimv-2 cvQqTx CardTitle__Wrapper-sc-1boazl2-0 leSmZR" data-testid="table-header-title_testid"><div class="CardTitle__Title-sc-1boazl2-1 erayvF">Sessions &amp; Notes (1)</div><div class="CardTitle__Subtitle-sc-1boazl2-2 eFQtaE"><div class="TableFilters__Wrapper-sc-tmewch-0 dTYVNw"><div class="Chip__Wrapper-sc-1baofkb-0 hgpYwl"><span class="Chip__Content-sc-1baofkb-1 hfdEGn">Next 3 Recurrences</span><div class="Chip__IconWrapper-sc-1baofkb-2 bZjbGs"><svg class="Icon__IconContainer-sc-s95nwd-0 fMnttp" data-testid="icon" viewBox="0 0 24 24" fill="#fff" width="14" height="14"><path data-testid="icon-path" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></div></div></div></div></div><div class="Header__ActionsWrapper-sc-xfcimv-3 eBwHf"></div><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 jQwBK" aria-label="Toggle Filter List" data-testid="components_datatable_header_button_toggle-filter-list"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"></path></svg></button></span></span></div><div class="common__TableWrapper-sc-1hb9rs-8 jOcDRg"><span class="TableHeader__Wrapper-sc-jkgeix-0 cZFTjI"><div class="TableHeader__Info-sc-jkgeix-1 EBmyb TableRow__CheckboxColumn-sc-17fju35-1 fQEQgO"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="Icon__IconContainer-sc-s95nwd-0 kjejJT" data-testid="icon" viewBox="0 0 24 24" fill="#237396" width="18" height="18" tabindex="0"><path data-testid="icon-path" d="M0.41,13.41L6,19L7.41,17.58L1.83,12M22.24,5.58L11.66,16.17L7.5,12L6.07,13.41L11.66,19L23.66,7M18,7L16.59,5.58L10.24,11.93L11.66,13.34L18,7Z"></path></svg></span></span></div><div class="TableHeader__StyledTableHeader-sc-jkgeix-2 gxEIuy"><div class="table-row undefined TableRow__Wrapper-sc-17fju35-0 jzGIPm"><div class="table-row-checkbox TableRow__CheckboxColumn-sc-17fju35-1 fQEQgO"><div class="Checkbox__Wrapper-sc-t01l89-0 kQxRno"><input type="checkbox" aria-hidden="true" style=""><div class="Checkbox__Content-sc-t01l89-1 hlrWkY"><div class="Checkbox__IconContainer-sc-t01l89-3 brTmgw" aria-checked="false" tabindex="0" role="checkbox" aria-labelledby="checkbox-label"><svg class="Icon__IconContainer-sc-s95nwd-0 bXJEKe" data-testid="icon" viewBox="0 0 24 24" fill="#237396"><path data-testid="icon-path" d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></svg></div><label class="Checkbox__Label-sc-t01l89-2 kuiIZA"></label></div></div></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 eShuHg" colspan="2"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB">Date</div></button></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" colspan="1"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB">Therapist</div></button></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" colspan="1"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB">Service Name</div></button></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" colspan="1"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw" tabindex="0"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB">Attendance</div><span><svg class="Icon__IconContainer-sc-s95nwd-0 ZTpop" data-testid="icon" viewBox="0 0 24 24" fill="#237396" width="16" height="17"><path data-testid="icon-path" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg></span></button></span></span></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" colspan="1"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB">Amount</div></button></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" colspan="1"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB">Status</div></button></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" colspan="1"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB">Note</div></button></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 fXUpLi" colspan="0.5"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB"></div></button></span></div><div class="TableHeaderColumn__Wrapper-sc-15lkj19-0 yVfyB TableRowColumn__Wrapper-sc-fsoayx-0 fXUpLi" colspan="0.5"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="TableHeaderColumn__Button-sc-15lkj19-1 VlTuQ Touchable-sc-d2zavk-0 dGKylw"><div class="TableHeaderColumn__Content-sc-15lkj19-3 dztSwB"></div></button></span></div></div></div></span><div class="TableBody-sc-wx7xui-0 dCWcvC"><div class="table-row undefined TableRow__Wrapper-sc-17fju35-0 jzGIPm"><div class="table-row-checkbox TableRow__CheckboxColumn-sc-17fju35-1 fQEQgO"><div class="Checkbox__Wrapper-sc-t01l89-0 kQxRno"><input type="checkbox" aria-hidden="true" style=""><div class="Checkbox__Content-sc-t01l89-1 hlrWkY"><div class="Checkbox__IconContainer-sc-t01l89-3 brTmgw" aria-checked="false" tabindex="0" role="checkbox" aria-labelledby="checkbox-label"><svg class="Icon__IconContainer-sc-s95nwd-0 bXJEKe" data-testid="icon" viewBox="0 0 24 24" fill="#237396"><path data-testid="icon-path" d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></svg></div><label class="Checkbox__Label-sc-t01l89-2 kuiIZA"></label></div></div></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 eShuHg" colspan="2"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><a class="Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><span><span title="Sun, Feb 8th 2026 - 10:00AM">Sun, Feb 8th 2026 - 10:00AM</span></span></a></span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" title="Brendan Herjavec"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN">Brendan Herjavec</span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" title="Hoot Help Session"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="common__Clickable-sc-1hb9rs-26 fFufnh Touchable-sc-d2zavk-0 dGKylw">Hoot Help Session</button></span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" title="Attended"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><div class="TableRow__IconRowContainer-sc-1ahzkzo-0 gzMFEX"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="Icon__IconContainer-sc-s95nwd-0 eMfDfy" data-testid="icon" viewBox="0 0 24 24" fill="#85BD25"><path data-testid="icon-path" d="M16.53 11.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59 17l5.94-5.94zM19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"></path></svg></span></span>&nbsp;Attended</div></span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" title="200"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><span data-testid="currency-string">$200.00</span></span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp" title="Invoiced, Receipted &amp; Paid #1"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><button class="common__Clickable-sc-1hb9rs-26 fFufnh Touchable-sc-d2zavk-0 dGKylw">Invoiced, Receipted &amp; Paid <small>#1</small></button></span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 cFSxqp"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fbDvmN"><div class="NoteButton__PopoverStyled-sc-5l12wk-0 hlElRp"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="NoteButton__StyledButton-sc-5l12wk-1 fVEjeM Button__ButtonBase-sc-17zmp21-0 ctEGfs" type="button" aria-label="Create Note" tabindex="0">Create Note</button></span></span></div></span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 fXUpLi" colspan="0.5"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fMYReS"></span></div><div class="TableRowColumn__Wrapper-sc-fsoayx-0 fXUpLi" colspan="0.5"><span class="TableRowColumn__WrapSpan-sc-fsoayx-1 fMYReS"></span></div></div></div></div><div class="Footer__FooterWrapper-sc-1irp623-0 boypYn"><div class="Footer__Section-sc-1irp623-1 jnBKbU"><button class="undefined Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" aria-label="refresh table"><div class="Footer__Section-sc-1irp623-1 jnBKbU">Refresh&nbsp;<svg class="Icon__IconContainer-sc-s95nwd-0 jBrJui" data-testid="icon" viewBox="0 0 24 24" width="18" height="18"><path data-testid="icon-path" d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path></svg></div></button></div><div class="Footer__Section-sc-1irp623-1 jnBKbU"><button class="undefined Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 fwkbtd" type="button" aria-label="page change decrease"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg></button><div class="css-10nd86i"><div class="css-hu7has react-select__control"><div class="css-1c8pw3s react-select__value-container react-select__value-container--has-value"><div class="css-23gdih react-select__single-value">Page 1</div><div class="css-1skrffd"><div class="react-select__input" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-2-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: HKGrotesk-Regular, Helvetica, Arial, sans-serif; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class="css-1wy0on6 react-select__indicators"><span class="css-nmj1y2 react-select__indicator-separator"></span><div aria-hidden="true" class="css-1hh0tlj react-select__indicator react-select__dropdown-indicator"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-19bqh2r"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div><button class="Footer__NextButton-sc-1irp623-2 dAhRzK Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 fwkbtd" type="button" aria-label="page change increase"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></div></div></div></div></div></div></div></div></div></div></div></div></div><script async="" src="https://js.stripe.com/v3/"></script><script async="" src="https://fattjs.fattpay.com/js/fattmerchant.js"></script><script type="text/javascript" src="/main.624335aaead0ef19241a.js"></script><div id="userpilotContent" key="1213681490" theme_id="0"><div class="conv-cont userpilot-conv" style="display: none;"><div class="canv userpilot-backdrop"></div></div></div><iframe name="__privateStripeMetricsController7830" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fbrendanherjtherapy.owlpractice.ca%2Fclient%2F1%2Fsessions&amp;title=Practice%20Management&amp;referrer=&amp;muid=72a0057b-04ca-4adc-91c0-7dcc693aa24e324988&amp;sid=cd122367-8dec-4bc1-abca-9e37bf4ebe62c7ce06&amp;version=6&amp;preview=false&amp;__shared_params__[version]=v3" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div class="root-portal"><div class="Toaster__AnimateContent-sc-10pk1v-0 gdNcVs" role="region" aria-live="polite"></div></div><div class="root-portal"><div class="Toaster__AnimateContent-sc-10pk1v-0 feMjlG" role="region" aria-live="polite"></div></div><iframe title="Checklist" id="userpilot-checklist" key="1213681490" widget="5" style="width: 176px !important; border: none; position: fixed; z-index: 2147483638; display: block; color-scheme: light; height: 70px !important; opacity: 1 !important; zoom: 1; bottom: 60px; right: 16px; min-height: 70px !important; min-width: 176px !important;"></iframe><div class="bp3-portal"><div aria-live="polite" class="bp3-overlay"></div></div><div class="cke_screen_reader_only cke_copyformatting_notification"><div aria-live="polite"></div></div></body></html>

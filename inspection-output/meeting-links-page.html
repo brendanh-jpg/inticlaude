@@ -1,0 +1,882 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calendar</title><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" onload="this.onload=null;this.removeAttribute('media');"><meta name="robots" content="noindex, nofollow"><script>window.userpilotSettings = {token: 'NX-6a493d7a'};</script><script async="" src="https://js.userpilot.io/sdk/latest.js"></script><script async="" data-client-key="sdk-h5XaCIAThsGrQsQi" src="https://cdn.jsdelivr.net/npm/@growthbook/growthbook/dist/bundles/auto.min.js"></script><meta name="apple-mobile-web-app-title" content="Owl Practice"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="theme-color" content="#237396"><link rel="apple-touch-startup-image" href="/icon_180x180.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon_180x180.png"><link rel="apple-touch-icon" sizes="167x167" href="/icon_167x167.png"><link rel="apple-touch-icon" sizes="152x152" href="/icon_152x152.png"><link rel="apple-touch-icon" sizes="120x120" href="/icon_120x120.png"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><link href="/main.054b2f5eacdbf73260f2.css" rel="stylesheet"><link as="style" href="/0.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/15.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/17.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/9.054b2f5eacdbf73260f2.css" rel="preload"><script src="https://js.userpilot.io/sdk/version/1.771/app.js" async=""></script><style>
+iframe#userpilot-nps {
+  width: 900px;
+  right: 0px;
+  margin: 0px auto;
+  opacity: 1 !important;
+}
+
+/* NPS Mobile */
+@media (max-width: 900px) {
+  iframe#userpilot-nps {
+      width: 100%;
+  }
+}
+
+iframe#userpilot-resource-centre-frame {
+  width: 0px;
+  height: 0px;
+}
+
+div#userpilotContent[key="1213681490"]:not(.preview) {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  line-height: 18px;
+  -webkit-transition: none;
+  transition: none;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483638;
+  pointer-events: none;
+  outline: none !important;
+  background: none !important;
+  --sidebar-width: 0px;
+  direction: ltr;
+  display: block;
+}
+
+div#userpilotContent[key="1213681490"] * {
+  -webkit-transition: none;
+  transition: none;
+  direction: ltr;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont, #userpilotContent[key="1213681490"] .conv-backdrop-cont {
+  z-index: 999999999;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  transition: opacity 0.1s, z-index 0s, visibility 0s;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont, #userpilotContent[key="1213681490"] .conv-backdrop-cont {
+  z-index: 999999999;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  transition: opacity 0.1s, z-index 0s, visibility 0s;
+}
+
+#userpilotContent[key="1213681490"] .userpilot .conv-cont {
+  z-index: 2147483000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont {
+  background: none;
+}
+
+#userpilotContent[key="1213681490"] .canv {
+  position: absolute;
+  top: 0;
+  box-shadow: inset 0 0 0 0px #ffffff, inset 0 0 15px rgb(208, 208, 208);
+  background: none !important;
+  display: flex;
+  border: 10000px solid rgba(255, 255, 255, .56);
+  margin-left: -10000px;
+  margin-top: -10000px;
+  padding: 150px;
+  opacity: 0;
+  transition: opacity 0.2s, padding 0.2s;
+  border-radius: 10006px
+}
+
+#userpilotContent[key="1213681490"] .userpilot .canv {
+  position: fixed;
+  top: 0;
+  background: none;
+  display: flex;
+  border: 10000px solid rgba(255, 255, 255, .7);
+  margin-left: -10000px;
+  margin-top: -10000px;
+  padding: 150px;
+  opacity: 0;
+  border-radius: 10006px
+}
+
+#userpilotContent[key="1213681490"] .canv.userpilot-canv-hidden {
+  opacity: 0 !important
+}
+
+#userpilotContent[key="1213681490"] .userpilot-soft-focus .canv {
+  border: none
+}
+
+#userpilotContent[key="1213681490"] .conv-cont[userpilot-hidden] .up-userpilot-mmx-part{
+  pointer-events: none !important;
+}
+
+#userpilotContent[key="1213681490"] .up-userpilot-mmx-part {
+  position: absolute;
+  z-index: 1 !important;
+  background: none;
+}
+
+#userpilotContent[key="1213681490"] [up-backdrop="0"] {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont[backdrop-overlay="1"] .up-userpilot-mmx-part {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0px !important;
+  left: 0px !important;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont.allow-scroll .up-userpilot-mmx-part {
+  pointer-events: none;
+}
+
+div#userpilotContent[key="1213681490"]>*, div#userpilotContent[key="1213681490"]>*:not(.userpilot-hotspot-container)>*:not(.userpilot-backdrop) {
+  pointer-events: all;
+}
+
+#userpilotContent[key="1213681490"] .userpilot-mmx-cursor {
+  position: fixed;
+  width: 14px;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  pointer-events: none
+}
+#userpilotContent[key="1213681490"] .userpilot-mmx-cursor * {
+  pointer-events: none !important;
+}
+#userpilotContent[key="1213681490"] .up-t-pluse {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 100%;
+  color: gainsboro;
+  background: gainsboro
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse {
+  width: 10px;
+  height: 10px;
+  pointer-events: none !important;
+}
+#userpilotContent[key="1213681490"] .up-t-pluse:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -3px;
+  top: -3px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 7px solid;
+  border-color: inherit;
+  -webkit-animation: userpilotActive 2s infinite linear;
+  animation: userpilotActive 2s infinite linear
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse:before {
+  height: 18px;
+  width: 18px;
+  left: -4px;
+  top: -4px;
+  border: 0px;
+  background: inherit;
+  -webkit-animation: userpilot-tooltip-pulse 2s infinite linear;
+  animation: userpilot-tooltip-pulse 2s infinite linear
+}
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@-webkit-keyframes active {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+#userpilotContent[key="1213681490"] .userpilot-ripple {
+  position: absolute;
+  pointer-events: none;
+  width: 0px;
+  height: 30px;
+  border: none;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple {
+  height: 18px;
+  width: 18px;
+  background-color: transparent !important;
+}
+#userpilotContent[key="1213681490"] .userpilot-ripple:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 0px;
+  top: 0px;
+  background-color: transparent;
+  border-radius: 50%;
+  background: inherit;
+  -webkit-animation: userpilotActive 2s infinite linear;
+  animation: userpilotActive 2s infinite linear;
+  border: 10px solid;
+  border-color: inherit;
+  box-sizing: border-box;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple:before {
+  height: 18px;
+  width: 18px;
+  left: -1px;
+  top: -1px;
+  -webkit-animation: userpilot-tooltip-pulse 2s infinite linear;
+  animation: userpilot-tooltip-pulse 2s infinite linear;
+}
+@-webkit-keyframes userpilot-tooltip-pulse {
+  0%,
+  100% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+@keyframes userpilot-tooltip-pulse {
+  0%,
+  100% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+#userpilotContent[key="1213681490"] .userpilot-ripple:after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 10px;
+  top: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  background: inherit;
+  -webkit-animation: userpilot_active_after 2s infinite linear;
+  animation: userpilot_active_after 2s infinite linear;
+  box-sizing: border-box;
+  background: currentColor;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple:after {
+  height: 10px;
+  width: 10px;
+  left: 4px;
+  top: 4px;
+  animation: none;
+}
+@keyframes userpilot_active_after {
+  0% {
+    -webkit-transform: scale(.1);
+    opacity: 1
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: scale(1)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(5)
+  }
+}
+
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    opacity: 1;
+    border-color: inherit;
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: scale(1.5);
+    border-color: inherit;
+  }
+
+  30% {
+    background: none;
+    border: 0 solid;
+    border-color: inherit;
+    opacity: 0
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    border-color: inherit;
+  }
+}
+
+
+/* sonar animations */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"], 
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"] {
+  background: none !important;
+  animation: none;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"]::after, 
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"]::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  border-radius: 150px;
+  animation: pulse-dot infinite 1.5s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"]::before {
+  left: 0px;
+  top: 0px;
+  animation: pulse-ring infinite 1.5s;
+  border-style: solid;
+  border-width: 4px;
+  padding: 5px;
+  background: none !important;
+}
+
+/* morph animation */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"],
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"] {
+  background: none !important;
+  animation: none;
+  height: 18px;
+  width: 18px;
+  left: -4px;
+  top: -4px;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"]::before {
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  opacity: .6;
+  position: absolute;
+  border-radius: 50%;
+  animation: morph 1s linear infinite;
+  box-shadow: 0 0 5px 1px currentColor;
+  border: 9px solid;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"]::after {
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  content: "";
+  display: block;
+}
+
+/* target animation */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"],
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]{
+  height: 18px;
+  width: 18px;
+  box-shadow: 0 0 4px 2px currentColor;
+  opacity: 1;
+  animation: target 2s linear infinite;
+  background: currentColor !important;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: currentColor transparent transparent transparent;
+  opacity: .6;
+  background: none;
+  animation: none;
+  border-radius: 0;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent currentColor transparent;
+  opacity: .6;
+  top: initial;
+  left: initial;
+  border-radius: initial;
+  background: none;
+}
+
+ /* egg animations */
+ #userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"],
+ #userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 6px 4px currentColor;
+  animation: egg 600ms linear infinite;
+  animation-direction: alternate;
+  background: none !important;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  background: transparent;
+  border: 1px solid currentColor;
+  animation: none;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]::after {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  background: currentColor;
+  opacity: .6;
+}
+
+
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@-webkit-keyframes active {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1, 1) translate(-50%, -50%);
+  }
+
+  30% {
+    transform: scale(1.25, 1.25) translate(-40%, -40%);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(-50%, -50%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale(1.8, 1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes morph {
+  0% {
+    transform: rotateZ(0);
+    border-radius: 20%;
+  }
+
+  50% {
+    transform: rotateZ(45deg);
+    border-radius: 50%;
+  }
+
+  100% {
+    transform: rotateZ(90deg);
+    border-radius: 20%;
+  }
+}
+
+@keyframes target {
+  0% {
+    transform: rotateZ(0) scale(0.6);
+  }
+
+  50% {
+    transform: rotateZ(180deg) scale(1);
+  }
+
+  100% {
+    transform: rotateZ(360deg) scale(0.6);
+  }
+}
+
+@keyframes egg {
+  from {
+    box-shadow: inset 0 0 8px 3px currentColor;
+  }
+
+  to {
+    box-shadow: inset 0 0 4px 1px currentColor;
+  }
+}</style><style>
+iframe.userpilot-disabled-iframe {
+  pointer-events: none !important;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-nps,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-checklist,
+iframe#userpilotSurveys,
+iframe#userpilot-survey {
+  background: none;
+  max-height: none;
+  max-width: none;
+  min-height: 0px;
+  min-width: 0px;
+  filter: none;
+  pointer-events: initial;
+  outline: none;
+  visibility: visible;
+  transition: none;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-checklist,
+iframe#userpilotSurveys,
+iframe#userpilot-survey {
+  right: initial;
+  left: initial;
+  top: initial;
+  bottom: initial;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-survey,
+iframe#userpilotSurveys {
+    display: initial;
+}
+
+iframe#userpilotContentNativeIframe {
+  user-select: none;
+}
+
+.userpilot-mask-item {
+  position: absolute;
+  top: 0px;
+  z-index: 2147483647;
+  pointer-events: none;
+  box-shadow: rgb(239, 71, 132) 0px 0px 0px 1px inset !important;
+  background-color: rgba(239, 71, 132, 0.09) !important;
+  border: none;
+  pointer-events: none;
+  color-scheme: light;
+}
+
+#userpilot-banner_v2-container {
+  display: flex;
+}
+
+iframe#userpilotIframeContainer.userpilot-banner {
+  box-sizing: content-box;
+}
+</style><style>
+  /* Container styles */
+  .bb-custom-select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* Opener button styles */
+  .bb-custom-select-opener {
+    display: none;
+  }
+
+  /* Disabled state styles */
+  .bb-custom-select-container.bb-is-disabled .bb-custom-select-opener {
+    background-color: #e9ecef;
+    border-color: #505050;
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+
+  /* Add not-allowed cursor to the entire container when disabled */
+  .bb-custom-select-container.bb-is-disabled {
+    cursor: not-allowed;
+  }
+
+  /* Also ensure the select element shows not-allowed cursor when disabled */
+  .bb-custom-select-container.bb-is-disabled select {
+    cursor: not-allowed;
+  }
+
+  .bb-custom-select-container.bb-is-disabled .bb-custom-select-opener::after {
+    border-top-color: #6c757d;
+  }
+
+  /* Add dropdown arrow */
+  .bb-custom-select-opener::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666;
+  }
+
+  /* Rotate arrow when open */
+  .bb-custom-select-opener.bb-is-open::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  /* Keep native select visible */
+  .bb-customSelect select {
+    position: relative;
+    width: 100%;
+  }
+
+  /* Dropdown panel */
+  .bb-custom-select-panel {
+    display: none;  /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999999; /* Should always be on top of other elements */
+    margin-top: 4px;
+    width: max-content; /* Allow panel to grow based on content */
+    min-width: 100%;   /* But ensure it's at least as wide as the opener */
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  /* Show panel when container has bb-is-open class */
+  .bb-custom-select-container.bb-is-open .bb-custom-select-panel {
+    display: block;
+  }
+
+  /* Option styles */
+  .bb-custom-select-option {
+    padding: 6px 12px;
+    line-height: 1.5;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .bb-custom-select-option:hover,
+  .bb-custom-select-option.bb-has-focus {
+    background-color: #f0f9fa;
+  }
+
+  .bb-custom-select-option.bb-is-selected {
+    background-color: #e9ecef;
+  }
+</style><link rel="stylesheet" type="text/css" href="/0.054b2f5eacdbf73260f2.css"><script charset="utf-8" src="/0.be0181f7385702419586.chunk.js"></script><script charset="utf-8" src="/1.82bc9082982ecc8e31f9.chunk.js"></script><style data-styled-components=""></style><style data-styled-components=""></style><style data-emotion=""></style><style>.cke{visibility:hidden;}</style><script charset="utf-8" src="/16.1ee8548cc095f531623b.chunk.js"></script><script charset="utf-8" src="/72.5f6f5d10fd3faa705a4d.chunk.js"></script><script charset="utf-8" src="/4.dfe4fd97da37b6cc1809.chunk.js"></script><script charset="utf-8" src="/49.181b5a837fea3f6bfcc5.chunk.js"></script><script charset="utf-8" src="/69.19a1f0e1149244b966ef.chunk.js"></script><link rel="stylesheet" type="text/css" href="/9.054b2f5eacdbf73260f2.css"><script charset="utf-8" src="/9.500e00f51f32cccf24b5.chunk.js"></script><link rel="stylesheet" type="text/css" href="/17.054b2f5eacdbf73260f2.css"><script charset="utf-8" src="/17.d31f6dbf39f06be84f82.chunk.js"></script><script src="//js.userpilot.io/sdk/latest.js"></script></head><body><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/></noscript><noscript style="display: block; margin-left: auto; margin-right: auto; font-family: sans-serif; max-width: 380px; padding: 1em; text-align: center;">If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript><div id="app" style="height: 100%; width: 100%;" role="main"><div class="App__Container-sc-1urod3b-0 fZgMJP Provider__Base-sc-vpkrki-0 ikABkA"><style>
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Regular'), url(/49de8c8f70a36ad4618f9e4975f5364b.ttf) format('truetype');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Medium'), url(/a822d33614b51eb05478e0e29cf757f3.ttf) format('truetype');
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Bold'), url(/0043e1adfa9ab91f0df1a629e273302d.ttf) format('truetype');
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: 'HKGrotesk-Regular';
+        src: local('HKGrotesk-Regular'), url(/49de8c8f70a36ad4618f9e4975f5364b.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'ProximaNova-Regular';
+        src: local('ProximaNova-Regular'), url(/feface72008e6857da27f939e1eceffa.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'ProximaNova-Medium';
+        src: local('ProximaNova-Medium'), url(/251c35fe6eeec7ffa3d335357aabcbd0.ttf) format('truetype');
+        font-weight: 500;
+      }
+    </style><div aria-busy="true" style="visibility: hidden; display: none;">Loading...</div><div class="styles__SideMenuWrapper-sc-xh2s93-4 dClqlN"><div class="styles__FirstNavItem-sc-xh2s93-5 fKdJXr styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 iCpAWl" data-testid="icon" viewBox="0 0 24 24" fill="#FFF" width="60" height="60"><path data-testid="icon-path" d="M8.5,10.7c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5S9,11.5,9,11.2C9,11,8.8,10.7,8.5,10.7z M18.4,10.7 c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5C18.9,11,18.7,10.7,18.4,10.7z M17.1,8.5 c-2,0-3.5,1.4-3.7,3.5c-0.2,2.1,1.6,4.1,3.7,4.1c2,0,3.7-1.7,3.7-3.9C20.7,10.1,19.1,8.5,17.1,8.5z M17.1,14.4 c-1.4,0-2.5-1.2-2.5-2.6c0-1.4,1.1-2.5,2.5-2.5c1.4,0,2.5,1.1,2.5,2.5C19.6,13.2,18.4,14.4,17.1,14.4z M7.2,8.5 c-2,0-3.5,1.4-3.7,3.5c-0.2,2.1,1.6,4.1,3.7,4.1c2,0,3.7-1.7,3.7-3.9C10.8,10.1,9.3,8.5,7.2,8.5z M7.3,14.4c-1.4,0-2.5-1.2-2.5-2.6 c0-1.4,1.1-2.5,2.5-2.5s2.5,1.1,2.5,2.5C9.7,13.2,8.6,14.4,7.3,14.4z M22.7,11.4c0-2.1-1.7-3.8-1.7-3.8L21.3,4 c-1,0.8-2.6,1.2-2.6,1.2l-2,0.6c-1.9,0.5-3,1.3-3,1.3C13,7.9,12,7.8,12,7.8c-1,0-1.6-0.6-1.6-0.6C9.4,6.2,6.8,5.6,6.8,5.6 C3.5,4.9,2.8,4,2.8,4l0.3,3.6c-2.3,2.2-1.8,5.2-1.8,5.2c0.4,2.7,1.8,4,3.5,5c1.7,1,6.3,0.3,6.3,0.3l1,2l1-2c2.7,0.4,4,0.1,4,0.1 c1.2,0,3.2-0.8,4.6-2.7C23,13.5,22.7,11.4,22.7,11.4z M7.1,16.8c-2.5,0-4.5-2.2-4.4-4.6c0.1-2.4,2-4.4,4.4-4.4c2.4,0,4.3,2,4.4,4.4 C11.6,14.7,9.6,16.8,7.1,16.8z M12.1,19.5l-1.7-3.2c0,0,1.6-1.2,1.7-3.6c0,0-0.1,2,1.7,3.6L12.1,19.5z M17.1,16.8 c-2.5,0-4.5-2.2-4.4-4.6c0.1-2.4,2-4.4,4.4-4.4c2.4,0,4.3,2,4.4,4.4C21.5,14.7,19.6,16.8,17.1,16.8z"></path></svg></div><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 RhHWP"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Calendar</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Clients</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Workflow</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Dashboard</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H11V3M13,3V11H21V5C21,3.89 20.11,3 19,3M13,13V21H19C20.11,21 21,20.11 21,19V13"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Manage</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Settings</div></div></a><span><div class="styles__NavItem-sc-xh2s93-3 fXBiLB" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"></path></svg>Help</div></span></div><div class="App__WorkspaceWrapper-sc-1urod3b-3 fSCIGM" aria-live="polite"><div class="App__TopMenuWrapper-sc-1urod3b-1 iEoicu"><div class="styles__TopMenuWrapper-sc-c8kk2l-0 fbmOKD"><div class="styles__MenuToggle-sc-c8kk2l-2 fRPbLX"><button class="undefined Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" type="button" aria-label="menu"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button></div><div class="styles__UserName-sc-c8kk2l-1 fAdXuF">BrendanHerj Private Practice - Brendan Herjavec<span class="styles__TrialUpgrade-sc-c8kk2l-15 cOntnM">|<svg class="Icon__IconContainer-sc-s95nwd-0 fMbfUs" data-testid="icon" viewBox="0 0 24 24" fill="white" width="18" height="18" style="margin: 0px 5px;"><path data-testid="icon-path" d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg>12 days left on trial</span></div><div class="styles__Actions-sc-c8kk2l-3 iVMDfz"><div class="styles__ActionDropdownWrapper-sc-c8kk2l-4 efTxZI"><div class="styles__SearchWrapper-sc-c8kk2l-6 hBUylg"><div><div class="InputGroup__Wrapper-sc-kcke9n-3 jCMBil" data-testid="components_input-group"><div class="InputGroup__InputRow-sc-kcke9n-1 taPJV" data-testid="components_input-group_input-row"><div class="inputGroup__input-symbol InputGroup__InputSymbol-sc-kcke9n-2 hxEXGB" data-testid="components_input-group_input-symbol"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></span></div><div class="InputGroup__Input-sc-kcke9n-0 cwgEqz" data-testid="components_input-group_input"><div><input class="common__Input-sc-1hb9rs-24 iJWrSo" placeholder="Search..." type="text" value=""></div></div></div></div></div></div></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="privacy mode"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg></button></span></span></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="Recently Viewed"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg></button></span></span></span></span></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="add client"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg></button></span></span></div><button class="styles__UpgradeButton-sc-c8kk2l-16 hjGEhR Button__ButtonBase-sc-17zmp21-0 grrQNS" data-userpilot="upgrade-plan-topmenu" type="button" tabindex="0">Upgrade Plan</button><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" type="button" aria-label="more options"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></button></span></span></div></div></div></div><div class="App__Content-sc-1urod3b-2 uZzQq"><div class="Calendar__CalendarWrapper-sc-x68gcw-0 bIgTFw"><div class="ScreenReaderTitle__VisuallyHiddenScreenReadable-sc-1g5rjoy-0 deGNiO"> New Page Calendar </div><div style="visibility: hidden; display: none;">Loading...</div><div style="visibility: hidden; display: none;">Loading...</div><div style="visibility: hidden; display: none;">Loading...</div><div></div><div class="common__RootWorkspace-sc-1hb9rs-7 dgKGPI common__Wrapper-sc-1hb9rs-2 kLpUho"><div class="Sidebar__SidebarContent-sc-1ir4plx-0 bHDGGK"><div class="CardTitle__Wrapper-sc-1boazl2-0 leSmZR"><div class="CardTitle__Title-sc-1boazl2-1 erayvF">Wed, Feb 11</div></div><ul class="bp3-menu bp3-large Sidebar__TherapistList-sc-1ir4plx-1 HsRDv" style="background: transparent;"><div class="common__Subheader-sc-1hb9rs-25 fucXBY">Up Next Today</div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item Sidebar__NextUpListItem-sc-1ir4plx-2 gzqFft"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>No Upcoming Events</span><br><small>Appreciate the quiet moments</small></div></a></li></div></ul><hr class="Sidebar__Divider-sc-1ir4plx-4 idSUXM Divider-sc-1rwdet1-0 gtAJmU"><details class="Sidebar__NavSection-sc-1ir4plx-3 cAiwdb" open=""><summary><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M9.00002 8.12499L12.88 12.005L9.00002 15.885C8.61002 16.275 8.61002 16.905 9.00002 17.295C9.39002 17.685 10.02 17.685 10.41 17.295L15 12.705C15.39 12.315 15.39 11.685 15 11.295L10.41 6.705C10.02 6.31499 9.39002 6.31499 9.00002 6.705C8.62002 7.095 8.61002 7.73499 9.00002 8.12499Z"></path></svg>My Calendar</summary><div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="Checkbox__Wrapper-sc-t01l89-0 kQxRno"><input type="checkbox" tabindex="-1" aria-hidden="true"><div class="Checkbox__Content-sc-t01l89-1 hlrWkY"><div class="Checkbox__IconContainer-sc-t01l89-3 brTmgw" aria-checked="false" tabindex="0" role="checkbox" aria-labelledby="checkbox-label"><svg class="Icon__IconContainer-sc-s95nwd-0 bXJEKe" data-testid="icon" viewBox="0 0 24 24" fill="#237396"><path data-testid="icon-path" d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></svg></div><label class="Checkbox__Label-sc-t01l89-2 kuiIZA"></label></div></div><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Personal</span></div></a></li></div></div></details></div><div class="common__StandardWorkspace-sc-1hb9rs-6 dtArXg common__Wrapper-sc-1hb9rs-2 kLpUho"><button class="Calendar__NewSessionButton-sc-x68gcw-3 WUoVq Button__ButtonBase-sc-17zmp21-0 grrQNS" data-testid="containers_calendar_new-session" data-userpilot="fab-button" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></button><div class="Toolbar__CalendarToolbarWrapper-sc-1jryfir-0 jesMwL"><div class="Toolbar__ButtonGroup-sc-1jryfir-2 jCfWMe Toolbar__InlineSection-sc-1jryfir-1 eJMGKp"><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Today</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path></svg></button><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 bkTPIa" tabindex="0" type="button">Sync</button></span></span><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 fwkbtd" tabindex="0" type="button">Export</button></span></span></span></span></div><div class="Toolbar__TitleGroupWrapper-sc-1jryfir-3 kLwuGm Toolbar__InlineSection-sc-1jryfir-1 eJMGKp"><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg></button><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 bkTPIa" tabindex="0" type="button"></button></span></span><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></div><div class="Toolbar__ButtonGroup-sc-1jryfir-2 jCfWMe Toolbar__InlineSection-sc-1jryfir-1 eJMGKp"><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Day</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Week</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Month</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 hTEPhE" data-testid="icon" viewBox="0 0 24 24" fill="#000"><path data-testid="icon-path" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zM12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path></svg></button><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 bkTPIa" tabindex="0" type="button"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg></button></span></span></div></div><div class="Calendar__CardWithHeight-sc-x68gcw-1 jTHkwI Card-sc-1ac7maq-0 hsCPbp"><div style="visibility: hidden; display: none;">Loading...</div></div></div></div></div></div></div></div></div><script async="" src="https://js.stripe.com/v3/"></script><script async="" src="https://fattjs.fattpay.com/js/fattmerchant.js"></script><script type="text/javascript" src="/main.624335aaead0ef19241a.js"></script><div id="userpilotContent" key="1213681490" theme_id="0"><div class="conv-cont userpilot-conv" style="display: none;"><div class="canv userpilot-backdrop"></div></div></div><iframe name="__privateStripeMetricsController7780" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fbrendanherjtherapy.owlpractice.ca%2Fcalendar&amp;title=Practice%20Management&amp;referrer=https%3A%2F%2Fbrendanherjtherapy.owlpractice.ca%2Fsettings%2Fvideo&amp;muid=64d397e5-1660-4bda-a1c8-8da9f726e97a14174f&amp;sid=73e12af8-18fb-4d39-8e2e-ba7388041352e50090&amp;version=6&amp;preview=false&amp;__shared_params__[version]=v3" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div class="root-portal"><div class="Toaster__AnimateContent-sc-10pk1v-0 gdNcVs" role="region" aria-live="polite"></div></div><div class="root-portal"><div class="Toaster__AnimateContent-sc-10pk1v-0 feMjlG" role="region" aria-live="polite"></div></div></body></html>

@@ -19,7 +19,6 @@ function getCategoryInfo(changes: DetectedChanges): CategoryInfo[] {
     { key: "client", label: "Clients", ...counts(changes.clients) },
     { key: "appointment", label: "Appointments", ...counts(changes.appointments) },
     { key: "sessionNote", label: "Session Notes", ...counts(changes.sessionNotes) },
-    { key: "meetingLink", label: "Meeting Links", ...counts(changes.meetingLinks) },
   ];
 }
 

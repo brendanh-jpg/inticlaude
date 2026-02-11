@@ -1,4 +1,4 @@
-import type { Client, Appointment, SessionNote, MeetingLink } from "@/sync/types";
+import type { Client, Appointment, SessionNote } from "@/sync/types";
 import type {
   PlaySpaceClientResponse,
   PlaySpaceAppointmentResponse,
@@ -30,6 +30,8 @@ export function mapAppointment(raw: PlaySpaceAppointmentResponse): Appointment {
     no_show: "no-show",
   };
 
+  const playspaceBase = process.env.PLAYSPACE_BASE_URL || "https://agentic-ps.playspace.health";
+
   return {
     id: raw.id,
     practitionerId: raw.practitionerId || undefined,
@@ -44,6 +46,7 @@ export function mapAppointment(raw: PlaySpaceAppointmentResponse): Appointment {
     type: raw.typeOfSession === "in_person" ? "in-person" : "telehealth",
     status: statusMap[raw.attendanceStatus] ?? "scheduled",
     meetingLink: raw.videoMeetingUrl || undefined,
+    playspaceUrl: `${playspaceBase}/appointments/${raw.id}`,
     source: "playspace",
     sourceId: raw.id,
   };
@@ -59,16 +62,5 @@ export function mapNote(raw: PlaySpaceNoteResponse, clientId?: string): SessionN
     locked: raw.locked,
     source: "playspace",
     sourceId: raw.id,
-  };
-}
-
-export function mapMeetingLink(raw: PlaySpaceAppointmentResponse): MeetingLink | null {
-  if (!raw.videoMeetingUrl) return null;
-  return {
-    id: `ml-${raw.id}`,
-    appointmentId: raw.id,
-    url: raw.videoMeetingUrl,
-    source: "playspace",
-    sourceId: `ml-${raw.id}`,
   };
 }

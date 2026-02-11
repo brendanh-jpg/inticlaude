@@ -1,0 +1,882 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calendar</title><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" onload="this.onload=null;this.removeAttribute('media');"><meta name="robots" content="noindex, nofollow"><script>window.userpilotSettings = {token: 'NX-6a493d7a'};</script><script async="" src="https://js.userpilot.io/sdk/latest.js"></script><script async="" data-client-key="sdk-h5XaCIAThsGrQsQi" src="https://cdn.jsdelivr.net/npm/@growthbook/growthbook/dist/bundles/auto.min.js"></script><meta name="apple-mobile-web-app-title" content="Owl Practice"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="theme-color" content="#237396"><link rel="apple-touch-startup-image" href="/icon_180x180.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon_180x180.png"><link rel="apple-touch-icon" sizes="167x167" href="/icon_167x167.png"><link rel="apple-touch-icon" sizes="152x152" href="/icon_152x152.png"><link rel="apple-touch-icon" sizes="120x120" href="/icon_120x120.png"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><link href="/main.054b2f5eacdbf73260f2.css" rel="stylesheet"><link as="style" href="/0.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/15.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/17.054b2f5eacdbf73260f2.css" rel="preload"><link as="style" href="/9.054b2f5eacdbf73260f2.css" rel="preload"><script src="https://js.userpilot.io/sdk/version/1.771/app.js" async=""></script><style>
+iframe#userpilot-nps {
+  width: 900px;
+  right: 0px;
+  margin: 0px auto;
+  opacity: 1 !important;
+}
+
+/* NPS Mobile */
+@media (max-width: 900px) {
+  iframe#userpilot-nps {
+      width: 100%;
+  }
+}
+
+iframe#userpilot-resource-centre-frame {
+  width: 0px;
+  height: 0px;
+}
+
+div#userpilotContent[key="1213681490"]:not(.preview) {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  line-height: 18px;
+  -webkit-transition: none;
+  transition: none;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483638;
+  pointer-events: none;
+  outline: none !important;
+  background: none !important;
+  --sidebar-width: 0px;
+  direction: ltr;
+  display: block;
+}
+
+div#userpilotContent[key="1213681490"] * {
+  -webkit-transition: none;
+  transition: none;
+  direction: ltr;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont, #userpilotContent[key="1213681490"] .conv-backdrop-cont {
+  z-index: 999999999;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  transition: opacity 0.1s, z-index 0s, visibility 0s;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont, #userpilotContent[key="1213681490"] .conv-backdrop-cont {
+  z-index: 999999999;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  transition: opacity 0.1s, z-index 0s, visibility 0s;
+}
+
+#userpilotContent[key="1213681490"] .userpilot .conv-cont {
+  z-index: 2147483000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont {
+  background: none;
+}
+
+#userpilotContent[key="1213681490"] .canv {
+  position: absolute;
+  top: 0;
+  box-shadow: inset 0 0 0 0px #ffffff, inset 0 0 15px rgb(208, 208, 208);
+  background: none !important;
+  display: flex;
+  border: 10000px solid rgba(255, 255, 255, .56);
+  margin-left: -10000px;
+  margin-top: -10000px;
+  padding: 150px;
+  opacity: 0;
+  transition: opacity 0.2s, padding 0.2s;
+  border-radius: 10006px
+}
+
+#userpilotContent[key="1213681490"] .userpilot .canv {
+  position: fixed;
+  top: 0;
+  background: none;
+  display: flex;
+  border: 10000px solid rgba(255, 255, 255, .7);
+  margin-left: -10000px;
+  margin-top: -10000px;
+  padding: 150px;
+  opacity: 0;
+  border-radius: 10006px
+}
+
+#userpilotContent[key="1213681490"] .canv.userpilot-canv-hidden {
+  opacity: 0 !important
+}
+
+#userpilotContent[key="1213681490"] .userpilot-soft-focus .canv {
+  border: none
+}
+
+#userpilotContent[key="1213681490"] .conv-cont[userpilot-hidden] .up-userpilot-mmx-part{
+  pointer-events: none !important;
+}
+
+#userpilotContent[key="1213681490"] .up-userpilot-mmx-part {
+  position: absolute;
+  z-index: 1 !important;
+  background: none;
+}
+
+#userpilotContent[key="1213681490"] [up-backdrop="0"] {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont[backdrop-overlay="1"] .up-userpilot-mmx-part {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0px !important;
+  left: 0px !important;
+}
+
+#userpilotContent[key="1213681490"] .conv-cont.allow-scroll .up-userpilot-mmx-part {
+  pointer-events: none;
+}
+
+div#userpilotContent[key="1213681490"]>*, div#userpilotContent[key="1213681490"]>*:not(.userpilot-hotspot-container)>*:not(.userpilot-backdrop) {
+  pointer-events: all;
+}
+
+#userpilotContent[key="1213681490"] .userpilot-mmx-cursor {
+  position: fixed;
+  width: 14px;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  pointer-events: none
+}
+#userpilotContent[key="1213681490"] .userpilot-mmx-cursor * {
+  pointer-events: none !important;
+}
+#userpilotContent[key="1213681490"] .up-t-pluse {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 100%;
+  color: gainsboro;
+  background: gainsboro
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse {
+  width: 10px;
+  height: 10px;
+  pointer-events: none !important;
+}
+#userpilotContent[key="1213681490"] .up-t-pluse:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -3px;
+  top: -3px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 7px solid;
+  border-color: inherit;
+  -webkit-animation: userpilotActive 2s infinite linear;
+  animation: userpilotActive 2s infinite linear
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse:before {
+  height: 18px;
+  width: 18px;
+  left: -4px;
+  top: -4px;
+  border: 0px;
+  background: inherit;
+  -webkit-animation: userpilot-tooltip-pulse 2s infinite linear;
+  animation: userpilot-tooltip-pulse 2s infinite linear
+}
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@-webkit-keyframes active {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+#userpilotContent[key="1213681490"] .userpilot-ripple {
+  position: absolute;
+  pointer-events: none;
+  width: 0px;
+  height: 30px;
+  border: none;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple {
+  height: 18px;
+  width: 18px;
+  background-color: transparent !important;
+}
+#userpilotContent[key="1213681490"] .userpilot-ripple:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 0px;
+  top: 0px;
+  background-color: transparent;
+  border-radius: 50%;
+  background: inherit;
+  -webkit-animation: userpilotActive 2s infinite linear;
+  animation: userpilotActive 2s infinite linear;
+  border: 10px solid;
+  border-color: inherit;
+  box-sizing: border-box;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple:before {
+  height: 18px;
+  width: 18px;
+  left: -1px;
+  top: -1px;
+  -webkit-animation: userpilot-tooltip-pulse 2s infinite linear;
+  animation: userpilot-tooltip-pulse 2s infinite linear;
+}
+@-webkit-keyframes userpilot-tooltip-pulse {
+  0%,
+  100% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+@keyframes userpilot-tooltip-pulse {
+  0%,
+  100% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+#userpilotContent[key="1213681490"] .userpilot-ripple:after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 10px;
+  top: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  background: inherit;
+  -webkit-animation: userpilot_active_after 2s infinite linear;
+  animation: userpilot_active_after 2s infinite linear;
+  box-sizing: border-box;
+  background: currentColor;
+}
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple:after {
+  height: 10px;
+  width: 10px;
+  left: 4px;
+  top: 4px;
+  animation: none;
+}
+@keyframes userpilot_active_after {
+  0% {
+    -webkit-transform: scale(.1);
+    opacity: 1
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: scale(1)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(5)
+  }
+}
+
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    opacity: 1;
+    border-color: inherit;
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: scale(1.5);
+    border-color: inherit;
+  }
+
+  30% {
+    background: none;
+    border: 0 solid;
+    border-color: inherit;
+    opacity: 0
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    border-color: inherit;
+  }
+}
+
+
+/* sonar animations */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"], 
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"] {
+  background: none !important;
+  animation: none;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"]::after, 
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"]::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  border-radius: 150px;
+  animation: pulse-dot infinite 1.5s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="sonar"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="sonar"]::before {
+  left: 0px;
+  top: 0px;
+  animation: pulse-ring infinite 1.5s;
+  border-style: solid;
+  border-width: 4px;
+  padding: 5px;
+  background: none !important;
+}
+
+/* morph animation */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"],
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"] {
+  background: none !important;
+  animation: none;
+  height: 18px;
+  width: 18px;
+  left: -4px;
+  top: -4px;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"]::before {
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  opacity: .6;
+  position: absolute;
+  border-radius: 50%;
+  animation: morph 1s linear infinite;
+  box-shadow: 0 0 5px 1px currentColor;
+  border: 9px solid;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="morph"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="morph"]::after {
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  content: "";
+  display: block;
+}
+
+/* target animation */
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"],
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]{
+  height: 18px;
+  width: 18px;
+  box-shadow: 0 0 4px 2px currentColor;
+  opacity: 1;
+  animation: target 2s linear infinite;
+  background: currentColor !important;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: currentColor transparent transparent transparent;
+  opacity: .6;
+  background: none;
+  animation: none;
+  border-radius: 0;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="target"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="target"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent currentColor transparent;
+  opacity: .6;
+  top: initial;
+  left: initial;
+  border-radius: initial;
+  background: none;
+}
+
+ /* egg animations */
+ #userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"],
+ #userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 6px 4px currentColor;
+  animation: egg 600ms linear infinite;
+  animation-direction: alternate;
+  background: none !important;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"]::before,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  background: transparent;
+  border: 1px solid currentColor;
+  animation: none;
+}
+
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .up-t-pluse[animation="egg"]::after,
+#userpilotContent[key="1213681490"]:not([version="0.1"]) .userpilot-ripple[animation="egg"]::after {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  background: currentColor;
+  opacity: .6;
+}
+
+
+@keyframes userpilotActive {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@-webkit-keyframes active {
+  0% {
+    -webkit-transform: scale(.1);
+    border-color: inherit;
+    opacity: 1
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    border: 5px solid;
+    border-color: inherit;
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: scale(1.3);
+    border: 0 solid;
+    border-color: inherit
+  }
+
+  100% {
+    border: 0 solid;
+    border-color: inherit
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1, 1) translate(-50%, -50%);
+  }
+
+  30% {
+    transform: scale(1.25, 1.25) translate(-40%, -40%);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(-50%, -50%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale(1.8, 1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes morph {
+  0% {
+    transform: rotateZ(0);
+    border-radius: 20%;
+  }
+
+  50% {
+    transform: rotateZ(45deg);
+    border-radius: 50%;
+  }
+
+  100% {
+    transform: rotateZ(90deg);
+    border-radius: 20%;
+  }
+}
+
+@keyframes target {
+  0% {
+    transform: rotateZ(0) scale(0.6);
+  }
+
+  50% {
+    transform: rotateZ(180deg) scale(1);
+  }
+
+  100% {
+    transform: rotateZ(360deg) scale(0.6);
+  }
+}
+
+@keyframes egg {
+  from {
+    box-shadow: inset 0 0 8px 3px currentColor;
+  }
+
+  to {
+    box-shadow: inset 0 0 4px 1px currentColor;
+  }
+}</style><style>
+iframe.userpilot-disabled-iframe {
+  pointer-events: none !important;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-nps,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-checklist,
+iframe#userpilotSurveys,
+iframe#userpilot-survey {
+  background: none;
+  max-height: none;
+  max-width: none;
+  min-height: 0px;
+  min-width: 0px;
+  filter: none;
+  pointer-events: initial;
+  outline: none;
+  visibility: visible;
+  transition: none;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-checklist,
+iframe#userpilotSurveys,
+iframe#userpilot-survey {
+  right: initial;
+  left: initial;
+  top: initial;
+  bottom: initial;
+}
+
+iframe#userpilotIframeContainer,
+iframe#userpilotContentNativeIframe,
+iframe#userpilot-resource-centre-frame,
+iframe#userpilot-survey,
+iframe#userpilotSurveys {
+    display: initial;
+}
+
+iframe#userpilotContentNativeIframe {
+  user-select: none;
+}
+
+.userpilot-mask-item {
+  position: absolute;
+  top: 0px;
+  z-index: 2147483647;
+  pointer-events: none;
+  box-shadow: rgb(239, 71, 132) 0px 0px 0px 1px inset !important;
+  background-color: rgba(239, 71, 132, 0.09) !important;
+  border: none;
+  pointer-events: none;
+  color-scheme: light;
+}
+
+#userpilot-banner_v2-container {
+  display: flex;
+}
+
+iframe#userpilotIframeContainer.userpilot-banner {
+  box-sizing: content-box;
+}
+</style><style>
+  /* Container styles */
+  .bb-custom-select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* Opener button styles */
+  .bb-custom-select-opener {
+    display: none;
+  }
+
+  /* Disabled state styles */
+  .bb-custom-select-container.bb-is-disabled .bb-custom-select-opener {
+    background-color: #e9ecef;
+    border-color: #505050;
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+
+  /* Add not-allowed cursor to the entire container when disabled */
+  .bb-custom-select-container.bb-is-disabled {
+    cursor: not-allowed;
+  }
+
+  /* Also ensure the select element shows not-allowed cursor when disabled */
+  .bb-custom-select-container.bb-is-disabled select {
+    cursor: not-allowed;
+  }
+
+  .bb-custom-select-container.bb-is-disabled .bb-custom-select-opener::after {
+    border-top-color: #6c757d;
+  }
+
+  /* Add dropdown arrow */
+  .bb-custom-select-opener::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666;
+  }
+
+  /* Rotate arrow when open */
+  .bb-custom-select-opener.bb-is-open::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  /* Keep native select visible */
+  .bb-customSelect select {
+    position: relative;
+    width: 100%;
+  }
+
+  /* Dropdown panel */
+  .bb-custom-select-panel {
+    display: none;  /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999999; /* Should always be on top of other elements */
+    margin-top: 4px;
+    width: max-content; /* Allow panel to grow based on content */
+    min-width: 100%;   /* But ensure it's at least as wide as the opener */
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  /* Show panel when container has bb-is-open class */
+  .bb-custom-select-container.bb-is-open .bb-custom-select-panel {
+    display: block;
+  }
+
+  /* Option styles */
+  .bb-custom-select-option {
+    padding: 6px 12px;
+    line-height: 1.5;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .bb-custom-select-option:hover,
+  .bb-custom-select-option.bb-has-focus {
+    background-color: #f0f9fa;
+  }
+
+  .bb-custom-select-option.bb-is-selected {
+    background-color: #e9ecef;
+  }
+</style><link rel="stylesheet" type="text/css" href="/0.054b2f5eacdbf73260f2.css"><script charset="utf-8" src="/0.be0181f7385702419586.chunk.js"></script><script charset="utf-8" src="/1.82bc9082982ecc8e31f9.chunk.js"></script><style data-styled-components=""></style><style data-styled-components=""></style><style data-emotion=""></style><style>.cke{visibility:hidden;}</style><script charset="utf-8" src="/16.1ee8548cc095f531623b.chunk.js"></script><script charset="utf-8" src="/4.dfe4fd97da37b6cc1809.chunk.js"></script><script charset="utf-8" src="/49.181b5a837fea3f6bfcc5.chunk.js"></script><script charset="utf-8" src="/72.5f6f5d10fd3faa705a4d.chunk.js"></script><script charset="utf-8" src="/69.19a1f0e1149244b966ef.chunk.js"></script><script charset="utf-8" src="/29.7ba425ec1807c242f4da.chunk.js"></script><script src="//js.userpilot.io/sdk/latest.js"></script><link rel="stylesheet" type="text/css" href="/9.054b2f5eacdbf73260f2.css"><script charset="utf-8" src="/9.500e00f51f32cccf24b5.chunk.js"></script><link rel="stylesheet" type="text/css" href="/17.054b2f5eacdbf73260f2.css"><script charset="utf-8" src="/17.d31f6dbf39f06be84f82.chunk.js"></script></head><body><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/></noscript><noscript style="display: block; margin-left: auto; margin-right: auto; font-family: sans-serif; max-width: 380px; padding: 1em; text-align: center;">If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript><div id="app" style="height: 100%; width: 100%;" role="main"><div class="App__Container-sc-1urod3b-0 fZgMJP Provider__Base-sc-vpkrki-0 ikABkA"><style>
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Regular'), url(/49de8c8f70a36ad4618f9e4975f5364b.ttf) format('truetype');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Medium'), url(/a822d33614b51eb05478e0e29cf757f3.ttf) format('truetype');
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: 'HKGrotesk';
+        src: local('HKGrotesk-Bold'), url(/0043e1adfa9ab91f0df1a629e273302d.ttf) format('truetype');
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: 'HKGrotesk-Regular';
+        src: local('HKGrotesk-Regular'), url(/49de8c8f70a36ad4618f9e4975f5364b.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'ProximaNova-Regular';
+        src: local('ProximaNova-Regular'), url(/feface72008e6857da27f939e1eceffa.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'ProximaNova-Medium';
+        src: local('ProximaNova-Medium'), url(/251c35fe6eeec7ffa3d335357aabcbd0.ttf) format('truetype');
+        font-weight: 500;
+      }
+    </style><div class="styles__SideMenuWrapper-sc-xh2s93-4 dClqlN"><div class="styles__FirstNavItem-sc-xh2s93-5 fKdJXr styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 iCpAWl" data-testid="icon" viewBox="0 0 24 24" fill="#FFF" width="60" height="60"><path data-testid="icon-path" d="M8.5,10.7c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5S9,11.5,9,11.2C9,11,8.8,10.7,8.5,10.7z M18.4,10.7 c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5C18.9,11,18.7,10.7,18.4,10.7z M17.1,8.5 c-2,0-3.5,1.4-3.7,3.5c-0.2,2.1,1.6,4.1,3.7,4.1c2,0,3.7-1.7,3.7-3.9C20.7,10.1,19.1,8.5,17.1,8.5z M17.1,14.4 c-1.4,0-2.5-1.2-2.5-2.6c0-1.4,1.1-2.5,2.5-2.5c1.4,0,2.5,1.1,2.5,2.5C19.6,13.2,18.4,14.4,17.1,14.4z M7.2,8.5 c-2,0-3.5,1.4-3.7,3.5c-0.2,2.1,1.6,4.1,3.7,4.1c2,0,3.7-1.7,3.7-3.9C10.8,10.1,9.3,8.5,7.2,8.5z M7.3,14.4c-1.4,0-2.5-1.2-2.5-2.6 c0-1.4,1.1-2.5,2.5-2.5s2.5,1.1,2.5,2.5C9.7,13.2,8.6,14.4,7.3,14.4z M22.7,11.4c0-2.1-1.7-3.8-1.7-3.8L21.3,4 c-1,0.8-2.6,1.2-2.6,1.2l-2,0.6c-1.9,0.5-3,1.3-3,1.3C13,7.9,12,7.8,12,7.8c-1,0-1.6-0.6-1.6-0.6C9.4,6.2,6.8,5.6,6.8,5.6 C3.5,4.9,2.8,4,2.8,4l0.3,3.6c-2.3,2.2-1.8,5.2-1.8,5.2c0.4,2.7,1.8,4,3.5,5c1.7,1,6.3,0.3,6.3,0.3l1,2l1-2c2.7,0.4,4,0.1,4,0.1 c1.2,0,3.2-0.8,4.6-2.7C23,13.5,22.7,11.4,22.7,11.4z M7.1,16.8c-2.5,0-4.5-2.2-4.4-4.6c0.1-2.4,2-4.4,4.4-4.4c2.4,0,4.3,2,4.4,4.4 C11.6,14.7,9.6,16.8,7.1,16.8z M12.1,19.5l-1.7-3.2c0,0,1.6-1.2,1.7-3.6c0,0-0.1,2,1.7,3.6L12.1,19.5z M17.1,16.8 c-2.5,0-4.5-2.2-4.4-4.6c0.1-2.4,2-4.4,4.4-4.4c2.4,0,4.3,2,4.4,4.4C21.5,14.7,19.6,16.8,17.1,16.8z"></path></svg></div><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 RhHWP"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Calendar</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Clients</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Workflow</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Dashboard</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H11V3M13,3V11H21V5C21,3.89 20.11,3 19,3M13,13V21H19C20.11,21 21,20.11 21,19V13"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Manage</div></div></a><a class="styles__LinkWrapper-sc-xh2s93-0 khbOzY Link__LinkWrapper-sc-1ehb5za-0 cTOpBr" data-testid="link" tabindex="0"><div class="styles__NavItem-sc-xh2s93-3 fXBiLB"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg><div class="styles__NavText-sc-xh2s93-2 eQFZCa">Settings</div></div></a><span><div class="styles__NavItem-sc-xh2s93-3 fXBiLB" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"></path></svg>Help</div></span></div><div class="App__WorkspaceWrapper-sc-1urod3b-3 fSCIGM" aria-live="polite"><div class="App__TopMenuWrapper-sc-1urod3b-1 iEoicu"><div class="styles__TopMenuWrapper-sc-c8kk2l-0 fbmOKD"><div class="styles__MenuToggle-sc-c8kk2l-2 fRPbLX"><button class="undefined Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" type="button" aria-label="menu"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button></div><div class="styles__UserName-sc-c8kk2l-1 fAdXuF">BrendanHerj Private Practice - Brendan Herjavec<span class="styles__TrialUpgrade-sc-c8kk2l-15 cOntnM">|<svg class="Icon__IconContainer-sc-s95nwd-0 fMbfUs" data-testid="icon" viewBox="0 0 24 24" fill="white" width="18" height="18" style="margin: 0px 5px;"><path data-testid="icon-path" d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg>12 days left on trial</span></div><div class="styles__Actions-sc-c8kk2l-3 iVMDfz"><div class="styles__ActionDropdownWrapper-sc-c8kk2l-4 efTxZI"><div class="styles__SearchWrapper-sc-c8kk2l-6 hBUylg"><div><div class="InputGroup__Wrapper-sc-kcke9n-3 jCMBil" data-testid="components_input-group"><div class="InputGroup__InputRow-sc-kcke9n-1 taPJV" data-testid="components_input-group_input-row"><div class="inputGroup__input-symbol InputGroup__InputSymbol-sc-kcke9n-2 hxEXGB" data-testid="components_input-group_input-symbol"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></span></div><div class="InputGroup__Input-sc-kcke9n-0 cwgEqz" data-testid="components_input-group_input"><div><input class="common__Input-sc-1hb9rs-24 iJWrSo" placeholder="Search..." type="text" value="" style=""></div></div></div></div></div></div></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="privacy mode"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg></button></span></span></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="Recently Viewed"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg></button></span></span></span></span></div><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" tabindex="0" type="button" aria-label="add client"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg></button></span></span></div><button class="styles__UpgradeButton-sc-c8kk2l-16 hjGEhR Button__ButtonBase-sc-17zmp21-0 grrQNS" data-userpilot="upgrade-plan-topmenu" type="button" tabindex="0">Upgrade Plan</button><div class="styles__ActionButtonWrapper-sc-c8kk2l-5 iAZBUU"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonFlat-sc-17zmp21-1 jniHVF Button__ButtonBase-sc-17zmp21-0 bYqsyp" type="button" aria-label="more options"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></button></span></span></div></div></div></div><div class="App__Content-sc-1urod3b-2 uZzQq"><div class="Calendar__CalendarWrapper-sc-x68gcw-0 bIgTFw"><div class="ScreenReaderTitle__VisuallyHiddenScreenReadable-sc-1g5rjoy-0 deGNiO"> New Page Calendar </div><div></div><div class="common__RootWorkspace-sc-1hb9rs-7 dgKGPI common__Wrapper-sc-1hb9rs-2 kLpUho"><div class="Sidebar__SidebarContent-sc-1ir4plx-0 bHDGGK"><div class="CardTitle__Wrapper-sc-1boazl2-0 leSmZR"><div class="CardTitle__Title-sc-1boazl2-1 erayvF">Wed, Feb 11</div></div><ul class="bp3-menu bp3-large Sidebar__TherapistList-sc-1ir4plx-1 HsRDv" style="background: transparent;"><div class="common__Subheader-sc-1hb9rs-25 fucXBY">Up Next Today</div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item Sidebar__NextUpListItem-sc-1ir4plx-2 gzqFft"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path></svg><div class="bp3-fill bp3-text-overflow-ellipsis"><span>No Upcoming Events</span><br><small>Appreciate the quiet moments</small></div></a></li></div></ul><hr class="Sidebar__Divider-sc-1ir4plx-4 idSUXM Divider-sc-1rwdet1-0 gtAJmU"><details class="Sidebar__NavSection-sc-1ir4plx-3 cAiwdb" open=""><summary><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M9.00002 8.12499L12.88 12.005L9.00002 15.885C8.61002 16.275 8.61002 16.905 9.00002 17.295C9.39002 17.685 10.02 17.685 10.41 17.295L15 12.705C15.39 12.315 15.39 11.685 15 11.295L10.41 6.705C10.02 6.31499 9.39002 6.31499 9.00002 6.705C8.62002 7.095 8.61002 7.73499 9.00002 8.12499Z"></path></svg>My Calendar</summary><div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="Checkbox__Wrapper-sc-t01l89-0 kQxRno"><input type="checkbox" tabindex="-1" aria-hidden="true" checked="" style=""><div class="Checkbox__Content-sc-t01l89-1 hlrWkY"><div class="Checkbox__IconContainer-sc-t01l89-3 brTmgw" aria-checked="true" tabindex="0" role="checkbox" aria-labelledby="checkbox-label"><svg class="Icon__IconContainer-sc-s95nwd-0 fABsr" data-testid="icon" viewBox="0 0 24 24" fill=""><path data-testid="icon-path" d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></div><label class="Checkbox__Label-sc-t01l89-2 kuiIZA"></label></div></div><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Personal</span></div></a></li></div><div class="ListItem__ListItemWrapper-sc-rurafb-1 bDyUqZ"><li class=""><a tabindex="0" class="bp3-menu-item bp3-popover-dismiss navigation-list-item "><div class="Checkbox__Wrapper-sc-t01l89-0 kQxRno"><input type="checkbox" tabindex="-1" aria-hidden="true" checked="" style=""><div class="Checkbox__Content-sc-t01l89-1 hlrWkY"><div class="Checkbox__IconContainer-sc-t01l89-3 brTmgw" aria-checked="true" tabindex="0" role="checkbox" aria-labelledby="checkbox-label"><svg class="Icon__IconContainer-sc-s95nwd-0 hJIpxo" data-testid="icon" viewBox="0 0 24 24" fill="#add266"><path data-testid="icon-path" d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></div><label class="Checkbox__Label-sc-t01l89-2 kuiIZA"></label></div></div><div class="bp3-fill bp3-text-overflow-ellipsis"><span>Brendan Herjavec</span></div></a></li></div></div></details></div><div class="common__StandardWorkspace-sc-1hb9rs-6 dtArXg common__Wrapper-sc-1hb9rs-2 kLpUho"><button class="Calendar__NewSessionButton-sc-x68gcw-3 WUoVq Button__ButtonBase-sc-17zmp21-0 grrQNS" data-testid="containers_calendar_new-session" data-userpilot="fab-button" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 bnEzOj" data-testid="icon" viewBox="0 0 24 24" fill="#FFF"><path data-testid="icon-path" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></button><div class="Toolbar__CalendarToolbarWrapper-sc-1jryfir-0 jesMwL"><div class="Toolbar__ButtonGroup-sc-1jryfir-2 jCfWMe Toolbar__InlineSection-sc-1jryfir-1 eJMGKp"><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Today</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path></svg></button><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 bkTPIa" tabindex="0" type="button">Sync</button></span></span><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 bkTPIa" tabindex="0" type="button">Export</button></span></span></span></span></div><div class="Toolbar__TitleGroupWrapper-sc-1jryfir-3 kLwuGm Toolbar__InlineSection-sc-1jryfir-1 eJMGKp"><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg></button><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 bkTPIa" tabindex="0" type="button">Feb 8 - 14, 2026</button></span></span><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></div><div class="Toolbar__ButtonGroup-sc-1jryfir-2 jCfWMe Toolbar__InlineSection-sc-1jryfir-1 eJMGKp"><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Day</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 cguDny" type="button" tabindex="0">Week</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0">Month</button><button class="undefined Button__ButtonBase-sc-17zmp21-0 bkTPIa" type="button" tabindex="0"><svg class="Icon__IconContainer-sc-s95nwd-0 hTEPhE" data-testid="icon" viewBox="0 0 24 24" fill="#000"><path data-testid="icon-path" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zM12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path></svg></button><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><button class="Button__ButtonBase-sc-17zmp21-0 bkTPIa" tabindex="0" type="button"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg></button></span></span></div></div><div class="Calendar__CardWithHeight-sc-x68gcw-1 jTHkwI Card-sc-1ac7maq-0 hsCPbp"><div class="FullCalendar__Container-sc-11wr82n-0 cwdsxR"><div id="fullcalendar" class="fc fc-unthemed fc-ltr"><div class="fc-toolbar fc-header-toolbar" style=""><div class="fc-left"></div><div class="fc-right"></div><div class="fc-center"></div><div class="fc-clear"></div></div><div class="fc-view-container" style=""><div class="fc-view fc-agendaWeek-view fc-agenda-view" style=""><table class=""><thead class="fc-head"><tr><td class="fc-head-container fc-widget-header"><div class="fc-row fc-widget-header" style="border-right-width: 1px; margin-right: 14px;"><table class=""><thead><tr><th class="fc-axis fc-widget-header" style="width: 67px;"></th><th class="fc-day-header fc-widget-header fc-sun fc-past" data-date="2026-02-08"><a data-goto="{&quot;date&quot;:&quot;2026-02-08&quot;,&quot;type&quot;:&quot;day&quot;}">Sun 2/8</a></th><th class="fc-day-header fc-widget-header fc-mon fc-past" data-date="2026-02-09"><a data-goto="{&quot;date&quot;:&quot;2026-02-09&quot;,&quot;type&quot;:&quot;day&quot;}">Mon 2/9</a></th><th class="fc-day-header fc-widget-header fc-tue fc-past" data-date="2026-02-10"><a data-goto="{&quot;date&quot;:&quot;2026-02-10&quot;,&quot;type&quot;:&quot;day&quot;}">Tue 2/10</a></th><th class="fc-day-header fc-widget-header fc-wed fc-today" data-date="2026-02-11"><a data-goto="{&quot;date&quot;:&quot;2026-02-11&quot;,&quot;type&quot;:&quot;day&quot;}">Wed 2/11</a></th><th class="fc-day-header fc-widget-header fc-thu fc-future" data-date="2026-02-12"><a data-goto="{&quot;date&quot;:&quot;2026-02-12&quot;,&quot;type&quot;:&quot;day&quot;}">Thu 2/12</a></th><th class="fc-day-header fc-widget-header fc-fri fc-future" data-date="2026-02-13"><a data-goto="{&quot;date&quot;:&quot;2026-02-13&quot;,&quot;type&quot;:&quot;day&quot;}">Fri 2/13</a></th><th class="fc-day-header fc-widget-header fc-sat fc-future" data-date="2026-02-14"><a data-goto="{&quot;date&quot;:&quot;2026-02-14&quot;,&quot;type&quot;:&quot;day&quot;}">Sat 2/14</a></th></tr></thead></table></div></td></tr></thead><tbody class="fc-body"><tr><td class="fc-widget-content"><div class="fc-day-grid fc-unselectable"><div class="fc-row fc-week fc-widget-content" style="border-right-width: 1px; margin-right: 14px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-axis fc-widget-content" style="width: 67px;"><span>all-day</span></td><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2026-02-08"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2026-02-09"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2026-02-10"></td><td class="fc-day fc-widget-content fc-wed fc-today " data-date="2026-02-11"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2026-02-12"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2026-02-13"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2026-02-14"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><tbody><tr><td class="fc-axis" style="width:67px"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></div><hr class="fc-divider fc-widget-header" style=""><div class="fc-scroller fc-time-grid-container" style="overflow: hidden scroll; height: 1240.44px;"><div class="fc-time-grid fc-unselectable"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-axis fc-widget-content" style="width: 67px;"></td><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2026-02-08"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2026-02-09"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2026-02-10"></td><td class="fc-day fc-widget-content fc-wed fc-today " data-date="2026-02-11"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2026-02-12"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2026-02-13"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2026-02-14"></td></tr></tbody></table></div><div class="fc-slats"><table class=""><tbody><tr data-time="00:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>12:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="00:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="00:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>12:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="00:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="01:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>1:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="01:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="01:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>1:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="01:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="02:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>2:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="02:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="02:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>2:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="02:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="03:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>3:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="03:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="03:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>3:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="03:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="04:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>4:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="04:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="04:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>4:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="04:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="05:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>5:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="05:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="05:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>5:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="05:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="06:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>6:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="06:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="06:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>6:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="06:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="07:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>7:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="07:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="07:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>7:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="07:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="08:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>8:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="08:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="08:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>8:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="08:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="09:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>9:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="09:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="09:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>9:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="09:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="10:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>10:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="10:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="10:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>10:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="10:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="11:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>11:00 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="11:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="11:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>11:30 am</span></td><td class="fc-widget-content"></td></tr><tr data-time="11:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="12:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>12:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="12:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="12:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>12:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="12:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="13:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>1:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="13:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="13:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>1:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="13:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="14:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>2:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="14:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="14:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>2:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="14:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="15:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>3:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="15:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="15:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>3:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="15:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="16:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>4:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="16:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="16:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>4:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="16:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="17:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>5:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="17:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="17:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>5:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="17:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="18:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>6:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="18:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="18:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>6:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="18:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="19:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>7:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="19:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="19:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>7:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="19:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="20:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>8:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="20:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="20:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>8:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="20:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="21:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>9:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="21:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="21:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>9:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="21:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="22:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>10:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="22:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="22:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>10:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="22:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="23:00:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>11:00 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="23:15:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr><tr data-time="23:30:00"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"><span>11:30 pm</span></td><td class="fc-widget-content"></td></tr><tr data-time="23:45:00" class="fc-minor"><td class="fc-axis fc-time fc-widget-content" style="width: 67px;"></td><td class="fc-widget-content"></td></tr></tbody></table></div><hr class="fc-divider fc-widget-header" style="display:none"><div class="fc-content-skeleton"><table><tbody><tr><td class="fc-axis" style="width: 67px;"></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end fc-draggable fc-resizable" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(173, 210, 102); inset: 1239.5px 0% -1487.5px; z-index: 1;"><div class="ui-resizable-handle ui-resizable-s styles__Wrapper-sc-1poe94z-1 gRfPTQ" color="#000000"><div class="styles__Title-sc-1poe94z-2 HmTrs" color="#000000"><span class="styles__HeaderTitleLeftWrapper-sc-1poe94z-9 boCzfX">10:00am<span class="styles__PrintSpan-sc-1poe94z-5 iOIiuC">&nbsp;-&nbsp;12:00pm</span></span><span>Paid</span></div><div class="styles__Content-sc-1poe94z-3 gLRTcd"><div class="ClientCodeBlock__Wrapper-sc-zzoprq-4 hAlNgD"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><div class="ClientCodeBlock__FlipAvatar-sc-zzoprq-5 huRPsx Avatar__Wrapper-sc-1pxdunm-0 ggTdzu" color="#FFF" size="35" style="font-size: 0.875em; margin-right: 0.25em; max-width: 35px; min-width: 35px;"><span class="Avatar__Content-sc-1pxdunm-1 bLmaLe">HHo</span></div></span></span><div class="ClientCodeBlock__GroupDetailsWrapper-sc-zzoprq-19 ekgXBd"><span class="ClientCodeBlock__ClientName-sc-zzoprq-2 ncXnS" title="Hillary Hootkins" size="16" font-size="small">Hillary Hootkins</span></div></div><span class="styles__PrintBlock-sc-1poe94z-6 kXNvA"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>&nbsp;Brendan Herjavec</span><span class="styles__PrintBlock-sc-1poe94z-6 kXNvA"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>&nbsp;Hoot Help Session</span><span class="styles__PrintBlockWithComment-sc-1poe94z-7 fWeopT"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><svg class="Icon__IconContainer-sc-s95nwd-0 kpkqnr" data-testid="icon" viewBox="0 0 24 24" fill="#000000" tabindex="0"><path data-testid="icon-path" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10M16,14H8V13C8,11.67 10.67,11 12,11C13.33,11 16,11.67 16,13V14M12,6A2,2 0 0,1 14,8A2,2 0 0,1 12,10A2,2 0 0,1 10,8A2,2 0 0,1 12,6Z"></path></svg></span></span><p class="styles__PrintHide-sc-1poe94z-8 eoTEcG">Hoot Help Session</p></span></div></div></a></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 0px; bottom: -2975.5px;"></div></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 0px; bottom: -1115.5px;"></div><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 2107.5px; bottom: -2975.5px;"></div></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 0px; bottom: -1115.5px;"></div><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 2107.5px; bottom: -2975.5px;"></div></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end fc-draggable fc-resizable" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(173, 210, 102); inset: 2107.5px 0% -2210.83px; z-index: 1;"><div class="ui-resizable-handle ui-resizable-s styles__Wrapper-sc-1poe94z-1 gRfPTQ" color="#000000"><div class="styles__Title-sc-1poe94z-2 HmTrs" color="#000000"><span class="styles__HeaderTitleLeftWrapper-sc-1poe94z-9 boCzfX">5:00pm<span class="styles__PrintSpan-sc-1poe94z-5 iOIiuC">&nbsp;-&nbsp;5:50pm</span></span><span>Attended</span></div><div class="styles__Content-sc-1poe94z-3 gLRTcd"><div class="ClientCodeBlock__Wrapper-sc-zzoprq-4 hAlNgD"><span class="bp3-popover-wrapper"><span aria-haspopup="true" class="bp3-popover-target"><div class="ClientCodeBlock__FlipAvatar-sc-zzoprq-5 huRPsx Avatar__Wrapper-sc-1pxdunm-0 ggTdzu" color="#FFF" size="35" style="font-size: 0.875em; margin-right: 0.25em; max-width: 35px; min-width: 35px;"><span class="Avatar__Content-sc-1pxdunm-1 bLmaLe">BSm</span></div></span></span><div class="ClientCodeBlock__GroupDetailsWrapper-sc-zzoprq-19 ekgXBd"><span class="ClientCodeBlock__ClientName-sc-zzoprq-2 ncXnS" title="Billy Smith" size="11" font-size="small">Billy Smith</span></div></div><span class="styles__PrintBlock-sc-1poe94z-6 kXNvA"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>&nbsp;Brendan Herjavec</span><span class="styles__PrintBlock-sc-1poe94z-6 kXNvA"><svg class="Icon__IconContainer-sc-s95nwd-0 djJARe" data-testid="icon" viewBox="0 0 24 24"><path data-testid="icon-path" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>&nbsp;Psychotherapy with the patient present</span><span class="styles__PrintBlockWithComment-sc-1poe94z-7 fWeopT"><p class="styles__PrintHide-sc-1poe94z-8 eoTEcG">Psychotherapy with the patient present</p></span></div></div></a></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 0px; bottom: -1115.5px;"></div><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 2107.5px; bottom: -2975.5px;"></div></div><div class="fc-business-container"></div><div class="fc-now-indicator fc-now-indicator-line" style="top: 783.621px;"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 0px; bottom: -1115.5px;"></div><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 2107.5px; bottom: -2975.5px;"></div></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 0px; bottom: -1115.5px;"></div><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 2107.5px; bottom: -2975.5px;"></div></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"><div class="fc-bgevent" style="background-color: rgb(174, 174, 174); top: 0px; bottom: -2975.5px;"></div></div><div class="fc-business-container"></div></div></td></tr></tbody></table><div class="fc-now-indicator fc-now-indicator-arrow" style="top: 783.621px;"></div></div></div></div></td></tr></tbody></table></div></div></div></div></div></div></div></div></div></div></div></div><script async="" src="https://js.stripe.com/v3/"></script><script async="" src="https://fattjs.fattpay.com/js/fattmerchant.js"></script><script type="text/javascript" src="/main.624335aaead0ef19241a.js"></script><div id="userpilotContent" key="1213681490" theme_id="0"><div class="conv-cont userpilot-conv" style="display: none;"><div class="canv userpilot-backdrop"></div></div></div><iframe name="__privateStripeMetricsController8380" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fbrendanherjtherapy.owlpractice.ca%2Fclient%2F1%2Fsessions&amp;title=Practice%20Management&amp;referrer=&amp;muid=5547b852-1ee6-4187-93c2-ef8bedf4229c5fa2aa&amp;sid=a1e04f46-4ae7-4041-bc31-f3aacd1971a73207a7&amp;version=6&amp;preview=false&amp;__shared_params__[version]=v3" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div class="root-portal"><div class="Toaster__AnimateContent-sc-10pk1v-0 gdNcVs" role="region" aria-live="polite"></div></div><div class="root-portal"><div class="Toaster__AnimateContent-sc-10pk1v-0 feMjlG" role="region" aria-live="polite"></div></div><iframe title="Checklist" id="userpilot-checklist" key="1213681490" widget="5" style="width: 176px !important; border: none; position: fixed; z-index: 2147483638; display: block; color-scheme: light; height: 70px !important; opacity: 1 !important; zoom: 1; bottom: 60px; min-height: 70px !important; min-width: 176px !important; right: 16px;"></iframe></body></html>

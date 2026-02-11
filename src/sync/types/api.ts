@@ -21,11 +21,10 @@ export const syncRequestSchema = z.object({
     clients: z.array(z.any()).default([]),
     appointments: z.array(z.any()).default([]),
     sessionNotes: z.array(z.any()).default([]),
-    meetingLinks: z.array(z.any()).default([]),
   }),
   options: z.object({
     dryRun: z.boolean().default(false),
-    entities: z.array(z.enum(["client", "appointment", "sessionNote", "meetingLink"])).optional(),
+    entities: z.array(z.enum(["client", "appointment", "sessionNote"])).optional(),
   }).optional(),
 });
 

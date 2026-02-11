@@ -1,4 +1,4 @@
-import type { Client, Appointment, SessionNote, MeetingLink } from "@/sync/types";
+import type { Client, Appointment, SessionNote } from "@/sync/types";
 import type { PlaySpaceCredentials } from "@/sync/types/api";
 import type {
   PlaySpaceListResponse,
@@ -7,7 +7,7 @@ import type {
   PlaySpaceNoteResponse,
   PlaySpacePractitionerResponse,
 } from "./types";
-import { mapClient, mapAppointment, mapNote, mapMeetingLink } from "./mappers";
+import { mapClient, mapAppointment, mapNote } from "./mappers";
 import { createChildLogger } from "@/sync/logger";
 
 const log = createChildLogger("playspace-client");
@@ -165,13 +165,4 @@ export class PlaySpaceClient {
     return raw.map((n) => mapNote(n, options.clientId));
   }
 
-  // --- Meeting Links (derived from appointments with videoMeetingUrl) ---
-
-  async getMeetingLinks(options?: { practitionerId?: string }): Promise<MeetingLink[]> {
-    const params: Record<string, string> = {};
-    params.practitionerId = options?.practitionerId ?? DEFAULT_PRACTITIONER_ID;
-
-    const raw = await this.fetchAllPages<PlaySpaceAppointmentResponse>("/appointments", params);
-    return raw.map(mapMeetingLink).filter((ml): ml is MeetingLink => ml !== null);
-  }
 }

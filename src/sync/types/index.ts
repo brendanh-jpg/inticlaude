@@ -28,6 +28,7 @@ export interface Appointment {
   type: "in-person" | "telehealth";
   status: "scheduled" | "completed" | "cancelled" | "no-show";
   meetingLink?: string;
+  playspaceUrl?: string;
   source: "playspace";
   sourceId: string;
 }
@@ -44,17 +45,7 @@ export interface SessionNote {
   sourceId: string;
 }
 
-export interface MeetingLink {
-  id: string;
-  appointmentId: string;
-  url: string;
-  provider?: string;
-  expiresAt?: string;
-  source: "playspace";
-  sourceId: string;
-}
-
-export type EntityType = "client" | "appointment" | "sessionNote" | "meetingLink";
+export type EntityType = "client" | "appointment" | "sessionNote";
 
 export interface SyncResult {
   entity: EntityType;

@@ -1,4 +1,4 @@
-export type EntityType = "client" | "appointment" | "sessionNote" | "meetingLink";
+export type EntityType = "client" | "appointment" | "sessionNote";
 
 export type SyncStatus = "synced" | "failed" | "pending";
 

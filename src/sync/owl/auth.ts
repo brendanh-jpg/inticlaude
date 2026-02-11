@@ -34,9 +34,20 @@ export async function loginToOwl(page: Page, credentials: OwlCredentials): Promi
  * The sidebar has navigation links (Calendar, Clients, etc.) that only appear when authenticated.
  */
 export async function isLoggedIn(page: Page): Promise<boolean> {
+  // Check URL — if we're on the login page, we're not logged in
+  const url = page.url();
+  if (url.endsWith("/") || url.includes("/sign-in") || url.includes("/login")) {
+    return false;
+  }
+
+  // If we're on any authenticated page (calendar, clients, client/*, etc.), we're logged in
+  if (url.includes("/calendar") || url.includes("/client") || url.includes("/settings")) {
+    return true;
+  }
+
+  // Fallback: look for sidebar nav (Calendar link or any nav element)
   try {
-    // The left sidebar nav with "Calendar" text is only present when logged in
-    await page.waitForSelector('a:has-text("Calendar")', { timeout: 3000 });
+    await page.waitForSelector('a:has-text("Calendar"), [class*="Sidebar"], [class*="sidebar"], nav', { timeout: 5000 });
     return true;
   } catch {
     return false;

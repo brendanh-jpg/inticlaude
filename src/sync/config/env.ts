@@ -25,6 +25,8 @@ const envSchema = z.object({
   SYNC_LEDGER_PATH: z
     .string()
     .default("./sync_ledger.db"),
+  SYNC_DATE_FROM: z.string().optional(), // ISO date e.g. "2026-01-01"
+  SYNC_DATE_TO: z.string().optional(),   // ISO date e.g. "2026-12-31"
 });
 
 export type SyncEnv = z.infer<typeof envSchema>;

@@ -609,12 +609,25 @@ export async function createAppointment(page: Page, appointment: Appointment): P
     }
   }
 
-  // Add description as session comment
-  if (appointment.description) {
-    try {
-      const comments = await page.$('.bp3-overlay-content textarea[placeholder="Enter comments..."]');
-      if (comments) await comments.fill(appointment.description);
-    } catch { /* optional field */ }
+  // Build session comments: PlaySpace URL + meeting link + description
+  {
+    const commentParts: string[] = [];
+    if (appointment.playspaceUrl) {
+      commentParts.push(`PlaySpace: ${appointment.playspaceUrl}`);
+    }
+    if (appointment.meetingLink) {
+      commentParts.push(`Meeting Link: ${appointment.meetingLink}`);
+    }
+    if (appointment.description) {
+      commentParts.push(appointment.description);
+    }
+
+    if (commentParts.length > 0) {
+      try {
+        const comments = await page.$('.bp3-overlay-content textarea[placeholder="Enter comments..."]');
+        if (comments) await comments.fill(commentParts.join("\n"));
+      } catch { /* optional field */ }
+    }
   }
 
   // Submit — use evaluate to bypass any remaining overlay backdrops

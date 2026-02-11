@@ -1,12 +1,12 @@
-import type { Client, Appointment, SessionNote, MeetingLink, SyncResult } from "@/sync/types";
+import type { Client, Appointment, SessionNote, SyncResult } from "@/sync/types";
 import type { OwlCredentials } from "@/sync/types/api";
 import { createBrowserSession, closeBrowserSession, type BrowserSession } from "@/sync/browser/session";
 import { ensureLoggedIn } from "./auth";
 import { createClient, updateClient, findExistingClient, searchClientByName } from "./pages/clients";
 import { createAppointment, updateAppointment, findExistingAppointment } from "./pages/appointments";
-import { createSessionNote, findExistingNote } from "./pages/session-notes";
-import { setMeetingLink } from "./pages/meeting-links";
+import { navigateToSessionNotes, createSessionNote, findExistingNote } from "./pages/session-notes";
 import { createChildLogger } from "@/sync/logger";
+import { findRecord } from "@/sync/ledger/repository";
 
 const log = createChildLogger("owl-client");
 
@@ -45,18 +45,29 @@ export class OwlPracticeClient {
     await ensureLoggedIn(page, this.credentials);
 
     try {
-      // Check if client already exists by name
+      // Step 1: Check ledger first (fast — no browser automation)
+      const ledgerRecord = findRecord(client.sourceId, "client");
+      if (ledgerRecord?.syncStatus === "synced" && ledgerRecord.owlReference) {
+        log.info("Client already synced (ledger) — skipping", {
+          name: `${client.firstName} ${client.lastName}`,
+          owlId: ledgerRecord.owlReference,
+        });
+        return { entity: "client", sourceId: client.sourceId, action: "skipped", owlReference: ledgerRecord.owlReference, timestamp: new Date().toISOString() };
+      }
+
+      // Step 2: Search Owl UI by name (fallback if ledger has no record)
       const existingId = await searchClientByName(page, client.firstName, client.lastName);
       if (existingId) {
-        // MVP: skip existing clients (update not yet implemented)
-        log.info("Client already exists in Owl — skipping", {
+        log.info("Client already exists in Owl (name search) — skipping", {
           name: `${client.firstName} ${client.lastName}`,
           owlId: existingId,
         });
         return { entity: "client", sourceId: client.sourceId, action: "skipped", owlReference: existingId, timestamp: new Date().toISOString() };
       }
-      await createClient(page, client);
-      return { entity: "client", sourceId: client.sourceId, action: "created", timestamp: new Date().toISOString() };
+
+      // Step 3: Create new client (last resort)
+      const newOwlId = await createClient(page, client);
+      return { entity: "client", sourceId: client.sourceId, action: "created", owlReference: newOwlId, timestamp: new Date().toISOString() };
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       log.error("Failed to sync client", { sourceId: client.sourceId, error: message });
@@ -92,6 +103,27 @@ export class OwlPracticeClient {
       if (exists) {
         return { entity: "sessionNote", sourceId: note.sourceId, action: "skipped", timestamp: new Date().toISOString() };
       }
+
+      // Resolve the Owl client ID from the ledger (clients are synced first)
+      let owlClientId: string | undefined;
+      if (note.clientId) {
+        const clientRecord = findRecord(note.clientId, "client");
+        if (clientRecord?.owlReference) {
+          owlClientId = clientRecord.owlReference;
+        }
+      }
+
+      if (!owlClientId) {
+        log.warn("Cannot find Owl client ID for session note — client may not be synced yet", {
+          sourceId: note.sourceId,
+          clientId: note.clientId,
+        });
+        return { entity: "sessionNote", sourceId: note.sourceId, action: "failed", error: "Owl client ID not found — sync clients first", timestamp: new Date().toISOString() };
+      }
+
+      // Navigate to the client's Sessions & Notes page
+      await navigateToSessionNotes(page, owlClientId);
+
       await createSessionNote(page, note);
       return { entity: "sessionNote", sourceId: note.sourceId, action: "created", timestamp: new Date().toISOString() };
     } catch (error) {
@@ -101,17 +133,4 @@ export class OwlPracticeClient {
     }
   }
 
-  async pushMeetingLink(link: MeetingLink): Promise<SyncResult> {
-    const page = this.getPage();
-    await ensureLoggedIn(page, this.credentials);
-
-    try {
-      await setMeetingLink(page, link);
-      return { entity: "meetingLink", sourceId: link.sourceId, action: "created", timestamp: new Date().toISOString() };
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      log.error("Failed to sync meeting link", { sourceId: link.sourceId, error: message });
-      return { entity: "meetingLink", sourceId: link.sourceId, action: "failed", error: message, timestamp: new Date().toISOString() };
-    }
-  }
 }

@@ -43,19 +43,7 @@ const NAV_TIMEOUT = 5000;
 export async function navigateToClients(page: Page): Promise<void> {
   log.info("Navigating to Clients list...");
 
-  // Dismiss ALL overlay backdrops that might intercept pointer events
-  await page.evaluate(() => {
-    document.querySelectorAll('.bp3-overlay-backdrop').forEach(el => {
-      (el as HTMLElement).style.pointerEvents = 'none';
-    });
-    // Also close any open overlays/dialogs
-    document.querySelectorAll('.bp3-overlay-content').forEach(el => {
-      (el as HTMLElement).style.display = 'none';
-    });
-  });
-  await page.waitForTimeout(300);
-
-  // Try Escape to close any lingering modals
+  // Close any lingering modals first
   for (let i = 0; i < 3; i++) {
     try {
       const overlay = await page.$('.bp3-overlay-backdrop');
@@ -68,14 +56,29 @@ export async function navigateToClients(page: Page): Promise<void> {
     } catch { break; }
   }
 
-  // Use direct URL navigation for reliability — avoids sidebar click issues
-  const baseUrl = page.url().split("/").slice(0, 3).join("/");
-  await page.goto(`${baseUrl}/clients/all-clients`, { waitUntil: "domcontentloaded", timeout: 15000 });
-  await page.waitForTimeout(2000);
+  // If already on the clients page, just wait for it to settle
+  if (page.url().includes("/clients/all-clients")) {
+    await page.waitForTimeout(1000);
+    log.info("Already on clients list page");
+    return;
+  }
+
+  // Navigate via sidebar link (SPA navigation — preserves session state)
+  try {
+    await page.click('a:has-text("Clients")', { timeout: 5000 });
+    await page.waitForTimeout(2000);
+  } catch {
+    // Fallback: direct URL navigation if sidebar click fails
+    log.warn("Sidebar click failed, trying direct URL navigation");
+    const baseUrl = page.url().split("/").slice(0, 3).join("/");
+    await page.goto(`${baseUrl}/clients/all-clients`, { waitUntil: "domcontentloaded", timeout: 15000 });
+    await page.waitForTimeout(3000);
+  }
 
   // Verify we're on the clients page
   const url = page.url();
   if (!url.includes("/clients")) {
+    log.warn("Not on clients page after navigation", { url });
     throw new Error(`Failed to navigate to clients — landed on: ${url}`);
   }
 
@@ -155,7 +158,7 @@ async function fillClientForm(page: Page, client: Client): Promise<void> {
  * 3. Click "Add Client" button to save
  * 4. Wait for modal to close
  */
-export async function createClient(page: Page, client: Client): Promise<void> {
+export async function createClient(page: Page, client: Client): Promise<string | undefined> {
   log.info("Creating client in Owl Practice", {
     firstName: client.firstName,
     lastName: client.lastName,
@@ -200,7 +203,21 @@ export async function createClient(page: Page, client: Client): Promise<void> {
     }
   } catch { /* clean */ }
 
-  log.info("Client created successfully", { name: `${client.firstName} ${client.lastName}` });
+  // Try to extract the Owl client ID from the current URL
+  // After creation, Owl may redirect to /client/{id}/sessions
+  let owlClientId: string | undefined;
+  const url = page.url();
+  const idMatch = url.match(/\/client\/(\d+)\//);
+  if (idMatch) {
+    owlClientId = idMatch[1];
+    log.info("Client created successfully", { name: `${client.firstName} ${client.lastName}`, owlId: owlClientId });
+  } else {
+    // If we're not on the client page, search for the newly created client
+    owlClientId = (await searchClientByName(page, client.firstName, client.lastName)) ?? undefined;
+    log.info("Client created successfully", { name: `${client.firstName} ${client.lastName}`, owlId: owlClientId ?? "unknown" });
+  }
+
+  return owlClientId;
 }
 
 /**
@@ -247,7 +264,12 @@ export async function findExistingClient(
 /**
  * Search for a client by name on the clients list page.
  *
- * Uses the search/filter on the All Clients table.
+ * Owl Practice uses styled-components (not <a> links or <table>):
+ *   - Client names are <span class="ClientCodeBlock__ClientName-...">
+ *   - Names shown as "LastName, FirstName" format
+ *   - Search box: input[placeholder="Search..."]
+ *   - Clicking a client name navigates to /client/{id}/sessions
+ *
  * Returns the Owl client ID if found, null if not.
  */
 export async function searchClientByName(
@@ -260,19 +282,43 @@ export async function searchClientByName(
   // Navigate to clients list first
   await navigateToClients(page);
 
-  // Look for a matching client name in the table
-  // Owl shows names as "LastName, FirstName" in the client table
-  const searchName = `${lastName}, ${firstName}`;
-  const clientLink = await page.$(`a[title="${searchName}"], a:has-text("${searchName}")`);
+  // Type into the search box to filter the client list
+  const searchInput = await page.$('input[placeholder="Search..."]');
+  if (searchInput) {
+    // Clear any previous search first
+    await searchInput.fill("");
+    await page.waitForTimeout(500);
+    await searchInput.fill(`${firstName} ${lastName}`);
+    await page.waitForTimeout(2000); // Let the list filter
+    log.info("Typed search query", { query: `${firstName} ${lastName}` });
+  }
 
-  if (clientLink) {
-    // Extract the client ID from the href (format: /client/{id}/sessions)
-    const href = await clientLink.getAttribute("href");
-    const match = href?.match(/\/client\/(\d+)\//);
+  // Client names are <span class="ClientCodeBlock__ClientName-..."> elements,
+  // shown as "LastName, FirstName" format.
+  // Use evaluate to find the exact match and click it.
+  const searchName = `${lastName}, ${firstName}`;
+  const found = await page.evaluate((name) => {
+    const spans = document.querySelectorAll('span[class*="ClientName"]');
+    for (const span of spans) {
+      if (span.textContent?.trim() === name) {
+        (span as HTMLElement).click();
+        return true;
+      }
+    }
+    return false;
+  }, searchName);
+
+  if (found) {
+    await page.waitForTimeout(3000); // Wait for SPA navigation
+
+    // Extract the client ID from the URL (format: /client/{id}/sessions)
+    const url = page.url();
+    const match = url.match(/\/client\/(\d+)\//);
     if (match) {
       log.info("Found existing client", { name: searchName, owlId: match[1] });
       return match[1];
     }
+    log.warn("Client span clicked but URL did not change to client page", { url });
   }
 
   log.info("Client not found", { name: searchName });

@@ -34,7 +34,6 @@ export async function POST(request: NextRequest) {
     clients: data.clients.length,
     appointments: data.appointments.length,
     sessionNotes: data.sessionNotes.length,
-    meetingLinks: data.meetingLinks.length,
     dryRun: options?.dryRun ?? false,
   });
 
