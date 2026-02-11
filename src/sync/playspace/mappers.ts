@@ -58,7 +58,7 @@ export function mapNote(raw: PlaySpaceNoteResponse, clientId?: string): SessionN
     clientId: clientId || undefined,
     name: raw.name || undefined,
     date: raw.createdAt,
-    content: raw.content ?? raw.description ?? "",
+    content: raw.content || raw.description || "",
     locked: raw.locked,
     source: "playspace",
     sourceId: raw.id,

@@ -53,6 +53,15 @@ export async function fetchPlaySpaceData(
   const allNotes: SessionNote[] = [];
   for (const client of clients) {
     const notes = await playspace.getSessionNotes({ clientId: client.sourceId });
+    for (const note of notes) {
+      log.debug("Fetched session note from PlaySpace", {
+        noteId: note.sourceId,
+        clientName: `${client.firstName} ${client.lastName}`,
+        name: note.name,
+        contentLength: note.content?.length ?? 0,
+        contentPreview: note.content ? note.content.substring(0, 100) : "(empty)",
+      });
+    }
     allNotes.push(...notes);
   }
 
@@ -129,6 +138,11 @@ export async function runSync(
     await owl.connect();
 
     if (selectedEntities.includes("client")) {
+      log.info("Client sync summary", {
+        new: changes.clients.new.map(c => `${c.firstName} ${c.lastName}`),
+        changed: changes.clients.changed.map(c => `${c.firstName} ${c.lastName}`),
+        unchanged: changes.clients.unchanged.map(c => `${c.firstName} ${c.lastName}`),
+      });
       const items = [...changes.clients.new, ...changes.clients.changed];
 
       // Also process unchanged clients whose owlReference is missing in the ledger.
@@ -162,6 +176,12 @@ export async function runSync(
     if (selectedEntities.includes("sessionNote")) {
       const items = [...changes.sessionNotes.new, ...changes.sessionNotes.changed];
       for (const note of items) {
+        log.info("Pushing session note to Owl", {
+          sourceId: note.sourceId,
+          name: note.name,
+          hasContent: !!note.content,
+          contentLength: note.content?.length ?? 0,
+        });
         const result = await owl.pushSessionNote(note);
         results.push(result);
         if (useLedger) recordResult(result, note);

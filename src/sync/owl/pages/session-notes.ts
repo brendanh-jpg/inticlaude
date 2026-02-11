@@ -156,26 +156,57 @@ export async function createSessionNote(page: Page, note: SessionNote): Promise<
     log.warn("Could not fill title input — continuing with default");
   }
 
-  // Step 5: Type content into the CKEditor rich text editor via iframe
+  // Step 5: Enter content into the CKEditor rich text editor via iframe
   if (note.content) {
+    log.info("Entering note content into CKEditor", {
+      contentLength: note.content.length,
+      contentPreview: note.content.substring(0, 100),
+    });
+
     const editorFrame = page.frameLocator("iframe.cke_wysiwyg_frame");
     const editorBody = editorFrame.locator("body");
 
-    // Click into the editor
-    await editorBody.click();
-    await page.waitForTimeout(300);
+    // Wait for the editor body to be ready
+    await editorBody.waitFor({ state: "visible", timeout: 5000 });
 
-    // Clear any existing content
-    await page.keyboard.press("Control+a");
-    await page.keyboard.press("Backspace");
-    await page.waitForTimeout(200);
+    // Use direct DOM manipulation for reliable content insertion.
+    // This bypasses all focus/keyboard routing issues with CKEditor iframes.
+    try {
+      await editorBody.evaluate((body, text) => {
+        body.innerHTML = text;
+        body.dispatchEvent(new Event("input", { bubbles: true }));
+      }, note.content);
 
-    // Type the note content
-    // Use keyboard.type for reliable input into contenteditable areas
-    await page.keyboard.type(note.content, { delay: 5 });
+      // Verify content was set
+      const actualContent = await editorBody.evaluate((body) => body.innerHTML);
+      if (!actualContent || actualContent.length === 0) {
+        log.warn("CKEditor content appears empty after evaluate — falling back to keyboard.type()");
+        await editorBody.click();
+        await page.waitForTimeout(300);
+        await page.keyboard.press("Control+a");
+        await page.keyboard.press("Backspace");
+        await page.waitForTimeout(200);
+        await page.keyboard.type(note.content, { delay: 5 });
+      }
+    } catch (evalError) {
+      log.warn("CKEditor evaluate failed — falling back to keyboard.type()", {
+        error: evalError instanceof Error ? evalError.message : String(evalError),
+      });
+      await editorBody.click();
+      await page.waitForTimeout(300);
+      await page.keyboard.press("Control+a");
+      await page.keyboard.press("Backspace");
+      await page.waitForTimeout(200);
+      await page.keyboard.type(note.content, { delay: 5 });
+    }
 
     log.info("Note content entered into CKEditor", {
       contentLength: note.content.length,
+    });
+  } else {
+    log.warn("Session note has empty/falsy content — skipping CKEditor entry", {
+      sourceId: note.sourceId,
+      name: note.name,
     });
   }
 

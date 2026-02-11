@@ -159,10 +159,32 @@ export class PlaySpaceClient {
   // --- Session Notes ---
 
   async getSessionNotes(options: { clientId: string }): Promise<SessionNote[]> {
+    // Step 1: Fetch the list of notes (metadata only — no content)
     const raw = await this.fetchAllPages<PlaySpaceNoteResponse>("/notes", {
       clientId: options.clientId,
     });
-    return raw.map((n) => mapNote(n, options.clientId));
+
+    // Step 2: Fetch each note's full content via the detail endpoint
+    // The list endpoint doesn't return the `content` field.
+    // The detail endpoint requires `includeContent=true` to return it.
+    const enriched: PlaySpaceNoteResponse[] = [];
+    for (const note of raw) {
+      try {
+        const detail = await this.request<{ data: PlaySpaceNoteResponse }>(
+          `/notes/${note.id}`,
+          { includeContent: "true" },
+        );
+        enriched.push({ ...note, ...detail.data });
+      } catch (error) {
+        log.warn("Failed to fetch note detail — using list data", {
+          noteId: note.id,
+          error: error instanceof Error ? error.message : String(error),
+        });
+        enriched.push(note);
+      }
+    }
+
+    return enriched.map((n) => mapNote(n, options.clientId));
   }
 
 }
