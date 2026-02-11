@@ -26,9 +26,84 @@ interface SyncResult {
   message?: string;
 }
 
+type SyncPreset = {
+  label: string;
+  description: string;
+  entities: EntityType[];
+  color: string;
+  hoverColor: string;
+  icon: string;
+};
+
+const PRESETS: SyncPreset[] = [
+  {
+    label: "Sync Everything",
+    description: "Clients, appointments & session notes",
+    entities: ["client", "appointment", "sessionNote"],
+    color: "bg-teal-600",
+    hoverColor: "hover:bg-teal-700",
+    icon: "\u21BB",
+  },
+  {
+    label: "Sync Notes Only",
+    description: "Session notes for all clients",
+    entities: ["sessionNote"],
+    color: "bg-blue-600",
+    hoverColor: "hover:bg-blue-700",
+    icon: "\uD83D\uDCDD",
+  },
+  {
+    label: "Sync Clients & Appointments",
+    description: "Client records and calendar events",
+    entities: ["client", "appointment"],
+    color: "bg-indigo-600",
+    hoverColor: "hover:bg-indigo-700",
+    icon: "\uD83D\uDCC5",
+  },
+];
+
+function Spinner() {
+  return (
+    <svg
+      className="animate-spin h-5 w-5 text-white inline-block"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+      />
+    </svg>
+  );
+}
+
+function formatDuration(start: string, end: string): string {
+  const ms = new Date(end).getTime() - new Date(start).getTime();
+  if (ms < 1000) return `${ms}ms`;
+  const seconds = Math.floor(ms / 1000);
+  if (seconds < 60) return `${seconds}s`;
+  const minutes = Math.floor(seconds / 60);
+  const remaining = seconds % 60;
+  return `${minutes}m ${remaining}s`;
+}
+
 export default function Home() {
   const [loading, setLoading] = useState(false);
+  const [activePreset, setActivePreset] = useState<string | null>(null);
   const [result, setResult] = useState<SyncResult | null>(null);
+  const [showAdvanced, setShowAdvanced] = useState(false);
+
+  // Advanced options
   const [selectedEntities, setSelectedEntities] = useState<EntityType[]>([
     "client",
     "appointment",
@@ -38,23 +113,17 @@ export default function Home() {
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
 
-  const toggleEntity = (entity: EntityType) => {
-    setSelectedEntities((prev) =>
-      prev.includes(entity)
-        ? prev.filter((e) => e !== entity)
-        : [...prev, entity]
-    );
-  };
-
-  const runSync = async () => {
+  const runSync = async (entities: EntityType[], presetLabel?: string) => {
     setLoading(true);
+    setActivePreset(presetLabel ?? "custom");
     setResult(null);
+
     try {
       const response = await fetch("/api/sync/run", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          entities: selectedEntities,
+          entities,
           dryRun,
           dateFrom: dateFrom || undefined,
           dateTo: dateTo || undefined,
@@ -69,163 +138,275 @@ export default function Home() {
       });
     } finally {
       setLoading(false);
+      setActivePreset(null);
     }
   };
 
-  const entityLabels: Record<EntityType, string> = {
-    client: "Clients",
-    appointment: "Appointments",
-    sessionNote: "Session Notes",
+  const toggleEntity = (entity: EntityType) => {
+    setSelectedEntities((prev) =>
+      prev.includes(entity)
+        ? prev.filter((e) => e !== entity)
+        : [...prev, entity]
+    );
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50 p-8 font-[family-name:var(--font-geist-sans)]">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold mb-2">Inti Sync</h1>
-        <p className="text-gray-500 mb-8">
-          PlaySpace → Owl Practice data sync
-        </p>
+  const statusDot = result
+    ? result.error || result.status === "completed_with_errors"
+      ? "bg-red-400"
+      : "bg-green-400"
+    : "bg-gray-300";
 
-        {/* Entity Selection */}
-        <div className="bg-white rounded-lg shadow p-6 mb-6">
-          <h2 className="text-lg font-semibold mb-4">Entities to sync</h2>
-          <div className="flex flex-wrap gap-3">
-            {(Object.keys(entityLabels) as EntityType[]).map((entity) => (
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-start justify-center pt-16 px-4 font-[family-name:var(--font-geist-sans)]">
+      <div className="w-full max-w-xl">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-1">
+            <h1 className="text-2xl font-bold text-gray-900">Inti</h1>
+            <span className={`w-2.5 h-2.5 rounded-full ${statusDot}`} />
+          </div>
+          <p className="text-sm text-gray-500">
+            PlaySpace &rarr; Owl Practice sync
+          </p>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="space-y-3 mb-6">
+          {PRESETS.map((preset) => {
+            const isActive = loading && activePreset === preset.label;
+            return (
               <button
-                key={entity}
-                onClick={() => toggleEntity(entity)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedEntities.includes(entity)
-                    ? "bg-teal-500 text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                key={preset.label}
+                onClick={() => runSync(preset.entities, preset.label)}
+                disabled={loading}
+                className={`w-full flex items-center gap-4 px-5 py-4 rounded-xl text-white font-medium transition-all ${
+                  loading
+                    ? "opacity-50 cursor-not-allowed bg-gray-400"
+                    : `${preset.color} ${preset.hoverColor} shadow-sm hover:shadow-md active:scale-[0.99]`
                 }`}
               >
-                {entityLabels[entity]}
+                <span className="text-xl w-7 text-center">
+                  {isActive ? <Spinner /> : preset.icon}
+                </span>
+                <div className="text-left">
+                  <div className="text-sm font-semibold">{preset.label}</div>
+                  <div className="text-xs opacity-80">{preset.description}</div>
+                </div>
               </button>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        {/* Options */}
-        <div className="bg-white rounded-lg shadow p-6 mb-6 space-y-4">
-          <label className="flex items-center gap-3 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={dryRun}
-              onChange={(e) => setDryRun(e.target.checked)}
-              className="w-4 h-4 rounded border-gray-300"
-            />
-            <span className="text-sm font-medium text-gray-700">
-              Dry run (preview only — no changes to Owl Practice)
-            </span>
-          </label>
-
-          <div>
-            <h3 className="text-sm font-medium text-gray-700 mb-2">
-              Appointment date range (optional)
-            </h3>
-            <div className="flex gap-3">
-              <input
-                type="date"
-                value={dateFrom}
-                onChange={(e) => setDateFrom(e.target.value)}
-                placeholder="From"
-                className="border border-gray-300 rounded px-3 py-2 text-sm flex-1"
-              />
-              <input
-                type="date"
-                value={dateTo}
-                onChange={(e) => setDateTo(e.target.value)}
-                placeholder="To"
-                className="border border-gray-300 rounded px-3 py-2 text-sm flex-1"
-              />
-            </div>
-            <p className="text-xs text-gray-400 mt-1">
-              Leave empty to sync all appointments, or set a range to limit.
-            </p>
-          </div>
-        </div>
-
-        {/* Run Button */}
+        {/* Advanced Options Toggle */}
         <button
-          onClick={runSync}
-          disabled={loading || selectedEntities.length === 0}
-          className={`w-full py-3 rounded-lg text-white font-semibold text-base transition-colors ${
-            loading || selectedEntities.length === 0
-              ? "bg-gray-300 cursor-not-allowed"
-              : "bg-teal-500 hover:bg-teal-600"
-          }`}
+          onClick={() => setShowAdvanced(!showAdvanced)}
+          className="text-xs text-gray-400 hover:text-gray-600 transition-colors mb-4 flex items-center gap-1"
         >
-          {loading ? "Syncing..." : dryRun ? "Preview Sync" : "Run Sync"}
+          <span
+            className={`transition-transform inline-block ${
+              showAdvanced ? "rotate-90" : ""
+            }`}
+          >
+            &#9656;
+          </span>
+          Advanced options
         </button>
+
+        {/* Advanced Options Panel */}
+        {showAdvanced && (
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-6 space-y-5">
+            {/* Entity Checkboxes */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                Entities
+              </h3>
+              <div className="flex gap-2">
+                {(
+                  [
+                    ["client", "Clients"],
+                    ["appointment", "Appointments"],
+                    ["sessionNote", "Notes"],
+                  ] as [EntityType, string][]
+                ).map(([entity, label]) => (
+                  <button
+                    key={entity}
+                    onClick={() => toggleEntity(entity)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                      selectedEntities.includes(entity)
+                        ? "bg-gray-900 text-white"
+                        : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Dry Run */}
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={dryRun}
+                onChange={(e) => setDryRun(e.target.checked)}
+                className="w-3.5 h-3.5 rounded border-gray-300 accent-gray-900"
+              />
+              <span className="text-xs text-gray-600">
+                Dry run (preview only)
+              </span>
+            </label>
+
+            {/* Date Range */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                Date range
+              </h3>
+              <div className="flex gap-2">
+                <input
+                  type="date"
+                  value={dateFrom}
+                  onChange={(e) => setDateFrom(e.target.value)}
+                  className="border border-gray-200 rounded-lg px-3 py-1.5 text-xs flex-1 text-gray-700"
+                />
+                <span className="text-gray-300 self-center">&mdash;</span>
+                <input
+                  type="date"
+                  value={dateTo}
+                  onChange={(e) => setDateTo(e.target.value)}
+                  className="border border-gray-200 rounded-lg px-3 py-1.5 text-xs flex-1 text-gray-700"
+                />
+              </div>
+            </div>
+
+            {/* Run Custom */}
+            <button
+              onClick={() => runSync(selectedEntities)}
+              disabled={loading || selectedEntities.length === 0}
+              className={`w-full py-2.5 rounded-lg text-sm font-semibold transition-colors ${
+                loading || selectedEntities.length === 0
+                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-900 text-white hover:bg-gray-800 active:scale-[0.99]"
+              }`}
+            >
+              {loading && activePreset === "custom" ? (
+                <span className="flex items-center justify-center gap-2">
+                  <Spinner /> Running...
+                </span>
+              ) : dryRun ? (
+                "Preview Custom Sync"
+              ) : (
+                "Run Custom Sync"
+              )}
+            </button>
+          </div>
+        )}
 
         {/* Results */}
         {result && (
-          <div className="mt-6 bg-white rounded-lg shadow p-6">
-            <h2 className="text-lg font-semibold mb-4">
-              {result.error ? "Error" : "Sync Results"}
-            </h2>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-semibold text-gray-900">
+                {result.error ? "Sync Failed" : "Sync Complete"}
+              </h2>
+              <button
+                onClick={() => setResult(null)}
+                className="text-xs text-gray-400 hover:text-gray-600"
+              >
+                Clear
+              </button>
+            </div>
 
             {result.error ? (
-              <div className="bg-red-50 border border-red-200 rounded p-4 text-red-700 text-sm">
+              <div className="bg-red-50 border border-red-100 rounded-lg p-3 text-xs text-red-700">
                 <p className="font-medium">{result.error}</p>
-                {result.message && <p className="mt-1">{result.message}</p>}
+                {result.message && (
+                  <p className="mt-1 text-red-600">{result.message}</p>
+                )}
               </div>
             ) : (
               <>
-                {/* Status */}
+                {/* Status Badge */}
                 <div
-                  className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${
+                  className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium mb-4 ${
                     result.status === "completed"
-                      ? "bg-green-100 text-green-700"
-                      : "bg-yellow-100 text-yellow-700"
+                      ? "bg-green-50 text-green-700"
+                      : "bg-yellow-50 text-yellow-700"
                   }`}
                 >
-                  {result.status}
+                  {result.status === "completed"
+                    ? "Success"
+                    : result.status === "completed_with_errors"
+                    ? "Completed with errors"
+                    : result.status}
                 </div>
 
-                {/* Data fetched */}
-                {result.data && (
-                  <div className="mb-4">
-                    <h3 className="text-sm font-medium text-gray-500 mb-2">
-                      Data fetched from PlaySpace
-                    </h3>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div>Clients: {result.data.clients}</div>
-                      <div>Appointments: {result.data.appointments}</div>
-                      <div>Session Notes: {result.data.sessionNotes}</div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Sync counts */}
+                {/* Counts Grid */}
                 {result.summary?.counts && (
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-500 mb-2">
-                      Sync results
-                    </h3>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div className="text-green-600">
-                        Created: {result.summary.counts.created}
+                  <div className="grid grid-cols-4 gap-2 mb-4">
+                    {[
+                      {
+                        label: "Created",
+                        value: result.summary.counts.created,
+                        color: "text-green-600",
+                        bg: "bg-green-50",
+                      },
+                      {
+                        label: "Updated",
+                        value: result.summary.counts.updated,
+                        color: "text-blue-600",
+                        bg: "bg-blue-50",
+                      },
+                      {
+                        label: "Skipped",
+                        value: result.summary.counts.skipped,
+                        color: "text-gray-500",
+                        bg: "bg-gray-50",
+                      },
+                      {
+                        label: "Failed",
+                        value: result.summary.counts.failed,
+                        color: "text-red-600",
+                        bg: "bg-red-50",
+                      },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className={`${item.bg} rounded-lg p-2.5 text-center`}
+                      >
+                        <div className={`text-lg font-bold ${item.color}`}>
+                          {item.value}
+                        </div>
+                        <div className="text-[10px] text-gray-500 uppercase tracking-wide">
+                          {item.label}
+                        </div>
                       </div>
-                      <div className="text-blue-600">
-                        Updated: {result.summary.counts.updated}
-                      </div>
-                      <div className="text-gray-500">
-                        Skipped: {result.summary.counts.skipped}
-                      </div>
-                      <div className="text-red-600">
-                        Failed: {result.summary.counts.failed}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 )}
 
-                {/* Run ID */}
-                {result.summary?.runId && (
-                  <p className="mt-4 text-xs text-gray-400">
-                    Run ID: {result.summary.runId}
-                  </p>
+                {/* Data Fetched */}
+                {result.data && (
+                  <div className="text-xs text-gray-500 mb-3">
+                    Fetched: {result.data.clients} clients,{" "}
+                    {result.data.appointments} appointments,{" "}
+                    {result.data.sessionNotes} notes
+                  </div>
+                )}
+
+                {/* Duration + Run ID */}
+                {result.summary && (
+                  <div className="text-[10px] text-gray-400 space-y-0.5">
+                    {result.summary.startedAt && result.summary.completedAt && (
+                      <div>
+                        Duration:{" "}
+                        {formatDuration(
+                          result.summary.startedAt,
+                          result.summary.completedAt
+                        )}
+                      </div>
+                    )}
+                    <div>Run: {result.summary.runId}</div>
+                  </div>
                 )}
               </>
             )}
