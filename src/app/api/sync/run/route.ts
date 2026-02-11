@@ -8,6 +8,9 @@ const log = createChildLogger("api-run");
 // Allow up to 5 minutes for Browserbase sync
 export const maxDuration = 300;
 
+// Module-level sync lock — prevents concurrent browser sessions
+let syncRunning = false;
+
 /**
  * POST /api/sync/run — Run a full sync using env-configured credentials.
  *
@@ -16,6 +19,14 @@ export const maxDuration = 300;
  *   dryRun?: boolean
  */
 export async function POST(request: NextRequest) {
+  // Check sync lock
+  if (syncRunning) {
+    log.warn("Sync already in progress — rejecting concurrent request");
+    return NextResponse.json(
+      { error: "Sync already in progress", message: "Please wait for the current sync to finish before starting another." },
+      { status: 409 },
+    );
+  }
   // Read optional body
   let entities: EntityType[] | undefined;
   let dryRun = false;
@@ -56,6 +67,7 @@ export async function POST(request: NextRequest) {
 
   log.info("Full sync triggered via UI", { entities, dryRun, dateFrom, dateTo });
 
+  syncRunning = true;
   try {
     // Step 1: Fetch from PlaySpace
     const data = await fetchPlaySpaceData({
@@ -99,5 +111,7 @@ export async function POST(request: NextRequest) {
       { error: "Sync failed", message },
       { status: 500 },
     );
+  } finally {
+    syncRunning = false;
   }
 }

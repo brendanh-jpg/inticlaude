@@ -130,6 +130,17 @@ export default function Home() {
         }),
       });
       const data = await response.json();
+
+      // Handle 409 Conflict — sync already in progress
+      if (response.status === 409) {
+        setResult({
+          status: "error",
+          error: "Sync already in progress",
+          message: data.message || "Please wait for the current sync to finish.",
+        });
+        return;
+      }
+
       setResult(data);
     } catch (error) {
       setResult({

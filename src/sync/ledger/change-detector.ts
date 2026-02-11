@@ -18,7 +18,8 @@ export function detectChanges<T extends { sourceId: string }>(
 
     if (!existing) {
       result.new.push(entity);
-    } else if (existing.dataHash !== hash) {
+    } else if (existing.dataHash !== hash || existing.syncStatus === "pending") {
+      // Re-sync if data changed OR if a previous sync was interrupted (pending)
       result.changed.push(entity);
     } else {
       result.unchanged.push(entity);

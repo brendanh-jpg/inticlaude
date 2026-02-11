@@ -7,7 +7,7 @@ import { OwlPracticeClient } from "@/sync/owl/client";
 import { createChildLogger } from "@/sync/logger";
 import { detectChanges } from "@/sync/ledger/change-detector";
 import { hashEntity } from "@/sync/ledger/hash";
-import { findRecord, markSynced, markFailed, createRun, completeRun } from "@/sync/ledger/repository";
+import { findRecord, markSynced, markFailed, markPending, createRun, completeRun } from "@/sync/ledger/repository";
 import type { ChangeSet } from "@/sync/ledger/types";
 
 const log = createChildLogger("sync-engine");
@@ -158,33 +158,60 @@ export async function runSync(
       }
 
       for (const client of items) {
-        const result = await owl.createOrUpdateClient(client);
-        results.push(result);
-        if (useLedger) recordResult(result, client);
+        const hash = hashEntity(client as unknown as Record<string, unknown>);
+        try {
+          if (useLedger) markPending(client.sourceId, "client", hash);
+          const result = await owl.createOrUpdateClient(client);
+          results.push(result);
+          if (useLedger) recordResult(result, client);
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          log.error("Client sync threw unexpectedly", { sourceId: client.sourceId, error: message });
+          results.push({ entity: "client", sourceId: client.sourceId, action: "failed", error: message, timestamp: new Date().toISOString() });
+          if (useLedger) markFailed(client.sourceId, "client", hash, message);
+        }
       }
     }
 
     if (selectedEntities.includes("appointment")) {
       const items = [...changes.appointments.new, ...changes.appointments.changed];
       for (const appointment of items) {
-        const result = await owl.createOrUpdateAppointment(appointment);
-        results.push(result);
-        if (useLedger) recordResult(result, appointment);
+        const hash = hashEntity(appointment as unknown as Record<string, unknown>);
+        try {
+          if (useLedger) markPending(appointment.sourceId, "appointment", hash);
+          const result = await owl.createOrUpdateAppointment(appointment);
+          results.push(result);
+          if (useLedger) recordResult(result, appointment);
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          log.error("Appointment sync threw unexpectedly", { sourceId: appointment.sourceId, error: message });
+          results.push({ entity: "appointment", sourceId: appointment.sourceId, action: "failed", error: message, timestamp: new Date().toISOString() });
+          if (useLedger) markFailed(appointment.sourceId, "appointment", hash, message);
+        }
       }
     }
 
     if (selectedEntities.includes("sessionNote")) {
       const items = [...changes.sessionNotes.new, ...changes.sessionNotes.changed];
       for (const note of items) {
-        log.info("Pushing session note to Owl", {
-          sourceId: note.sourceId,
-          name: note.name,
-          hasContent: !!note.content,
-          contentLength: note.content?.length ?? 0,
-        });
-        const result = await owl.pushSessionNote(note);
-        results.push(result);
-        if (useLedger) recordResult(result, note);
+        const hash = hashEntity(note as unknown as Record<string, unknown>);
+        try {
+          if (useLedger) markPending(note.sourceId, "sessionNote", hash);
+          log.info("Pushing session note to Owl", {
+            sourceId: note.sourceId,
+            name: note.name,
+            hasContent: !!note.content,
+            contentLength: note.content?.length ?? 0,
+          });
+          const result = await owl.pushSessionNote(note);
+          results.push(result);
+          if (useLedger) recordResult(result, note);
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          log.error("Session note sync threw unexpectedly", { sourceId: note.sourceId, error: message });
+          results.push({ entity: "sessionNote", sourceId: note.sourceId, action: "failed", error: message, timestamp: new Date().toISOString() });
+          if (useLedger) markFailed(note.sourceId, "sessionNote", hash, message);
+        }
       }
     }
 

@@ -99,11 +99,6 @@ export class OwlPracticeClient {
     await ensureLoggedIn(page, this.credentials);
 
     try {
-      const exists = await findExistingNote(page, note.sourceId);
-      if (exists) {
-        return { entity: "sessionNote", sourceId: note.sourceId, action: "skipped", timestamp: new Date().toISOString() };
-      }
-
       // Resolve the Owl client ID from the ledger (clients are synced first)
       let owlClientId: string | undefined;
       if (note.clientId) {
@@ -123,6 +118,17 @@ export class OwlPracticeClient {
 
       // Navigate to the client's Sessions & Notes page
       await navigateToSessionNotes(page, owlClientId);
+
+      // Check for duplicate by scanning the Non-Session Notes table for matching title
+      const noteTitle = note.name || `PlaySpace Note — ${note.date}`;
+      const exists = await findExistingNote(page, noteTitle);
+      if (exists) {
+        log.info("Note already exists in Owl (title match) — skipping", {
+          sourceId: note.sourceId,
+          title: noteTitle,
+        });
+        return { entity: "sessionNote", sourceId: note.sourceId, action: "skipped", timestamp: new Date().toISOString() };
+      }
 
       await createSessionNote(page, note);
       return { entity: "sessionNote", sourceId: note.sourceId, action: "created", timestamp: new Date().toISOString() };

@@ -43,6 +43,10 @@ export function markFailed(sourceId: string, entityType: EntityType, dataHash: s
   upsertRecord(sourceId, entityType, dataHash, "failed", null, error);
 }
 
+export function markPending(sourceId: string, entityType: EntityType, dataHash: string): void {
+  upsertRecord(sourceId, entityType, dataHash, "pending");
+}
+
 // --- Sync Runs ---
 
 export function createRun(

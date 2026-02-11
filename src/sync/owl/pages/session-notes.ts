@@ -246,15 +246,55 @@ export async function createSessionNote(page: Page, note: SessionNote): Promise<
 }
 
 /**
- * Check if a note already exists for a session.
+ * Check if a note with the given title already exists in the Non-Session Notes table.
  *
- * For MVP: rely on the ledger to track which notes have been synced.
- * The orchestrator in owl/client.ts checks the ledger before calling this.
- * If we get here, treat as "not found" and allow creation.
+ * Scans the currently-visible Non-Session Notes tab for a row whose Title column
+ * matches the note's name. This prevents duplicates when the ledger is cleared
+ * or lost.
+ *
+ * IMPORTANT: The page must already be on the client's Sessions & Notes page
+ * (navigateToSessionNotes must have been called).
  */
 export async function findExistingNote(
-  _page: Page,
-  _sourceId: string
+  page: Page,
+  noteTitle: string,
 ): Promise<boolean> {
-  return false;
+  log.info("Checking for existing note in Non-Session Notes table", { noteTitle });
+
+  try {
+    // Click the "Non-Session Notes" tab to make sure it's active
+    const nonSessionTab = await page.waitForSelector(
+      'button:has-text("Non-Session Notes")',
+      { timeout: 5000, state: "visible" },
+    );
+    await nonSessionTab.click();
+    await page.waitForTimeout(1500);
+
+    // Scan table rows for a matching title
+    const found = await page.evaluate((searchTitle) => {
+      // Non-Session Notes table has columns: Created, Author, Therapist, Title, Modified, Actions
+      // Title is typically the 4th column (index 3)
+      const rows = document.querySelectorAll("table tbody tr");
+      for (const row of rows) {
+        const cells = row.querySelectorAll("td");
+        // Check all cells for the title (position may vary)
+        for (const cell of cells) {
+          const text = (cell.textContent || "").trim();
+          if (text === searchTitle) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }, noteTitle);
+
+    log.info("Duplicate note check result", { noteTitle, found });
+    return found;
+  } catch (error) {
+    log.warn("Could not check for existing note — assuming not found", {
+      noteTitle,
+      error: error instanceof Error ? error.message : String(error),
+    });
+    return false;
+  }
 }

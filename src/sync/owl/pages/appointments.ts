@@ -45,7 +45,10 @@ function pickServiceLabel(appointment: Appointment): string {
   return "Psychotherapy, 60 mins (Individual)";
 }
 
-/** Parse ISO datetime into Owl date-picker components. */
+/** Practice timezone — configurable via env, defaults to Eastern. */
+const PRACTICE_TIMEZONE = process.env.PRACTICE_TIMEZONE || "America/Toronto";
+
+/** Parse ISO datetime into Owl date-picker components using the practice timezone. */
 function parseDateComponents(isoString: string): {
   month: string;
   day: string;
@@ -53,30 +56,51 @@ function parseDateComponents(isoString: string): {
   time: string;
 } {
   const date = new Date(isoString);
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
+  // Use Intl.DateTimeFormat to extract parts in the practice timezone
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: PRACTICE_TIMEZONE,
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
 
-  // Round to nearest 30 minutes (Owl time dropdown uses 30-min intervals)
-  if (minutes < 15) {
-    minutes = 0;
-  } else if (minutes < 45) {
-    minutes = 30;
-  } else {
-    minutes = 0;
-    hours += 1;
-    if (hours >= 24) hours = 0;
-  }
+  const parts = formatter.formatToParts(date);
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? "";
 
-  const ampm = hours >= 12 ? "PM" : "AM";
-  const displayHours = hours % 12 || 12;
+  const month = get("month");       // "Jan", "Feb", etc.
+  const day = get("day");           // "1", "15", etc.
+  const year = get("year");         // "2025"
+  let hours = parseInt(get("hour"), 10) || 12;
+  let minutes = parseInt(get("minute"), 10) || 0;
+  const dayPeriod = get("dayPeriod"); // "AM" or "PM"
+
+  // Round to nearest 30 minutes (Owl time dropdown uses 30-min intervals).
+  // Work in epoch millis to avoid date-advancing bugs.
+  const roundedMs = Math.round(date.getTime() / (30 * 60 * 1000)) * (30 * 60 * 1000);
+  const roundedDate = new Date(roundedMs);
+
+  const roundedFormatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: PRACTICE_TIMEZONE,
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+  const roundedParts = roundedFormatter.formatToParts(roundedDate);
+  const getRounded = (type: string) => roundedParts.find((p) => p.type === type)?.value ?? "";
+
+  hours = parseInt(getRounded("hour"), 10) || 12;
+  minutes = parseInt(getRounded("minute"), 10) || 0;
+  const ampm = getRounded("dayPeriod") || dayPeriod;
 
   return {
-    month: months[date.getMonth()],
-    day: String(date.getDate()),
-    year: String(date.getFullYear()),
-    time: `${displayHours}:${minutes.toString().padStart(2, "0")} ${ampm}`,
+    month,
+    day,
+    year,
+    time: `${hours}:${minutes.toString().padStart(2, "0")} ${ampm}`,
   };
 }
 
